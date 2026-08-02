@@ -53,4 +53,17 @@ offset_right = 23.0
 offset_bottom = 31.0
 text = "←"
 
+[node name="AddButton" type="Button" parent="Top/Control" unique_id=1482125466]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+text = "+"
+
+[connection signal="selected" from="." to="." method="_on_selected"]
+[connection signal="unselected" from="." to="." method="_on_unselected"]
 [connection signal="pressed" from="Top/Control/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Top/Control/AddButton" to="." method="_on_add_button_pressed"]

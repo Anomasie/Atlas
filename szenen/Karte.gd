@@ -85,9 +85,11 @@ func load_countries(to_add_ones : Array = []) -> void:
 
 func random_cohesive_countries(start_country:String = Global.countries.keys().pick_random(), length=6) -> Array:
 	var result : Array = [start_country]
+	print("start with: ", start_country)
 	for _i in length - 1:
 		var new_entry : String = start_country
 		while new_entry in result:
 			new_entry = Global.countries[result.pick_random()]["Neighbors"].pick_random()
+		print("add: ", new_entry)
 		result.append(new_entry)
 	return result

@@ -4,6 +4,7 @@ class_name PuzzleKarte
 signal check_whether_right
 signal open_main_menu
 signal selected
+signal unselected
 
 var SELECTION_COLOR = Color.WHITE
 const EPSILON = 10.0
@@ -30,22 +31,28 @@ func handle_input_click(event) -> void:
 			con_origin = AllSprites.get_node(dragging_country).position
 			highlight([country], SELECTION_COLOR)
 	elif event.is_action_released("click"):
-		selected.emit("")
+		unselected.emit(dragging_country)
 		dragging_country = ""
 		check_whether_right.emit()
 		hide_highlight()
 	elif dragging_country and event is InputEventMouseMotion:
 		AllSprites.get_node(dragging_country).position = con_origin + (get_global_mouse_position() - drag_origin)
 
+func right_position(country_position, origin:Vector2 = Vector2.ZERO) -> bool:
+	if (country_position - origin).length() > EPSILON:
+			return false
+	else:
+		return true
+
 func solved(origin : Vector2 = Vector2.ZERO) -> bool:
 	for sprite in AllSprites.get_children():
-		if (sprite.position - origin).length() > EPSILON:
+		if not right_position(sprite.position, origin):
 			return false
 	return true
 
-func tweak_right(origin:Vector2 = Vector2.ZERO) -> void:
+func tweak_right(countries : Array = AllSprites.get_children(), origin:Vector2 = Vector2.ZERO) -> void:
 	var tween : Tween = get_tree().create_tween()
-	for kid in AllSprites.get_children():
+	for kid in countries:
 		tween.tween_property(kid, "position", origin, HIGHLIGHT_IN_TIME)
 	await tween.finished
 	tween.kill()

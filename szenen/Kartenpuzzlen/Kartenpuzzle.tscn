@@ -39,6 +39,15 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 
+[node name="OKButton" type="Button" parent="CanvasLayer/Control" unique_id=1842270732]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
 [node name="Back" type="Button" parent="CanvasLayer/Control" unique_id=1240314772]
 layout_mode = 0
 offset_right = 8.0
@@ -46,4 +55,6 @@ offset_bottom = 8.0
 text = "←"
 
 [connection signal="selected" from="." to="." method="_on_selected"]
+[connection signal="unselected" from="." to="." method="_on_unselected"]
+[connection signal="pressed" from="CanvasLayer/Control/OKButton" to="." method="_on_ok_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Back" to="." method="_on_back_pressed"]

@@ -1,6 +1,9 @@
 extends PuzzleKarte
 
+signal ok
+
 var continue_game : bool = true
+@onready var OKButton = $CanvasLayer/Control/OKButton
 
 func _ready() -> void:
 	AllSprites = $AllSprites
@@ -25,10 +28,18 @@ func puzzle(load_country_names : PackedStringArray = random_cohesive_countries()
 	while not solved(AllSprites.get_child(0).position):
 		await check_whether_right
 	# tweak until actually right
-	await tweak_right(AllSprites.get_child(0).position)
+	await tweak_right(AllSprites.get_children(), AllSprites.get_child(0).position)
+	await self_ok()
 	##### delete old ones
 	for sprite in AllSprites.get_children():
 		sprite.queue_free()
+
+func self_ok() -> void:
+	await Global.wait(0.25)
+	OKButton.show()
+	await ok
+	OKButton.hide()
+	return
 
 func _on_back_pressed() -> void:
 	open_main_menu.emit()
@@ -37,3 +48,11 @@ func _on_back_pressed() -> void:
 
 func _on_selected(country : String) -> void:
 	$CanvasLayer/Control/Label.text = country
+
+
+func _on_unselected(country : String) -> void:
+	$CanvasLayer/Control/Label.text = ""
+
+
+func _on_ok_button_pressed() -> void:
+	ok.emit()

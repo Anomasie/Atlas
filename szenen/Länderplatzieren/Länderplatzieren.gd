@@ -23,7 +23,7 @@ func puzzle(load_country_name: String = Global.countries.keys().pick_random()) -
 	while not solved():
 		await check_whether_right
 	# tweak until actually right
-	await tweak_right(Vector2.ZERO)
+	await tweak_right(AllSprites.get_children(), Vector2.ZERO)
 
 func run_game() -> void:
 	while continue_game:
@@ -32,6 +32,26 @@ func run_game() -> void:
 		for kid in AllSprites.get_children():
 			kid.queue_free()
 
+
+
 func _on_back_pressed() -> void:
 	open_main_menu.emit()
 	queue_free()
+
+func _on_add_button_pressed() -> void:
+	load_countries([Global.countries.keys().pick_random()])
+
+func _on_selected(country : String) -> void:
+	if country in Global.countries.keys():
+		$Top/Control/Label.text = Global.countries[country]["German"]
+	else:
+		print("ERROR in Länderplatzieren.gd._on_selected: No country named ", country)
+
+func _on_unselected(country : String) -> void:
+	if not country:
+		return
+	if not AllSprites.has_node(country):
+		print("ERROR in Länderplatzieren.gd._on_unselected: No country loaded with name ", country)
+	if right_position(AllSprites.get_node(country).position):
+		print("tweak! ", country)
+		tweak_right([AllSprites.get_node(country)])

@@ -30,7 +30,7 @@ Madagaskar;Madagaskar;Mauritius,Seychellen
 Malawi;Malawi;Tansania,Mosambik,Sambia
 Mali;Mali;Algerien,Mauretanien,Niger,Senegal,Guinea,Elfenbeinkueste,BurkinaFaso
 Marokko;Marokko;WestSahara,Algerien,Mauretanien
-Mauretanien;Mauretanien;Mali,Algerien,Westsahara,Senegal,Mali
+Mauretanien;Mauretanien;Mali,Algerien,WestSahara,Senegal,Mali
 Mauritius;Mauritius;Madagaskar,Seychellen
 Mosambik;Mosambik;Tansania,Malawi,Sambia,Simbabwe,Suedafrika,Eswatini
 Namibia;Namibia;Angola,Botswana,Sambia,Suedafrika
@@ -52,5 +52,6 @@ Togo;Togo;Benin,BurkinaFaso,Ghana
 Tschad;Tschad;ZentralafrikanischeRepublik,Sudan,Libyen,Niger,Nigeria,Kamerun
 Tunesien;Tunesien;Algerien,Libyen
 Uganda;Uganda;DemokratischeRepublikKongo,Suedsudan,Kenia,Ruanda
-Westsahara;Westsahara;Marokko,Mauretanien
+WestSahara;Westsahara;Marokko,Mauretanien
 ZentralafrikanischeRepublik;Zentralafrikanische Republik;DemokratischeRepublikKongo, Suedsudan,Tschad,Sudan,Kamerun,Kongo
+SaoTomeUndPrincipe;Sao Tome Und Principe;Aequatorialguinea,Kamerun,Gabun
