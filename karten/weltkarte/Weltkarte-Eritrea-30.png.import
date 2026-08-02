@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wgnh1n0qjo8j"
-path="res://.godot/imported/Weltkarte--59.png-60a94b393ad3a62a535bfe2499d9fdbf.ctex"
+uid="uid://dfgmw1w4t0fs0"
+path="res://.godot/imported/Weltkarte-Eritrea-30.png-741ccdba3c2752c06c8d9d2dbd5fdf05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte--59.png"
-dest_files=["res://.godot/imported/Weltkarte--59.png-60a94b393ad3a62a535bfe2499d9fdbf.ctex"]
+source_file="res://karten/weltkarte/Weltkarte-Eritrea-30.png"
+dest_files=["res://.godot/imported/Weltkarte-Eritrea-30.png-741ccdba3c2752c06c8d9d2dbd5fdf05.ctex"]
 
 [params]
 

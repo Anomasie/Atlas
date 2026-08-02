@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://puctwx8oy717"]
+
+[ext_resource type="Script" uid="uid://c17c66any7ise" path="res://szenen/Länderraten/Länderraten.gd" id="1_8etso"]
+[ext_resource type="PackedScene" uid="uid://d2qp1rcqfwuxx" path="res://szenen/karten/Weltkarte.tscn" id="2_35arq"]
+
+[node name="Länderraten" type="Control" unique_id=1145824960]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8etso")
+
+[node name="Aufgabe" type="Label" parent="." unique_id=1740211570]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Weltkarte" parent="." unique_id=33769356 instance=ExtResource("2_35arq")]
+layout_mode = 1
