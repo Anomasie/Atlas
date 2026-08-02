@@ -127,7 +127,6 @@ func similar_sounding_countries(choose_out_of:Array, country: String) -> Array:
 func _on_button_pressed() -> void:
 	ok.emit()
 
-
 func _on_back_pressed() -> void:
 	open_main_menu.emit()
 	close()

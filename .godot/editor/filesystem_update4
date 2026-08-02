@@ -3,3 +3,6 @@ res://szenen/Karte.gd
 res://szenen/Kartenpuzzlen/Kartenpuzzle.gd
 res://szenen/Länderplatzieren/Länderplatzieren.tscn
 res://szenen/Länderplatzieren/Länderplatzieren.gd
+res://szenen/BeweglicheKarte.gd
+res://szenen/PuzzleKarte.gd
+res://szenen/Länderraten/Länderraten.gd
