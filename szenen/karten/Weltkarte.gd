@@ -28,7 +28,7 @@ func get_country(koordinaten: Vector2) -> String:
 			var color = kid.get_texture().get_image().get_pixel(koordinaten.x, koordinaten.y)
 			if color == Color.WHITE:
 				return kid.name
-	return "No country there"
+	return ""
 
 func highlight(list_of_countries:Array=[], highlight_color: Color = HIGHLIGHT_COLOR) -> void:
 	if not list_of_countries:
@@ -57,4 +57,5 @@ func hide_highlight() -> void:
 
 func _on_button_pressed() -> void:
 	var clicked_country : String = get_country(get_global_mouse_position())
-	country_selected.emit(clicked_country)
+	if clicked_country:
+		country_selected.emit(clicked_country)

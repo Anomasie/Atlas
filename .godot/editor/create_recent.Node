@@ -1,4 +1,6 @@
+Label
+VBoxContainer
+MarginContainer
 Button
 MenuButton
 TextureRect
-Label

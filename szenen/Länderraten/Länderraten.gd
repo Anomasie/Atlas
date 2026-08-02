@@ -7,7 +7,8 @@ const RIGHT_COLOR : Color = Color.YELLOW
 const WRONG_COLOR : Color = Color.RED
 var country_list : Array = []
 
-@onready var Aufgabe = $Aufgabe
+@onready var Aufgabe = $Results/Lines/Aufgabe
+@onready var Angeklickt = $Results/Lines/Angeklickt
 @onready var Weltkarte = $Weltkarte
 @onready var OKButton = $Button
 
@@ -15,6 +16,8 @@ var continue_game : bool = true
 
 func _ready() -> void:
 	OKButton.hide()
+	Angeklickt.text = ""
+	Aufgabe.text = ""
 	load_country_list()
 	run_game()
 
@@ -65,7 +68,7 @@ func run_game() -> void:
 			current_countries[goal] = -1
 		##### SHOW GOAL
 		# show goal
-		Aufgabe.text = goal
+		Aufgabe.text = "Finde " + goal + "!"
 		##### PLAYER'S TURN
 		# await player's choice
 		var choice : String = await Weltkarte.country_selected
@@ -74,10 +77,13 @@ func run_game() -> void:
 		# compare choice with goal
 		if choice == goal:
 			current_countries[goal] += 1
+			Angeklickt.text = "Richtig! Das ist "+choice+"!"
 			### show highlight
 			await Weltkarte.highlight([goal], RIGHT_COLOR)
 		else:
 			current_countries[goal] -= 1
+			Angeklickt.text = "Nein, das ist "+choice+"."
+			
 			Weltkarte.highlight([goal], RIGHT_COLOR)
 			await Weltkarte.highlight([choice], WRONG_COLOR)
 			# add choice to current_countries
@@ -91,6 +97,8 @@ func run_game() -> void:
 				current_countries[similar_one] = -1
 		await self_ok()
 		await Weltkarte.hide_highlight()
+		Angeklickt.text = ""
+		Aufgabe.text = ""
 
 func self_ok() -> void:
 	await Global.wait(0.25)

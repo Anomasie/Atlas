@@ -22,16 +22,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_11qh7")
 
-[node name="Aufgabe" type="Label" parent="." unique_id=1740211570]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-
 [node name="Weltkarte" parent="." unique_id=33769356 instance=ExtResource("2_35arq")]
 material = SubResource("CanvasItemMaterial_gb4g8")
 layout_mode = 1
@@ -43,5 +33,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Results" type="MarginContainer" parent="." unique_id=786105938]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Lines" type="VBoxContainer" parent="Results" unique_id=447585720]
+layout_mode = 2
+
+[node name="Aufgabe" type="Label" parent="Results/Lines" unique_id=1740211570]
+layout_mode = 2
+text = "Ziel: Finde"
+
+[node name="Angeklickt" type="Label" parent="Results/Lines" unique_id=1890209160]
+layout_mode = 2
+text = "Das war"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
