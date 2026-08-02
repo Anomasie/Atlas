@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b8pajf0t3f8re"]
+
+[ext_resource type="Script" uid="uid://crftmhx66lre8" path="res://szenen/Game.gd" id="1_cg8ki"]
+[ext_resource type="PackedScene" uid="uid://bfgpf40rudv26" path="res://szenen/Hauptmenu/Hauptmenu.tscn" id="1_i4jsc"]
+[ext_resource type="PackedScene" uid="uid://dwpqap83ku6qu" path="res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn" id="2_eanuy"]
+[ext_resource type="PackedScene" uid="uid://puctwx8oy717" path="res://szenen/Länderraten/Länderraten.tscn" id="3_kh6de"]
+[ext_resource type="PackedScene" uid="uid://dbprghoatsitx" path="res://szenen/Länderplatzieren/Länderplatzieren.tscn" id="4_qfxd2"]
+
+[node name="GAME" type="Control" unique_id=1194097578]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cg8ki")
+
+[node name="Kartenpuzzle" parent="." unique_id=424906269 instance=ExtResource("2_eanuy")]
+visible = false
+layout_mode = 1
+
+[node name="Länderraten" parent="." unique_id=1145824960 instance=ExtResource("3_kh6de")]
+visible = false
+layout_mode = 1
+
+[node name="Länderplatzieren" parent="." unique_id=857194381 instance=ExtResource("4_qfxd2")]
+visible = false
+layout_mode = 1
+
+[node name="Hauptmenu" parent="." unique_id=241467984 instance=ExtResource("1_i4jsc")]
+layout_mode = 1
+
+[connection signal="start_kartenpuzzle" from="Hauptmenu" to="." method="_on_hauptmenu_start_kartenpuzzle"]
+[connection signal="start_länderplatzieren" from="Hauptmenu" to="." method="_on_hauptmenu_start_länderplatzieren"]
+[connection signal="start_länderraten" from="Hauptmenu" to="." method="_on_hauptmenu_start_länderraten"]

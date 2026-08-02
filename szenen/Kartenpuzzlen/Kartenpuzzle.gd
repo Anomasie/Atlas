@@ -2,6 +2,7 @@ extends Karte
 
 signal check_whether_right
 
+const SELECTION_COLOR = Color.WHITE
 const EPSILON = 10.0
 const TWEAK_TIME = 1.0
 
@@ -13,6 +14,14 @@ func _ready() -> void:
 	Cam = $Cam
 	puzzle()
 
+func open() -> void:
+	show()
+	$CanvasLayer/Control.show()
+
+func close() -> void:
+	hide()
+	$CanvasLayer/Control.hide()
+
 func _input(event) -> void:
 	handle_input(event)
 	if event.is_action_pressed("click"):
@@ -21,15 +30,17 @@ func _input(event) -> void:
 			dragging = country
 			drag_origin = get_global_mouse_position()
 			con_origin = AllSprites.get_node(dragging).position
-			$CanvasLayer/Label.text = country
+			$CanvasLayer/Control/Label.text = country
+			highlight([country], SELECTION_COLOR)
 	elif event.is_action_released("click"):
 		dragging = ""
 		check_whether_right.emit()
-		$CanvasLayer/Label.text = ""
+		$CanvasLayer/Control/Label.text = ""
+		hide_highlight()
 	elif dragging and event is InputEventMouseMotion:
 		AllSprites.get_node(dragging).position = con_origin + (get_global_mouse_position() - drag_origin)
 
-func puzzle(load_countries : PackedStringArray = ["Niger", "Nigeria"]) -> void:
+func puzzle(load_countries : PackedStringArray = ["Niger", "Nigeria", "Tschad", "Kamerun"]) -> void:
 	##### PREPARATION
 	# load countries
 	var dir = DirAccess.open("res://karten/weltkarte")
@@ -52,7 +63,7 @@ func puzzle(load_countries : PackedStringArray = ["Niger", "Nigeria"]) -> void:
 		await check_whether_right
 	# tweak until actually right
 	await tweak_right()
-	$CanvasLayer/Label2.text = "FINISHED!"
+	$CanvasLayer/Control/Label2.text = "FINISHED!"
 
 func solved() -> bool:
 	var origin: Vector2 = AllSprites.get_child(0).position

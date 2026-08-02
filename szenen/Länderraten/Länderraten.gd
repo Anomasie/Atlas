@@ -3,14 +3,14 @@ extends Control
 signal ok
 
 const NO_START_COUNTRIES : int = 3
-const RIGHT_COLOR : Color = Color.YELLOW
-const WRONG_COLOR : Color = Color.RED
+const RIGHT_COLOR : Color = Color.BLUE
+const WRONG_COLOR : Color = Color.GREEN
 var country_list : Array = []
 
-@onready var Aufgabe = $Top/Results/Lines/Aufgabe
-@onready var Angeklickt = $Top/Results/Lines/Angeklickt
+@onready var Aufgabe = $Top/Control/Results/Lines/Aufgabe
+@onready var Angeklickt = $Top/Control/Results/Lines/Angeklickt
 @onready var Weltkarte = $Weltkarte
-@onready var OKButton = $Top/Button
+@onready var OKButton = $Top/Control/Button
 
 var continue_game : bool = true
 
@@ -20,6 +20,14 @@ func _ready() -> void:
 	Aufgabe.text = ""
 	load_country_list()
 	run_game()
+
+func open() -> void:
+	show()
+	$Top/Control.show()
+
+func close() -> void:
+	hide()
+	$Top/Control.hide()
 
 func least_known_countries(list_of_countries : Array, current_countries : Dictionary) -> Array:
 	var minimum : int = 0

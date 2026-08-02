@@ -1,10 +1,11 @@
+Control
+Button
+VBoxContainer
 CanvasLayer
 Label
 Sprite2D
 Node2D
 TextureRect
 Camera2D
-Button
-VBoxContainer
 MarginContainer
 MenuButton

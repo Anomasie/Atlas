@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dbprghoatsitx"]
+
+[ext_resource type="Texture2D" uid="uid://d238ukxiv5cgk" path="res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png" id="1_4quxq"]
+[ext_resource type="Script" uid="uid://bw5we61celoo3" path="res://szenen/Länderplatzieren/Länderplatzieren.gd" id="1_28rs3"]
+
+[node name="Länderplatzieren" type="Control" unique_id=857194381]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28rs3")
+
+[node name="Karte" type="TextureRect" parent="." unique_id=900331945]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_4quxq")
