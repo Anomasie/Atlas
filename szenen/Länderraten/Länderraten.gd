@@ -7,10 +7,10 @@ const RIGHT_COLOR : Color = Color.YELLOW
 const WRONG_COLOR : Color = Color.RED
 var country_list : Array = []
 
-@onready var Aufgabe = $Results/Lines/Aufgabe
-@onready var Angeklickt = $Results/Lines/Angeklickt
+@onready var Aufgabe = $Top/Results/Lines/Aufgabe
+@onready var Angeklickt = $Top/Results/Lines/Angeklickt
 @onready var Weltkarte = $Weltkarte
-@onready var OKButton = $Button
+@onready var OKButton = $Top/Button
 
 var continue_game : bool = true
 

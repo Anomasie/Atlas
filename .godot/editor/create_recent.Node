@@ -1,6 +1,10 @@
+TextureRect
+CanvasLayer
+Camera2D
+Node2D
+Sprite2D
+Button
 Label
 VBoxContainer
 MarginContainer
-Button
 MenuButton
-TextureRect

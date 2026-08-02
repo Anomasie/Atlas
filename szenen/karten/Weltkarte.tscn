@@ -9,8 +9,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 script = ExtResource("1_r4vwi")
+
+[node name="AllSprites" type="Node2D" parent="." unique_id=1113023665]
+
+[node name="Cam" type="Camera2D" parent="." unique_id=3284071]
+position = Vector2(960, 540)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="Button" type="Button" parent="." unique_id=1966443458]
 layout_mode = 1
