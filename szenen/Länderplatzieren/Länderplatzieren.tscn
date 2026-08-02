@@ -17,3 +17,14 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_4quxq")
+
+[node name="AllSprites" type="Node2D" parent="." unique_id=1119369162]
+
+[node name="Top" type="CanvasLayer" parent="." unique_id=1631853549]
+
+[node name="Back" type="Button" parent="Top" unique_id=1993473451]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "←"
+
+[connection signal="pressed" from="Top/Back" to="." method="_on_back_pressed"]

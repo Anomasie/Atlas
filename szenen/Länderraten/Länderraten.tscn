@@ -37,9 +37,12 @@ layout_mode = 1
 
 [node name="Control" type="Control" parent="Top" unique_id=547992107]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Button" type="Button" parent="Top/Control" unique_id=1264118283]
 layout_mode = 1
@@ -55,9 +58,8 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 990.0
+offset_top = -50.0
 offset_right = 256.0
-offset_bottom = 1040.0
 grow_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="Top/Control/Results" unique_id=484403299]
@@ -75,4 +77,10 @@ text = "Ziel: Finde"
 layout_mode = 2
 text = "Das war"
 
+[node name="Back" type="Button" parent="Top" unique_id=1660802702]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "←"
+
 [connection signal="pressed" from="Top/Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Top/Back" to="." method="_on_back_pressed"]

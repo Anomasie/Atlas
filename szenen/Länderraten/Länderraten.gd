@@ -1,6 +1,7 @@
 extends Control
 
 signal ok
+signal open_main_menu
 
 const NO_START_COUNTRIES : int = 3
 const RIGHT_COLOR : Color = Color.BLUE
@@ -23,11 +24,9 @@ func _ready() -> void:
 
 func open() -> void:
 	show()
-	$Top/Control.show()
 
 func close() -> void:
-	hide()
-	$Top/Control.hide()
+	self.queue_free()
 
 func least_known_countries(list_of_countries : Array, current_countries : Dictionary) -> Array:
 	var minimum : int = 0
@@ -127,3 +126,8 @@ func similar_sounding_countries(choose_out_of:Array, country: String) -> Array:
 
 func _on_button_pressed() -> void:
 	ok.emit()
+
+
+func _on_back_pressed() -> void:
+	open_main_menu.emit()
+	close()

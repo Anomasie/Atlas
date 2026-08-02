@@ -1,20 +1,26 @@
 extends Control
 
-func _ready() -> void:
-	open_only("Hauptmenu")
+@onready var Hauptmenu = $Hauptmenu
 
-func open_only(node_name:String) -> void:
-	for node in self.get_children():
-		if node.name != node_name:
-			node.close()
-		else:
-			node.open()
+func _ready() -> void:
+	open_main_menu()
+
+func add_game(path : String) -> void:
+	var instance = load(path).instantiate()
+	instance.open_main_menu.connect(open_main_menu)
+	self.add_child(instance)
+
+func open_main_menu() -> void:
+	Hauptmenu.open()
 
 func _on_hauptmenu_start_kartenpuzzle() -> void:
-	open_only("Kartenpuzzle")
+	Hauptmenu.close()
+	add_game("res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn")
 
 func _on_hauptmenu_start_länderplatzieren() -> void:
-	open_only("Länderplatzieren")
+	Hauptmenu.close()
+	add_game("res://szenen/Länderplatzieren/Länderplatzieren.tscn")
 
 func _on_hauptmenu_start_länderraten() -> void:
-	open_only("Länderraten")
+	Hauptmenu.close()
+	add_game("res://szenen/Länderraten/Länderraten.tscn")

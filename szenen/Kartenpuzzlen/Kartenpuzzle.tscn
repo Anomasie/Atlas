@@ -22,21 +22,38 @@ position_smoothing_speed = 10.0
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=1482478850]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1677252492]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
 offset_right = 40.0
-offset_bottom = 23.0
+grow_vertical = 0
 
 [node name="Label2" type="Label" parent="CanvasLayer/Control" unique_id=1889114191]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 920.0
-offset_right = 960.0
-offset_bottom = 23.0
-grow_horizontal = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Back" type="Button" parent="CanvasLayer/Control" unique_id=1240314772]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "←"
+
+[connection signal="pressed" from="CanvasLayer/Control/Back" to="." method="_on_back_pressed"]
