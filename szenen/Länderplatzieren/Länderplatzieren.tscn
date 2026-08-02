@@ -16,9 +16,15 @@ script = ExtResource("1_28rs3")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("2_28rs3")
 
 [node name="AllSprites" type="Node2D" parent="." unique_id=1119369162]
+
+[node name="Cam" type="Camera2D" parent="." unique_id=1838116808]
+position = Vector2(960, 540)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="Top" type="CanvasLayer" parent="." unique_id=1631853549]
 

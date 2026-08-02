@@ -5,6 +5,7 @@ var continue_game : bool = true
 func _ready() -> void:
 	SELECTION_COLOR = Color.BLUE
 	AllSprites = $AllSprites
+	Cam = $Cam
 	run_game()
 
 func _input(event) -> void:
