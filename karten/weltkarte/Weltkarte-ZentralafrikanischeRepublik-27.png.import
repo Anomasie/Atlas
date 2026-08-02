@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4i3kyv527p2t"
-path="res://.godot/imported/Weltkarte-Ägypten-7.png-e287ab27a6e70c05f55c506e8e8c653f.ctex"
+uid="uid://bla8rlxmirnuw"
+path="res://.godot/imported/Weltkarte-ZentralafrikanischeRepublik-27.png-fcd7a5ab8ea44ba5b44e37decb7c6c3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte-Ägypten-7.png"
-dest_files=["res://.godot/imported/Weltkarte-Ägypten-7.png-e287ab27a6e70c05f55c506e8e8c653f.ctex"]
+source_file="res://karten/weltkarte/Weltkarte-ZentralafrikanischeRepublik-27.png"
+dest_files=["res://.godot/imported/Weltkarte-ZentralafrikanischeRepublik-27.png-fcd7a5ab8ea44ba5b44e37decb7c6c3b.ctex"]
 
 [params]
 

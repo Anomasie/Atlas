@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmghd010e7mo2"
-path="res://.godot/imported/Weltkarte-Sierra Leone-17.png-9a3e9f51d6a3e9b5aaab326916436220.ctex"
+uid="uid://dghcrhfew5euc"
+path="res://.godot/imported/EigentlicheKarte-Physisch-1.png-7c1d646844695e22a9907ca276dfc660.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte-Sierra Leone-17.png"
-dest_files=["res://.godot/imported/Weltkarte-Sierra Leone-17.png-9a3e9f51d6a3e9b5aaab326916436220.ctex"]
+source_file="res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png"
+dest_files=["res://.godot/imported/EigentlicheKarte-Physisch-1.png-7c1d646844695e22a9907ca276dfc660.ctex"]
 
 [params]
 

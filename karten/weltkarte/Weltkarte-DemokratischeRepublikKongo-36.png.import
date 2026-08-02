@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmyf84faxo0km"
-path="res://.godot/imported/Weltkarte-Elfenbeinküste-20.png-704ebf3f11e69c3962512636bdbbd3b4.ctex"
+uid="uid://cf16avvtat0u3"
+path="res://.godot/imported/Weltkarte-DemokratischeRepublikKongo-36.png-c6ca385e956025143505fa90126e742f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte-Elfenbeinküste-20.png"
-dest_files=["res://.godot/imported/Weltkarte-Elfenbeinküste-20.png-704ebf3f11e69c3962512636bdbbd3b4.ctex"]
+source_file="res://karten/weltkarte/Weltkarte-DemokratischeRepublikKongo-36.png"
+dest_files=["res://.godot/imported/Weltkarte-DemokratischeRepublikKongo-36.png-c6ca385e956025143505fa90126e742f.ctex"]
 
 [params]
 

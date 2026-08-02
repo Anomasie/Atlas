@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5q8ccqhwbgba"
-path="res://.godot/imported/Weltkarte-Äquatorialguinea-39.png-a0df21e4bf79e2e98eb83857cba49fd4.ctex"
+uid="uid://d3usu8mi8rhej"
+path="res://.godot/imported/Weltkarte-Aegypten-7.png-7b2e691dcbfbddd31b49e567bbbe1c90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte-Äquatorialguinea-39.png"
-dest_files=["res://.godot/imported/Weltkarte-Äquatorialguinea-39.png-a0df21e4bf79e2e98eb83857cba49fd4.ctex"]
+source_file="res://karten/weltkarte/Weltkarte-Aegypten-7.png"
+dest_files=["res://.godot/imported/Weltkarte-Aegypten-7.png-7b2e691dcbfbddd31b49e567bbbe1c90.ctex"]
 
 [params]
 

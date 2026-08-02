@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xklairhuka53"
-path="res://.godot/imported/Weltkarte-Burkina Faso-25.png-922a51578dccf716d9d02084b91e0552.ctex"
+uid="uid://cpa52nn077liy"
+path="res://.godot/imported/Weltkarte-Elfenbeinkueste-19.png-59f44b3822b3a95d0cc6929908759014.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte-Burkina Faso-25.png"
-dest_files=["res://.godot/imported/Weltkarte-Burkina Faso-25.png-922a51578dccf716d9d02084b91e0552.ctex"]
+source_file="res://karten/weltkarte/Weltkarte-Elfenbeinkueste-19.png"
+dest_files=["res://.godot/imported/Weltkarte-Elfenbeinkueste-19.png-59f44b3822b3a95d0cc6929908759014.ctex"]
 
 [params]
 

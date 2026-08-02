@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://puctwx8oy717"]
 
 [ext_resource type="Script" uid="uid://c17c66any7ise" path="res://szenen/Länderraten/Länderraten.gd" id="1_8etso"]
+[ext_resource type="Texture2D" uid="uid://d238ukxiv5cgk" path="res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png" id="2_11qh7"]
 [ext_resource type="PackedScene" uid="uid://d2qp1rcqfwuxx" path="res://szenen/karten/Weltkarte.tscn" id="2_35arq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gb4g8"]
+blend_mode = 2
 
 [node name="Länderraten" type="Control" unique_id=1145824960]
 layout_mode = 3
@@ -11,6 +15,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8etso")
+
+[node name="Karte" type="TextureRect" parent="." unique_id=2003122369]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_11qh7")
 
 [node name="Aufgabe" type="Label" parent="." unique_id=1740211570]
 layout_mode = 1
@@ -23,4 +33,15 @@ offset_bottom = 23.0
 grow_horizontal = 2
 
 [node name="Weltkarte" parent="." unique_id=33769356 instance=ExtResource("2_35arq")]
+material = SubResource("CanvasItemMaterial_gb4g8")
 layout_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=1264118283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

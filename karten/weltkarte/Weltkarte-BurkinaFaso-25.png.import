@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcq45knd0wxp"
-path="res://.godot/imported/Weltkarte-Sao Tome und Principe-56.png-2c289f77b4987cbef61a7c4827caea5e.ctex"
+uid="uid://b380nw0bynu4j"
+path="res://.godot/imported/Weltkarte-BurkinaFaso-25.png-6bebb343e53b457f021ddb4f0f0a44d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte-Sao Tome und Principe-56.png"
-dest_files=["res://.godot/imported/Weltkarte-Sao Tome und Principe-56.png-2c289f77b4987cbef61a7c4827caea5e.ctex"]
+source_file="res://karten/weltkarte/Weltkarte-BurkinaFaso-25.png"
+dest_files=["res://.godot/imported/Weltkarte-BurkinaFaso-25.png-6bebb343e53b457f021ddb4f0f0a44d0.ctex"]
 
 [params]
 

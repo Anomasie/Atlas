@@ -1,14 +1,20 @@
 extends Control
 
+signal ok
+
 const NO_START_COUNTRIES : int = 3
+const RIGHT_COLOR : Color = Color.YELLOW
+const WRONG_COLOR : Color = Color.RED
 var country_list : Array = []
 
 @onready var Aufgabe = $Aufgabe
 @onready var Weltkarte = $Weltkarte
+@onready var OKButton = $Button
 
 var continue_game : bool = true
 
 func _ready() -> void:
+	OKButton.hide()
 	load_country_list()
 	run_game()
 
@@ -24,7 +30,6 @@ func least_known_countries(list_of_countries : Array, current_countries : Dictio
 				minimum_args.append(key)
 		elif minimum == 0:
 			minimum_args.append(key)
-	print("here: ", minimum_args)
 	return minimum_args
 
 func load_country_list() -> void:
@@ -69,8 +74,12 @@ func run_game() -> void:
 		# compare choice with goal
 		if choice == goal:
 			current_countries[goal] += 1
+			### show highlight
+			await Weltkarte.highlight([goal], RIGHT_COLOR)
 		else:
 			current_countries[goal] -= 1
+			Weltkarte.highlight([goal], RIGHT_COLOR)
+			await Weltkarte.highlight([choice], WRONG_COLOR)
 			# add choice to current_countries
 			if not choice in current_countries.keys():
 				current_countries[choice] = -1
@@ -78,13 +87,27 @@ func run_game() -> void:
 				current_countries[choice] -= 1
 			# add a similar sounding coutnry to current_countries
 			var similar_one : String = similar_sounding_countries(country_list, goal).pick_random()
-			if not similar_one in current_countries.keys():
+			if similar_one and not similar_one in current_countries.keys():
 				current_countries[similar_one] = -1
+		await self_ok()
+		await Weltkarte.hide_highlight()
+
+func self_ok() -> void:
+	await Global.wait(0.25)
+	OKButton.show()
+	await ok
+	OKButton.hide()
+	return
 
 func similar_sounding_countries(choose_out_of:Array, country: String) -> Array:
 	var result : Array = []
 	choose_out_of.erase(country)
 	for key in choose_out_of:
-		if country.left(3) == key.left(3) or country.right(4) == key.right(4):
+		if country.left(2) == key.left(2) or country.right(3) == key.right(3):
 			result.append(key)
+	if len(result) == 0:
+		result = [""]
 	return result
+
+func _on_button_pressed() -> void:
+	ok.emit()

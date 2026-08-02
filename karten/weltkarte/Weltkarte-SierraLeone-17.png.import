@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://budyls7k837gw"
-path="res://.godot/imported/Weltkarte-Zentralafrikanische Republik-27.png-c865e38d9be194e1543c1f322d3f4116.ctex"
+uid="uid://bu62igm33yuqd"
+path="res://.godot/imported/Weltkarte-SierraLeone-17.png-00c5891cd6036f36536de1aac617c3d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte-Zentralafrikanische Republik-27.png"
-dest_files=["res://.godot/imported/Weltkarte-Zentralafrikanische Republik-27.png-c865e38d9be194e1543c1f322d3f4116.ctex"]
+source_file="res://karten/weltkarte/Weltkarte-SierraLeone-17.png"
+dest_files=["res://.godot/imported/Weltkarte-SierraLeone-17.png-00c5891cd6036f36536de1aac617c3d1.ctex"]
 
 [params]
 

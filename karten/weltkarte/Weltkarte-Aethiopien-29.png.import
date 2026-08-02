@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://15ygp4d7l5su"
-path="res://.godot/imported/Weltkarte-Äthiopien-29.png-23aa5b3fd328bc3da84edb7b510b03f4.ctex"
+uid="uid://l6keywso433d"
+path="res://.godot/imported/Weltkarte-Aethiopien-29.png-f5abb482276842dfd10325f9ca646434.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte-Äthiopien-29.png"
-dest_files=["res://.godot/imported/Weltkarte-Äthiopien-29.png-23aa5b3fd328bc3da84edb7b510b03f4.ctex"]
+source_file="res://karten/weltkarte/Weltkarte-Aethiopien-29.png"
+dest_files=["res://.godot/imported/Weltkarte-Aethiopien-29.png-f5abb482276842dfd10325f9ca646434.ctex"]
 
 [params]
 
