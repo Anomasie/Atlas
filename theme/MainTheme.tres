@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://d1ak7jl27l6tv"]
+
+[ext_resource type="FontFile" uid="uid://vkje5a2sbirg" path="res://theme/fonts/Cairopixel.ttf" id="1_bgaje"]
+
+[resource]
+default_font = ExtResource("1_bgaje")
+default_font_size = 32

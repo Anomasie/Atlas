@@ -45,14 +45,11 @@ func _on_back_pressed() -> void:
 	open_main_menu.emit()
 	queue_free()
 
-
 func _on_selected(country : String) -> void:
 	$CanvasLayer/Control/Label.text = country
 
-
-func _on_unselected(country : String) -> void:
+func _on_unselected(_country : String) -> void:
 	$CanvasLayer/Control/Label.text = ""
-
 
 func _on_ok_button_pressed() -> void:
 	ok.emit()

@@ -26,6 +26,11 @@ window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom="uid://d1ak7jl27l6tv"
+theme/custom_font="uid://eu4krrfrv2wf"
+
 [input]
 
 zoom_in={
@@ -59,3 +64,5 @@ click={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/decals/filter=0
+textures/light_projectors/filter=0
