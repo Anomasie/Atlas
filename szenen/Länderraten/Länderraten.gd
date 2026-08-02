@@ -6,7 +6,6 @@ signal open_main_menu
 const NO_START_COUNTRIES : int = 3
 const RIGHT_COLOR : Color = Color.BLUE
 const WRONG_COLOR : Color = Color.GREEN
-var country_list : Array = []
 
 @onready var Aufgabe = $Top/Control/Results/Lines/Aufgabe
 @onready var Angeklickt = $Top/Control/Results/Lines/Angeklickt
@@ -19,7 +18,6 @@ func _ready() -> void:
 	OKButton.hide()
 	Angeklickt.text = ""
 	Aufgabe.text = ""
-	load_country_list()
 	run_game()
 
 func open() -> void:
@@ -42,20 +40,11 @@ func least_known_countries(list_of_countries : Array, current_countries : Dictio
 			minimum_args.append(key)
 	return minimum_args
 
-func load_country_list() -> void:
-	var dir = DirAccess.open("res://karten/weltkarte")
-	var file_names = dir.get_files()
-	for item in file_names:
-		if item.ends_with(".png"):
-			var poss_name : String = item.split("-")[1]
-			if poss_name:
-				country_list.append(poss_name)
-
 func run_game() -> void:
 	# choose start countries
 	var current_countries : Dictionary = {}
 	while len(current_countries.keys()) < NO_START_COUNTRIES:
-		var next_country : String = country_list.pick_random()
+		var next_country : String = Global.countries.keys().pick_random()
 		if not next_country in current_countries.keys():
 			current_countries[next_country] = -1
 	
@@ -64,7 +53,7 @@ func run_game() -> void:
 	while continue_game:
 		##### CHOOSE GOAL
 		# erase last country
-		var choose_out_of : Array = country_list
+		var choose_out_of : Array = Global.countries.keys()
 		choose_out_of.erase(last_goal)
 		choose_out_of.erase(last_choice)
 		# pick next goal
@@ -99,7 +88,7 @@ func run_game() -> void:
 			else:
 				current_countries[choice] -= 1
 			# add a similar sounding coutnry to current_countries
-			var similar_one : String = similar_sounding_countries(country_list, goal).pick_random()
+			var similar_one : String = similar_sounding_countries(Global.countries.keys(), goal).pick_random()
 			if similar_one and not similar_one in current_countries.keys():
 				current_countries[similar_one] = -1
 		await self_ok()

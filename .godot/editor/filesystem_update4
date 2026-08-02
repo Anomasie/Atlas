@@ -6,3 +6,6 @@ res://szenen/Länderplatzieren/Länderplatzieren.gd
 res://szenen/BeweglicheKarte.gd
 res://szenen/PuzzleKarte.gd
 res://szenen/Länderraten/Länderraten.gd
+res://szenen/Global.gd
+res://szenen/Länderraten/Länderraten.tscn
+res://szenen/karten/Weltkarte.tscn

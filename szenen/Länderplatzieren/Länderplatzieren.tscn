@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dbprghoatsitx"]
 
-[ext_resource type="Texture2D" uid="uid://d238ukxiv5cgk" path="res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png" id="1_4quxq"]
 [ext_resource type="Script" uid="uid://bw5we61celoo3" path="res://szenen/Länderplatzieren/Länderplatzieren.gd" id="1_28rs3"]
+[ext_resource type="Texture2D" uid="uid://c8255ra8s1ry3" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png" id="2_28rs3"]
 
 [node name="Länderplatzieren" type="Control" unique_id=857194381]
 layout_mode = 3
@@ -16,7 +16,7 @@ script = ExtResource("1_28rs3")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_4quxq")
+texture = ExtResource("2_28rs3")
 
 [node name="AllSprites" type="Node2D" parent="." unique_id=1119369162]
 

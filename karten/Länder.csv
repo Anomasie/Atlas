@@ -1,0 +1,55 @@
+Key;German;Neighbors
+Aegypten;Ägypten;Libyen,Palestina,Israel,Jordan,Sudan
+Aequatorialguinea;Äquatorialguinea;Gabun,Kamerun,SaoTomeUndPrincipe
+Algerien;Algerien;Tunesien,Libyen,Niger,Mali,Mauretanien,Marokko
+Angola;Angola;DemokratischeRepubklikKongo,Kongo,Sambia,Namibia
+Benin;Benin;Nigeria,Niger,BurkinaFaso,Togo
+Botswana;Botswana;Namibia,Simbabwe,Suedafrika
+Burundi;Burundi;DemokratischeRepubklikKongoRuanda,Tansania
+BurkinaFaso;Burkina Faso;Benin,Togo,Ghana,Elfenbeinkueste,Mali,Niger
+DemokratischeRepubklikKongo;Demokratische Repubklik Kongo;Suedsudan,Uganda,Ruanda,Tansania,ZentralafrikanischeRepublik,Kongo,Angola,Sambia,Burundi
+Dschibuti;Dschibuti;Eritrea,Aethiopien,Somaliland
+Elfenbeinkueste;Elfenbeinküste;Ghana,BurkinaFaso,Mali,Guinea,Liberia
+Eritrea;Eritrea;Dschibuti,Aethiopien,Sudan
+Eswatini;Eswatini;Suedafrika,Mosambik
+Gabun;Gabun;Aequatorialguinea,SaoTomeUndPrincipe,Kongo,Kamerun
+Gambien;Gambien;Senegal
+Ghana;Ghana;Togo,BurkinaFaso,Elfenbeinkueste
+Guinea;Guinea;Mali,Guinea-Bissau,Senegal,SierraLeone,Liberia,Elfenbeinkueste
+Guinea-Bissau;Guinea-Bissau;Guinea,Senegal
+Kamerun;Kamerun;ZentralafrikanischeRepublik,Tschad,Nigeria,Gabun,Kongo,Aequatorialguinea,SaoTomeUndPrincipe
+Kenia;Kenia;Somalia,Aethiopien,Suedsudan,Uganda,Tansania
+Kongo;Kongo;DemokratischeRepubklikKongo,ZentralafrikanischeRepublik,Kamerun,Gabun,Angola
+Lesotho;Lesotho;Suedafrika
+Liberia;Liberia;Elfenbeinkueste,Guinea,SierraLeone
+Libyen;Libyen;Algerien,Tunesien,Aegypten,Sudan,Tschad,Niger
+Madagaskar;Madagaskar;Mauritius,Seychellen
+Mali;Mali;Algerien,Mauretanien,Niger,Senegal,Guinea,Elfenbeinkueste,BurkinaFaso
+Marokko;Marokko;WestSahara,Algerien,Mauretanien
+Mauretanien;Mauretanien;Mali,Algerien,Westsahara,Senegal,Mali
+Mauritius;Mauritius;Madagaskar,Seychellen
+Mosambik;Mosambik;Tansania,Malawi,Sambia,Simbabwe,Suedafrika,Eswatini
+Namibia;Namibia;Angola,Botswana,Sambia,Suedafrika
+Niger;Niger;Libyen,Tschad,Nigeria,Benin,BurkinaFaso,Mali,Algerien
+Nigeria;Nigeria;Kamerun,Tschad,Niger,Benin
+Ruanda;Ruanda;DemokratischeRepubklikKongo,Burundi,Uganda,Tansania
+Sambia;Sambia;DemokratischeRepubklikKongoAngola,Namibia,Simbabwe,Mosambik,Malawi,Tansania
+Senegal;Senegal;Gambien,Mauretanien,Mali,Guinea,Guinea-Bissau
+Seychellen;Seychellen;Madagaskar,Mauritius
+SierraLeone;Sierra Leone;Liberia,Guinea
+Simbabwe;Simbabwe;Sambia,Botswana,Suedafrika,Mosambik
+Somalia;Somalia;Somaliland,Aethiopien,Kenia
+Somaliland;Somaliland;Somalia,Aethiopien,Dschibuti
+Sudan;Sudan;Aegypten,Libyen,Tschad,ZentralafrikanischeRepublik,Suedsudan,Eritrea,Aethiopien
+Suedafrika;Südafrika;Lesotho,Eswatini,Mosambik,Namibia,Botswana,Simbabwe
+Suedsudan;Suedsudan;Sudan,Aethiopien,Kenia,Uganda,ZentralafrikanischeRepublik,DemokratischeRepublikKongo
+Tansania;Tansania;DemokratischeRepubklikKongo,Kenia,Ruanda,Burundi,Sambia,Malawi,Mosambik
+Togo;Togo;Benin,BurkinaFaso,Ghana
+Tschad;Tschad;ZentralafrikanischeRepublik,Sudan,Libyen,Niger,Nigeria,Kamerun
+Tunesien;Tunesien;Algerien,Libyen
+Uganda;Uganda;DemokratischeRepubklikKongo,Suedsudan,Kenia,Ruanda
+Westsahara;Westsahara;Marokko,Mauretanien
+ZentralafrikanischeRepublik;Zentralafrikanische Republik;DemokratischeRepubklikKongo, Suedsudan,Tschad,Sudan,Kamerun,Kongo
+KapVerde;Kap Verde;
+Komoren;Komoren;Madagaskar,Tansania,Mosambik
+Malawi;Malawi;Tansania,Mosambik,Sambia
