@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dwpqap83ku6qu"]
+
+[ext_resource type="Script" uid="uid://clttf8lo7dc0o" path="res://szenen/Kartenpuzzlen/Kartenpuzzle.gd" id="1_4kvqp"]
+
+[node name="KartenPuzzle" type="Control" unique_id=424906269]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4kvqp")
+
+[node name="AllSprites" type="Node2D" parent="." unique_id=279698405]
+
+[node name="Cam" type="Camera2D" parent="." unique_id=1634769591]
+position = Vector2(960, 540)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=675518290]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1677252492]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1889114191]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2

@@ -111,7 +111,7 @@ func similar_sounding_countries(choose_out_of:Array, country: String) -> Array:
 	var result : Array = []
 	choose_out_of.erase(country)
 	for key in choose_out_of:
-		if country.left(2) == key.left(2) or country.right(3) == key.right(3):
+		if country.left(2) == key.left(2) or country.right(2) == key.right(2):
 			result.append(key)
 	if len(result) == 0:
 		result = [""]

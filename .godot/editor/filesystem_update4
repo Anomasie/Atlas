@@ -4,3 +4,6 @@ res://szenen/karten/Weltkarte.tscn
 res://szenen/karten/Weltkarte.gd
 res://szenen/Global.gd
 res://szenen/tests/Test.tscn
+res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn
+res://szenen/Kartenpuzzlen/Kartenpuzzle.gd
+res://szenen/Karte.gd
