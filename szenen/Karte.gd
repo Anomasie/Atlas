@@ -82,3 +82,12 @@ func load_countries(to_add_ones : Array = []) -> void:
 			new_texture.centered = false
 #			new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			AllSprites.add_child(new_texture)
+
+func random_cohesive_countries(start_country:String = Global.countries.keys().pick_random(), length=6) -> Array:
+	var result : Array = [start_country]
+	for _i in length - 1:
+		var new_entry : String = start_country
+		while new_entry in result:
+			new_entry = Global.countries[result.pick_random()]["Neighbors"].pick_random()
+		result.append(new_entry)
+	return result

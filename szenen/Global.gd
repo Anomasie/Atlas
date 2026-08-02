@@ -17,7 +17,7 @@ func load_country_list() -> void:
 			if keys[i] != "Neighbors":
 				countries[row_split[0]][keys[i]] = row_split[i]
 			else:
-				countries[row_split[0]][keys[i]] = row_split[i].split(",")
+				countries[row_split[0]][keys[i]] = Array(row_split[i].split(","))
 
 func wait(wait_time: float = 1.0) -> void:
 	if wait_time > 0:

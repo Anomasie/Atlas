@@ -1,14 +1,20 @@
 extends PuzzleKarte
 
+var continue_game : bool = true
+
 func _ready() -> void:
 	AllSprites = $AllSprites
 	Cam = $Cam
-	puzzle()
+	run_game()
 
 func _input(event) -> void:
 	handle_input_click(event)
 
-func puzzle(load_country_names : PackedStringArray = ["Niger", "Nigeria", "Tschad", "Kamerun"]) -> void:
+func run_game() -> void:
+	while continue_game:
+		await puzzle()
+
+func puzzle(load_country_names : PackedStringArray = random_cohesive_countries()) -> void:
 	##### PREPARATION
 	# load countries
 	load_countries(load_country_names)
@@ -20,8 +26,14 @@ func puzzle(load_country_names : PackedStringArray = ["Niger", "Nigeria", "Tscha
 		await check_whether_right
 	# tweak until actually right
 	await tweak_right(AllSprites.get_child(0).position)
-	$CanvasLayer/Control/Label2.text = "FINISHED!"
+	##### delete old ones
+	for sprite in AllSprites.get_children():
+		sprite.queue_free()
 
 func _on_back_pressed() -> void:
 	open_main_menu.emit()
 	queue_free()
+
+
+func _on_selected(country : String) -> void:
+	$CanvasLayer/Control/Label.text = country

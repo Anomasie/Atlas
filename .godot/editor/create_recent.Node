@@ -1,9 +1,9 @@
+Label
+Control
 CanvasLayer
 Button
 Node2D
-Control
 VBoxContainer
-Label
 Sprite2D
 TextureRect
 Camera2D

@@ -3,6 +3,7 @@ class_name PuzzleKarte
 
 signal check_whether_right
 signal open_main_menu
+signal selected
 
 var SELECTION_COLOR = Color.WHITE
 const EPSILON = 10.0
@@ -24,10 +25,12 @@ func handle_input_click(event) -> void:
 		var country = get_country(get_global_mouse_position())
 		if AllSprites.has_node(country):
 			dragging_country = country
+			selected.emit(country)
 			drag_origin = get_global_mouse_position()
 			con_origin = AllSprites.get_node(dragging_country).position
 			highlight([country], SELECTION_COLOR)
 	elif event.is_action_released("click"):
+		selected.emit("")
 		dragging_country = ""
 		check_whether_right.emit()
 		hide_highlight()
