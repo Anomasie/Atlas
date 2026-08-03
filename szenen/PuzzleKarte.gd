@@ -6,7 +6,7 @@ signal open_main_menu
 signal selected
 signal unselected
 
-var SELECTION_COLOR = Color.WHITE
+var SELECTION_COLOR = Color.DARK_GRAY
 const EPSILON = 10.0
 const TWEAK_TIME = 1.0
 

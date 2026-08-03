@@ -14,3 +14,4 @@ res://szenen/GAME.tscn
 res://szenen/Game.gd
 res://ressourcen/shader/Blur.gdshader
 res://ressourcen/shader/Sharpen.gdshader
+res://szenen/PuzzleKarte.gd
