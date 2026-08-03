@@ -2,10 +2,17 @@ extends PuzzleKarte
 
 signal ok
 
+const DIFFICULTY_PATHS : Array = [
+	"",
+	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
+	"res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png",
+]
+
 var continue_game : bool = true
 @onready var CountryContainer = $CanvasLayer/Control/LabelContainer
 @onready var CountryLabel = $CanvasLayer/Control/LabelContainer/CountryLabel
 @onready var OKButton = $CanvasLayer/Control/OKButton
+@onready var DifficultyOption = $CanvasLayer/Control/Options/Lines/DifficultyOption
 
 func _ready() -> void:
 	AllSprites = $AllSprites
@@ -15,6 +22,9 @@ func _ready() -> void:
 
 func _input(event) -> void:
 	handle_input_click(event)
+
+func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
+	print("load difficulty in Kartenpuzzle: ", index)
 
 func run_game() -> void:
 	while continue_game:
@@ -57,3 +67,6 @@ func _on_unselected(_country : String) -> void:
 
 func _on_ok_button_pressed() -> void:
 	ok.emit()
+
+func _on_difficulty_option_item_selected(index: int) -> void:
+	load_difficulty(index)

@@ -1,7 +1,15 @@
 extends PuzzleKarte
 
+@onready var BackgroundKarte = $Karte
 @onready var CountryContainer = $Top/Control/LabelContainer
 @onready var CountryLabel = $Top/Control/LabelContainer/CountryLabel
+@onready var DifficultyOption = $Top/Control/Options/Lines/DifficultyOption
+
+const DIFFICULTY_PATHS : Array = [
+	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
+	"res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png",
+	"res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png"
+]
 
 var continue_game : bool = true
 
@@ -9,10 +17,16 @@ func _ready() -> void:
 	SELECTION_COLOR = Color.BLUE
 	AllSprites = $AllSprites
 	Cam = $Cam
+	load_difficulty()
 	run_game()
 
 func _input(event) -> void:
 	handle_input_click(event)
+
+func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
+	BackgroundKarte.set_texture(
+		load(DIFFICULTY_PATHS[index])
+	)
 
 func puzzle(load_country_name: String = Global.countries.keys().pick_random()) -> void:
 	##### PREPARATION
@@ -35,8 +49,6 @@ func run_game() -> void:
 		for kid in AllSprites.get_children():
 			kid.hide()
 
-
-
 func _on_back_pressed() -> void:
 	open_main_menu.emit()
 	queue_free()
@@ -58,3 +70,7 @@ func _on_unselected(country : String) -> void:
 	if right_position(AllSprites.get_node(country).position):
 		print("tweak! ", country)
 		tweak_right([AllSprites.get_node(country)])
+
+
+func _on_difficulty_option_item_selected(index: int) -> void:
+	load_difficulty(index)

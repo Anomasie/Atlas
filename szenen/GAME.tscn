@@ -12,9 +12,9 @@ shader_parameter/blur_strength = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eanuy"]
 shader = ExtResource("4_ffk5q")
-shader_parameter/BLUE = Vector4(156, 146, 244, 256)
 shader_parameter/WHITE = Vector4(252, 250, 172, 256)
-shader_parameter/RED = Vector4(236, 138, 140, 256)
+shader_parameter/BEIGE = Vector4(236, 154, 84, 256)
+shader_parameter/BROWN = Vector4(132, 66, 4, 256)
 shader_parameter/BLACK = Vector4(4, 2, 4, 256)
 
 [node name="GAME" type="Control" unique_id=1194097578]

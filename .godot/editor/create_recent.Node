@@ -1,10 +1,11 @@
+OptionButton
+VBoxContainer
+PanelContainer
 ColorRect
 TextureRect
 SubViewportContainer
 SubViewport
-PanelContainer
 Panel
-VBoxContainer
 GridContainer
 Sprite2D
 Label

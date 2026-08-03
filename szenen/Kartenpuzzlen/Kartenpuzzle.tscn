@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://dwpqap83ku6qu"]
 
 [ext_resource type="Script" uid="uid://clttf8lo7dc0o" path="res://szenen/Kartenpuzzlen/Kartenpuzzle.gd" id="1_4kvqp"]
+[ext_resource type="Texture2D" uid="uid://dghcrhfew5euc" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png" id="2_36agm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kvqp"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.49, 0.2835467, 0.10289999, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="Kartenpuzzle" type="Control" unique_id=424906269]
 layout_mode = 3
@@ -10,6 +27,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4kvqp")
+
+[node name="Karte" type="TextureRect" parent="." unique_id=1352772675]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("2_36agm")
 
 [node name="AllSprites" type="Node2D" parent="." unique_id=279698405]
 
@@ -59,7 +83,32 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "←"
 
+[node name="Options" type="PanelContainer" parent="CanvasLayer/Control" unique_id=842967084]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4kvqp")
+
+[node name="Lines" type="VBoxContainer" parent="CanvasLayer/Control/Options" unique_id=971004893]
+layout_mode = 2
+
+[node name="DifficultyOption" type="OptionButton" parent="CanvasLayer/Control/Options/Lines" unique_id=1286877171]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "simple"
+popup/item_0/id = 0
+popup/item_1/text = "middle"
+popup/item_1/id = 2
+popup/item_2/text = "hard"
+popup/item_2/id = 1
+
 [connection signal="selected" from="." to="." method="_on_selected"]
 [connection signal="unselected" from="." to="." method="_on_unselected"]
 [connection signal="pressed" from="CanvasLayer/Control/OKButton" to="." method="_on_ok_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Back" to="." method="_on_back_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]

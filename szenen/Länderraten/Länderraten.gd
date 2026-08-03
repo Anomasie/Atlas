@@ -5,12 +5,20 @@ signal open_main_menu
 
 const NO_START_COUNTRIES : int = 3
 const RIGHT_COLOR : Color = Color.BLUE
-const WRONG_COLOR : Color = Color.GREEN
+const WRONG_COLOR : Color = Color.GREEN_YELLOW
 
 @onready var Aufgabe = $Top/Control/Results/Lines/Aufgabe
 @onready var Angeklickt = $Top/Control/Results/Lines/Angeklickt
 @onready var Weltkarte = $Weltkarte
 @onready var OKButton = $Top/Control/Button
+@onready var BackgroundKarte = $Karte
+@onready var DifficultyOption = $Top/Control/Options/Lines/DifficultyOption
+
+const DIFFICULTY_PATHS : Array = [
+	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
+	"res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png",
+	"res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png"
+]
 
 var continue_game : bool = true
 
@@ -39,6 +47,11 @@ func least_known_countries(list_of_countries : Array, current_countries : Dictio
 		elif minimum == 0:
 			minimum_args.append(key)
 	return minimum_args
+
+func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
+	BackgroundKarte.set_texture(
+		load(DIFFICULTY_PATHS[index])
+	)
 
 func run_game() -> void:
 	# choose start countries
@@ -119,3 +132,6 @@ func _on_button_pressed() -> void:
 func _on_back_pressed() -> void:
 	open_main_menu.emit()
 	close()
+
+func _on_difficulty_option_item_selected(index: int) -> void:
+	load_difficulty(index)
