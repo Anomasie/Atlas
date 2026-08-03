@@ -1,0 +1,7 @@
+### Schriftarten
+
+Gentium: SIL International https://www.dafont/gentium.font?l[]=10
+Some Time lader: Fredrick Brennan https://www.dafont.com/de/some-time-later.font?l[]=10&text=Lerne+alle+L%E4nder
+Bimbo JVE: Jayvee Enaguas https://www.dafont.com/de/bimbo-jve.font?l[]=10&text=Lerne+alle+L%E4nder
+Cairopixel: GGBotNet
+GrapeSodaFont: jeti

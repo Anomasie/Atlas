@@ -1,11 +1,12 @@
-Button
+TextureRect
+VBoxContainer
+GridContainer
+Sprite2D
 Label
+Button
 Control
 CanvasLayer
 Node2D
-VBoxContainer
-Sprite2D
-TextureRect
 Camera2D
 MarginContainer
 MenuButton

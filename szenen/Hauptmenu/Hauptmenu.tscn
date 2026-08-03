@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfgpf40rudv26"]
 
 [ext_resource type="Script" uid="uid://g02bumek677i" path="res://szenen/Hauptmenu/Hauptmenu.gd" id="1_6d0cj"]
+[ext_resource type="Texture2D" uid="uid://dcg4ebwlkijby" path="res://TestBackground.png" id="2_itusj"]
 
 [node name="Hauptmenu" type="Control" unique_id=241467984]
 layout_mode = 3
@@ -11,30 +12,55 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6d0cj")
 
-[node name="Lines" type="VBoxContainer" parent="." unique_id=39768465]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=699224290]
+modulate = Color(0.3180198, 0.31801978, 0.31801975, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_itusj")
+expand_mode = 1
+
+[node name="Lines" type="VBoxContainer" parent="." unique_id=88468087]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -112.5
+offset_top = -138.0
+offset_right = 112.5
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="Lines" unique_id=1407476861]
+layout_mode = 2
+theme_type_variation = &"MainLabel"
+text = "Stadt
+Land
+Fluss"
+horizontal_alignment = 1
+
 [node name="Länderraten" type="Button" parent="Lines" unique_id=312670196]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 text = "Länderraten"
 
 [node name="Kartenpuzzle" type="Button" parent="Lines" unique_id=24704060]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 text = "Länderpuzzeln"
 
 [node name="Länderplatzieren" type="Button" parent="Lines" unique_id=788861084]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 text = "Länder positionieren"
 
 [connection signal="pressed" from="Lines/Länderraten" to="." method="_on_länderraten_pressed"]

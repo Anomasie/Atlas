@@ -1,0 +1,36 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://c1vr4ij087cmb"
+path="res://.godot/imported/Some Time Later.otf-f3e49e1c4782ad91bf63c20f84bd48c1.fontdata"
+
+[deps]
+
+source_file="res://theme/fonts/Some Time Later.otf"
+dest_files=["res://.godot/imported/Some Time Later.otf-f3e49e1c4782ad91bf63c20f84bd48c1.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+modulate_color_glyphs=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

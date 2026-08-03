@@ -30,7 +30,7 @@ func run_game() -> void:
 		await puzzle()
 		# reset
 		for kid in AllSprites.get_children():
-			kid.queue_free()
+			kid.hide()
 
 
 

@@ -1,7 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://d1ak7jl27l6tv"]
 
-[ext_resource type="FontFile" uid="uid://vkje5a2sbirg" path="res://theme/fonts/Cairopixel.ttf" id="1_bgaje"]
+[ext_resource type="FontFile" uid="uid://c1vr4ij087cmb" path="res://theme/fonts/Some Time Later.otf" id="1_bgaje"]
+[ext_resource type="FontFile" uid="uid://dwa2umrp18m40" path="res://theme/fonts/Bimbo_JVE.ttf" id="2_oty4m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oty4m"]
 
 [resource]
-default_font = ExtResource("1_bgaje")
+default_font = ExtResource("2_oty4m")
 default_font_size = 32
+Button/styles/normal = SubResource("StyleBoxFlat_oty4m")
+MainLabel/base_type = &"Label"
+MainLabel/font_sizes/font_size = 48
+MainLabel/fonts/font = ExtResource("1_bgaje")
+NoGridContainer/base_type = &"GridContainer"
+NoGridContainer/constants/h_separation = 0
+NoGridContainer/constants/v_separation = 0

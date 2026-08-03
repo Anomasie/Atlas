@@ -24,7 +24,7 @@ Global="*uid://c1nsk623ebp2w"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
-window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [gui]
 

@@ -17,7 +17,7 @@ Gabun;Gabun;Aequatorialguinea,SaoTomeUndPrincipe,Kongo,Kamerun
 Gambien;Gambien;Senegal
 Ghana;Ghana;Togo,BurkinaFaso,Elfenbeinkueste
 Guinea;Guinea;Mali,Guinea-Bissau,Senegal,SierraLeone,Liberia,Elfenbeinkueste
-Guinea-Bissau;Guinea-Bissau;Guinea,Senegal
+GuineaBissau;Guinea-Bissau;Guinea,Senegal
 Kamerun;Kamerun;ZentralafrikanischeRepublik,Tschad,Nigeria,Gabun,Kongo,Aequatorialguinea,SaoTomeUndPrincipe
 KapVerde;Kap Verde;
 Kenia;Kenia;Somalia,Aethiopien,Suedsudan,Uganda,Tansania
@@ -52,6 +52,6 @@ Togo;Togo;Benin,BurkinaFaso,Ghana
 Tschad;Tschad;ZentralafrikanischeRepublik,Sudan,Libyen,Niger,Nigeria,Kamerun
 Tunesien;Tunesien;Algerien,Libyen
 Uganda;Uganda;DemokratischeRepublikKongo,Suedsudan,Kenia,Ruanda
-WestSahara;Westsahara;Marokko,Mauretanien
+WestSahara;West-Sahara;Marokko,Mauretanien
 ZentralafrikanischeRepublik;Zentralafrikanische Republik;DemokratischeRepublikKongo, Suedsudan,Tschad,Sudan,Kamerun,Kongo
 SaoTomeUndPrincipe;Sao Tome Und Principe;Aequatorialguinea,Kamerun,Gabun

@@ -32,7 +32,7 @@ func puzzle(load_country_names : PackedStringArray = random_cohesive_countries()
 	await self_ok()
 	##### delete old ones
 	for sprite in AllSprites.get_children():
-		sprite.queue_free()
+		sprite.hide()
 
 func self_ok() -> void:
 	await Global.wait(0.25)

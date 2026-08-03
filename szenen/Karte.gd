@@ -36,7 +36,7 @@ func handle_input(event: InputEvent) -> void:
 
 func get_country(koordinaten: Vector2) -> String:
 	for kid in AllSprites.get_children():
-		if kid is Sprite2D and kid.get_texture():
+		if kid.visible and kid is Sprite2D and kid.get_texture():
 			var image : Image = kid.get_texture().get_image()
 			var check_koords : Vector2i = koordinaten - kid.position
 			if image.get_width() > check_koords.x and check_koords.x >= 0 and image.get_height() > check_koords.y and check_koords.y >= 0:
@@ -70,18 +70,26 @@ func hide_highlight() -> void:
 	return
 
 func load_countries(to_add_ones : Array = []) -> void:
+	for kid in AllSprites.get_children():
+		kid.hide()
 	var dir = DirAccess.open("res://karten/weltkarte")
 	var file_names = dir.get_files()
 	for item in file_names:
-		if item.ends_with(".png") and (len(to_add_ones) == 0 or item.split("-")[1] in to_add_ones):
-			var new_texture = Sprite2D.new()
-			new_texture.set_texture( load("res://karten/weltkarte/"+item) )
-			new_texture.set_name(item.split("-")[1])
-			new_texture.self_modulate = NORMAL_COLOR
-			new_texture.material = self.material
-			new_texture.centered = false
-#			new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			AllSprites.add_child(new_texture)
+		if len(item.split("-")) > 1:
+			var item_name : String = item.split("-")[1]
+			if item.ends_with(".png") and (len(to_add_ones) == 0 or item_name in to_add_ones):
+				if not AllSprites.has_node(item):
+					var new_texture = Sprite2D.new()
+					new_texture.set_texture( load("res://karten/weltkarte/"+item) )
+					new_texture.set_name(item_name)
+					new_texture.self_modulate = NORMAL_COLOR
+					new_texture.material = self.material
+					new_texture.centered = false
+#					new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+					AllSprites.add_child(new_texture)
+#					print("set name ", item_name, " at \t ", new_texture.name, "\t with no ", item)
+				else:
+					AllSprites.get_node(item).show()
 
 func random_cohesive_countries(start_country:String = Global.countries.keys().pick_random(), length=6) -> Array:
 	var result : Array = [start_country]

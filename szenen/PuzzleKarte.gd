@@ -46,7 +46,7 @@ func right_position(country_position, origin:Vector2 = Vector2.ZERO) -> bool:
 
 func solved(origin : Vector2 = Vector2.ZERO) -> bool:
 	for sprite in AllSprites.get_children():
-		if not right_position(sprite.position, origin):
+		if sprite.visible and not right_position(sprite.position, origin):
 			return false
 	return true
 

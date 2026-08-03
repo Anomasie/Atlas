@@ -1,4 +1,11 @@
-res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn
-res://theme/MainTheme.tres
 res://szenen/Hauptmenu/Hauptmenu.tscn
+res://theme/MainTheme.tres
+res://szenen/Karte.gd
+res://szenen/Länderraten/Länderraten.tscn
+res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn
 res://szenen/Kartenpuzzlen/Kartenpuzzle.gd
+res://szenen/Länderplatzieren/Länderplatzieren.tscn
+res://szenen/Länderplatzieren/Länderplatzieren.gd
+res://szenen/karten/Weltkarte.tscn
+res://szenen/Länderraten/Länderraten.gd
+res://szenen/PuzzleKarte.gd
