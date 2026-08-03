@@ -29,15 +29,19 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1677252492]
+[node name="LabelContainer" type="PanelContainer" parent="CanvasLayer/Control" unique_id=700571898]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -10.5
+offset_right = 10.5
+offset_bottom = 45.0
 grow_horizontal = 2
+
+[node name="CountryLabel" type="Label" parent="CanvasLayer/Control/LabelContainer" unique_id=1677252492]
+layout_mode = 2
+text = "Madagaskar"
 
 [node name="OKButton" type="Button" parent="CanvasLayer/Control" unique_id=1842270732]
 layout_mode = 1

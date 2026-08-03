@@ -1,9 +1,16 @@
 extends Node
 
 var countries : Dictionary = {}
+var language : String = "German"
 
 func _ready() -> void:
 	load_country_list()
+
+func get_country_name(load_country_name : String) -> String:
+	if countries.has(load_country_name) and countries[load_country_name].has(language):
+		return countries[load_country_name][language]
+	else:
+		return load_country_name
 
 func load_country_list() -> void:
 	var file = FileAccess.open("res://karten/Länder.csv", FileAccess.READ)

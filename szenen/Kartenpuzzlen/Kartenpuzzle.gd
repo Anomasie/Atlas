@@ -3,11 +3,14 @@ extends PuzzleKarte
 signal ok
 
 var continue_game : bool = true
+@onready var CountryContainer = $CanvasLayer/Control/LabelContainer
+@onready var CountryLabel = $CanvasLayer/Control/LabelContainer/CountryLabel
 @onready var OKButton = $CanvasLayer/Control/OKButton
 
 func _ready() -> void:
 	AllSprites = $AllSprites
 	Cam = $Cam
+	CountryContainer.hide()
 	run_game()
 
 func _input(event) -> void:
@@ -46,10 +49,11 @@ func _on_back_pressed() -> void:
 	queue_free()
 
 func _on_selected(country : String) -> void:
-	$CanvasLayer/Control/Label.text = country
+	CountryLabel.text = Global.get_country_name(country)
+	CountryContainer.show()
 
 func _on_unselected(_country : String) -> void:
-	$CanvasLayer/Control/Label.text = ""
+	CountryContainer.hide()
 
 func _on_ok_button_pressed() -> void:
 	ok.emit()

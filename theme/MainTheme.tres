@@ -1,17 +1,67 @@
 [gd_resource type="Theme" format=3 uid="uid://d1ak7jl27l6tv"]
 
 [ext_resource type="FontFile" uid="uid://c1vr4ij087cmb" path="res://theme/fonts/Some Time Later.otf" id="1_bgaje"]
+[ext_resource type="StyleBox" uid="uid://ddcufdltt36wg" path="res://ressourcen/StyleBoxNormalButton.tres" id="1_cc0qq"]
 [ext_resource type="FontFile" uid="uid://dwa2umrp18m40" path="res://theme/fonts/Bimbo_JVE.ttf" id="2_oty4m"]
+[ext_resource type="StyleBox" uid="uid://cn5y4vksf4eqb" path="res://ressourcen/StyleBoxPanel.tres" id="3_hrn88"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrn88"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.84, 0.6888, 0.38639998, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oty4m"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.88781554, 0.6899936, 0.30804217, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m8glp"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.9490555, 0.49650443, 0.21736816, 1)
+border_width_left = 4
+border_width_top = 10
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6133902, 0.6133903, 0.61339, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [resource]
 default_font = ExtResource("2_oty4m")
 default_font_size = 32
-Button/styles/normal = SubResource("StyleBoxFlat_oty4m")
+Button/styles/focus = SubResource("StyleBoxFlat_hrn88")
+Button/styles/hover = SubResource("StyleBoxFlat_oty4m")
+Button/styles/normal = ExtResource("1_cc0qq")
+Button/styles/pressed = SubResource("StyleBoxFlat_m8glp")
 MainLabel/base_type = &"Label"
 MainLabel/font_sizes/font_size = 48
 MainLabel/fonts/font = ExtResource("1_bgaje")
 NoGridContainer/base_type = &"GridContainer"
 NoGridContainer/constants/h_separation = 0
 NoGridContainer/constants/v_separation = 0
+Panel/styles/panel = ExtResource("3_hrn88")
+PanelContainer/styles/panel = ExtResource("3_hrn88")

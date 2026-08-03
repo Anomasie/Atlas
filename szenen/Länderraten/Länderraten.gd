@@ -64,7 +64,7 @@ func run_game() -> void:
 			current_countries[goal] = -1
 		##### SHOW GOAL
 		# show goal
-		Aufgabe.text = "Finde " + goal + "!"
+		Aufgabe.text = "Finde " + Global.get_country_name(goal) + "!"
 		##### PLAYER'S TURN
 		# await player's choice
 		var choice : String = await Weltkarte.country_selected
@@ -73,12 +73,12 @@ func run_game() -> void:
 		# compare choice with goal
 		if choice == goal:
 			current_countries[goal] += 1
-			Angeklickt.text = "Richtig! Das ist "+choice+"!"
+			Angeklickt.text = "Richtig! Das ist "+Global.get_country_name(choice)+"!"
 			### show highlight
 			await Weltkarte.highlight([goal], RIGHT_COLOR)
 		else:
 			current_countries[goal] -= 1
-			Angeklickt.text = "Nein, das ist "+choice+"."
+			Angeklickt.text = "Nein, das ist "+Global.get_country_name(choice)+"."
 			
 			Weltkarte.highlight([goal], RIGHT_COLOR)
 			await Weltkarte.highlight([choice], WRONG_COLOR)

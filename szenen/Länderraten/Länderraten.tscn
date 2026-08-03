@@ -7,13 +7,6 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gb4g8"]
 blend_mode = 2
 
-[sub_resource type="Gradient" id="Gradient_35arq"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_11qh7"]
-gradient = SubResource("Gradient_35arq")
-
 [node name="Länderraten" type="Control" unique_id=1145824960]
 layout_mode = 3
 anchors_preset = 15
@@ -53,18 +46,14 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="Results" type="MarginContainer" parent="Top/Control" unique_id=786105938]
+[node name="Results" type="PanelContainer" parent="Top/Control" unique_id=2115653130]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -50.0
+offset_top = -86.0
 offset_right = 256.0
 grow_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="Top/Control/Results" unique_id=484403299]
-layout_mode = 2
-texture = SubResource("GradientTexture1D_11qh7")
 
 [node name="Lines" type="VBoxContainer" parent="Top/Control/Results" unique_id=447585720]
 layout_mode = 2

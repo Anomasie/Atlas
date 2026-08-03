@@ -1,5 +1,8 @@
 extends PuzzleKarte
 
+@onready var CountryContainer = $Top/Control/LabelContainer
+@onready var CountryLabel = $Top/Control/LabelContainer/CountryLabel
+
 var continue_game : bool = true
 
 func _ready() -> void:
@@ -15,7 +18,7 @@ func puzzle(load_country_name: String = Global.countries.keys().pick_random()) -
 	##### PREPARATION
 	# load countries
 	load_countries([load_country_name])
-	$Top/Control/Label.text = Global.countries[load_country_name]["German"]
+	CountryLabel.text = Global.get_country_name(load_country_name)
 	# shuffle a bit
 	for sprite in AllSprites.get_children():
 		sprite.position += Vector2(randf()*200, randf()*200)
@@ -43,7 +46,7 @@ func _on_add_button_pressed() -> void:
 
 func _on_selected(country : String) -> void:
 	if country in Global.countries.keys():
-		$Top/Control/Label.text = Global.countries[country]["German"]
+		CountryLabel.text = Global.get_country_name(country)
 	else:
 		print("ERROR in Länderplatzieren.gd._on_selected: No country named ", country)
 
