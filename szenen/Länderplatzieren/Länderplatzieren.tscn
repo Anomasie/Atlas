@@ -50,6 +50,7 @@ grow_horizontal = 2
 [node name="CountryLabel" type="Label" parent="Top/Control/LabelContainer" unique_id=442295105]
 layout_mode = 2
 text = "Madagaskar"
+horizontal_alignment = 1
 
 [node name="Back" type="Button" parent="Top/Control" unique_id=1993473451]
 layout_mode = 0

@@ -1,6 +1,9 @@
+ColorRect
+TextureRect
+SubViewportContainer
+SubViewport
 PanelContainer
 Panel
-TextureRect
 VBoxContainer
 GridContainer
 Sprite2D
@@ -9,6 +12,3 @@ Button
 Control
 CanvasLayer
 Node2D
-Camera2D
-MarginContainer
-MenuButton

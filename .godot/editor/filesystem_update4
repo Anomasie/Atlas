@@ -8,3 +8,9 @@ res://szenen/Länderplatzieren/Länderplatzieren.tscn
 res://szenen/Länderplatzieren/Länderplatzieren.gd
 res://szenen/Global.gd
 res://szenen/Länderraten/Länderraten.gd
+res://ressourcen/shader/ToonShaderMaterial.tres
+res://ressourcen/shader/ToonShader.gdshader
+res://szenen/GAME.tscn
+res://szenen/Game.gd
+res://ressourcen/shader/Blur.gdshader
+res://ressourcen/shader/Sharpen.gdshader

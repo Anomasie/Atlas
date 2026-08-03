@@ -5,3 +5,8 @@ Some Time lader: Fredrick Brennan https://www.dafont.com/de/some-time-later.font
 Bimbo JVE: Jayvee Enaguas https://www.dafont.com/de/bimbo-jve.font?l[]=10&text=Lerne+alle+L%E4nder
 Cairopixel: GGBotNet
 GrapeSodaFont: jeti
+
+
+### Shaders
+
+Blur: https://forum.godotengine.org/t/how-make-transparent-and-blur-main-window/65639/7

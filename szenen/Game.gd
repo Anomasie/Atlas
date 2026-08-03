@@ -1,6 +1,7 @@
 extends Control
 
 @onready var Hauptmenu = $Hauptmenu
+@onready var Subviewport = $ViewportContainer/SubViewport
 
 func _ready() -> void:
 	open_main_menu()
@@ -8,7 +9,7 @@ func _ready() -> void:
 func add_game(path : String) -> void:
 	var instance = load(path).instantiate()
 	instance.open_main_menu.connect(open_main_menu)
-	self.add_child(instance)
+	Subviewport.add_child(instance)
 
 func open_main_menu() -> void:
 	Hauptmenu.open()

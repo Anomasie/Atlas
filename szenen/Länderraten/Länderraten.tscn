@@ -48,12 +48,13 @@ flat = true
 
 [node name="Results" type="PanelContainer" parent="Top/Control" unique_id=2115653130]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -86.0
-offset_right = 256.0
-grow_vertical = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 86.0
+grow_horizontal = 2
 
 [node name="Lines" type="VBoxContainer" parent="Top/Control/Results" unique_id=447585720]
 layout_mode = 2
@@ -61,10 +62,12 @@ layout_mode = 2
 [node name="Aufgabe" type="Label" parent="Top/Control/Results/Lines" unique_id=1740211570]
 layout_mode = 2
 text = "Ziel: Finde"
+horizontal_alignment = 1
 
 [node name="Angeklickt" type="Label" parent="Top/Control/Results/Lines" unique_id=1890209160]
 layout_mode = 2
 text = "Das war"
+horizontal_alignment = 1
 
 [node name="Back" type="Button" parent="Top" unique_id=1660802702]
 offset_right = 8.0

@@ -2,6 +2,20 @@
 
 [ext_resource type="Script" uid="uid://crftmhx66lre8" path="res://szenen/Game.gd" id="1_cg8ki"]
 [ext_resource type="PackedScene" uid="uid://bfgpf40rudv26" path="res://szenen/Hauptmenu/Hauptmenu.tscn" id="1_i4jsc"]
+[ext_resource type="Shader" uid="uid://x85dagtd5moq" path="res://ressourcen/shader/Blur.gdshader" id="2_jam4m"]
+[ext_resource type="Shader" uid="uid://6buuo7pelf7h" path="res://ressourcen/shader/Sharpen.gdshader" id="4_ffk5q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jam4m"]
+shader = ExtResource("2_jam4m")
+shader_parameter/blur_radius = 8
+shader_parameter/blur_strength = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eanuy"]
+shader = ExtResource("4_ffk5q")
+shader_parameter/BLUE = Vector4(156, 146, 244, 256)
+shader_parameter/WHITE = Vector4(252, 250, 172, 256)
+shader_parameter/RED = Vector4(236, 138, 140, 256)
+shader_parameter/BLACK = Vector4(4, 2, 4, 256)
 
 [node name="GAME" type="Control" unique_id=1194097578]
 layout_mode = 3
@@ -12,8 +26,42 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cg8ki")
 
+[node name="ViewportContainer" type="SubViewportContainer" parent="." unique_id=523923642]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="ViewportContainer" unique_id=2024348588]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
 [node name="Hauptmenu" parent="." unique_id=241467984 instance=ExtResource("1_i4jsc")]
 layout_mode = 1
+
+[node name="BlurFilter" type="ColorRect" parent="." unique_id=2014873086]
+material = SubResource("ShaderMaterial_jam4m")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SharpernFiler" type="ColorRect" parent="." unique_id=1702931245]
+material = SubResource("ShaderMaterial_eanuy")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="start_kartenpuzzle" from="Hauptmenu" to="." method="_on_hauptmenu_start_kartenpuzzle"]
 [connection signal="start_länderplatzieren" from="Hauptmenu" to="." method="_on_hauptmenu_start_länderplatzieren"]

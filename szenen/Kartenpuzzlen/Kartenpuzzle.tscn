@@ -42,6 +42,7 @@ grow_horizontal = 2
 [node name="CountryLabel" type="Label" parent="CanvasLayer/Control/LabelContainer" unique_id=1677252492]
 layout_mode = 2
 text = "Madagaskar"
+horizontal_alignment = 1
 
 [node name="OKButton" type="Button" parent="CanvasLayer/Control" unique_id=1842270732]
 layout_mode = 1
