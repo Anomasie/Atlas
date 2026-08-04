@@ -109,6 +109,35 @@ popup/item_1/id = 2
 popup/item_2/text = "hard"
 popup/item_2/id = 1
 
+[node name="Statistik" type="PanelContainer" parent="Top/Control" unique_id=426769987]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 20.0
+grow_vertical = 0
+
+[node name="Grid" type="GridContainer" parent="Top/Control/Statistik" unique_id=77042057]
+layout_mode = 2
+columns = 2
+
+[node name="Gelernte" type="Label" parent="Top/Control/Statistik/Grid" unique_id=1344074370]
+layout_mode = 2
+text = "Gelernte Länder:"
+
+[node name="GelernteCounter" type="Label" parent="Top/Control/Statistik/Grid" unique_id=850906187]
+layout_mode = 2
+text = "10"
+
+[node name="Fehlende" type="Label" parent="Top/Control/Statistik/Grid" unique_id=1129628819]
+layout_mode = 2
+text = "Fehlende Länder:"
+
+[node name="FehlendeCounter" type="Label" parent="Top/Control/Statistik/Grid" unique_id=2035627815]
+layout_mode = 2
+text = "129"
+
 [node name="Back" type="Button" parent="Top" unique_id=1660802702]
 offset_right = 8.0
 offset_bottom = 8.0

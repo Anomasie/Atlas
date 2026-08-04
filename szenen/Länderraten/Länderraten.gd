@@ -13,6 +13,8 @@ const WRONG_COLOR : Color = Color.GREEN_YELLOW
 @onready var OKButton = $Top/Control/Button
 @onready var BackgroundKarte = $Karte
 @onready var DifficultyOption = $Top/Control/Options/Lines/DifficultyOption
+@onready var GelernteCounter = $Top/Control/Statistik/Grid/GelernteCounter
+@onready var FehlendeCounter = $Top/Control/Statistik/Grid/FehlendeCounter
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
@@ -33,6 +35,20 @@ func open() -> void:
 
 func close() -> void:
 	self.queue_free()
+
+func get_known_countries(list_of_countries: Dictionary) -> int:
+	var counter : int = 0
+	for key in list_of_countries.keys():
+		if list_of_countries[key] >= 0:
+			counter += 1
+	return counter
+
+func get_unknown_countries(known_countries: Dictionary) -> int:
+	var counter : int = 0
+	for key in Global.countries.keys():
+		if key not in known_countries.keys():
+			counter += 1
+	return counter
 
 func least_known_countries(list_of_countries : Array, current_countries : Dictionary) -> Array:
 	var minimum : int = 0
@@ -56,6 +72,7 @@ func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
 func run_game() -> void:
 	# choose start countries
 	var current_countries : Dictionary = {}
+	update_ui(current_countries)
 	while len(current_countries.keys()) < NO_START_COUNTRIES:
 		var next_country : String = Global.countries.keys().pick_random()
 		if not next_country in current_countries.keys():
@@ -84,6 +101,7 @@ func run_game() -> void:
 		last_choice = choice
 		##### EVALUATION
 		# compare choice with goal
+#		print(choice, ", ", goal)
 		if choice == goal:
 			current_countries[goal] += 1
 			Angeklickt.text = "Richtig! Das ist "+Global.get_country_name(choice)+"!"
@@ -104,6 +122,9 @@ func run_game() -> void:
 			var similar_one : String = similar_sounding_countries(Global.countries.keys(), goal).pick_random()
 			if similar_one and not similar_one in current_countries.keys():
 				current_countries[similar_one] = -1
+		##### change ui
+		update_ui(current_countries)
+		##### CLOSE
 		await self_ok()
 		await Weltkarte.hide_highlight()
 		Angeklickt.text = ""
@@ -125,6 +146,10 @@ func similar_sounding_countries(choose_out_of:Array, country: String) -> Array:
 	if len(result) == 0:
 		result = [""]
 	return result
+
+func update_ui(current_countries:Dictionary) -> void:
+	GelernteCounter.text = str(get_known_countries(current_countries))
+	FehlendeCounter.text = str(get_unknown_countries(current_countries))
 
 func _on_button_pressed() -> void:
 	ok.emit()

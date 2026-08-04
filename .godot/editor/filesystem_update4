@@ -6,3 +6,5 @@ res://ressourcen/shader/WaterDarker.gdshader
 res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn
 res://szenen/Länderraten/Länderraten.tscn
 res://szenen/Länderraten/Länderraten.gd
+res://szenen/karten/Weltkarte.tscn
+res://szenen/Karte.gd
