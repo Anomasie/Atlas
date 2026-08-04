@@ -2,12 +2,7 @@ res://szenen/GAME.tscn
 res://theme/MainTheme.tres
 res://ressourcen/shader/Blur.gdshader
 res://ressourcen/shader/Sharpen.gdshader
+res://ressourcen/shader/WaterDarker.gdshader
+res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn
 res://szenen/Länderraten/Länderraten.tscn
 res://szenen/Länderraten/Länderraten.gd
-res://ressourcen/StyleBoxNormalButton.tres
-res://szenen/Hauptmenu/Hauptmenu.tscn
-res://szenen/Länderplatzieren/Länderplatzieren.tscn
-res://ressourcen/shader/WaterDarker.gdshader
-res://szenen/Länderplatzieren/Länderplatzieren.gd
-res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn
-res://szenen/Kartenpuzzlen/Kartenpuzzle.gd

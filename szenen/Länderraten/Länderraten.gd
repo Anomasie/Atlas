@@ -4,7 +4,7 @@ signal ok
 signal open_main_menu
 
 const NO_START_COUNTRIES : int = 3
-const RIGHT_COLOR : Color = Color.BLUE
+const RIGHT_COLOR : Color = Color.DIM_GRAY
 const WRONG_COLOR : Color = Color.GREEN_YELLOW
 
 @onready var Aufgabe = $Top/Control/Results/Lines/Aufgabe

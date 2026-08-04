@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwpqap83ku6qu"]
 
 [ext_resource type="Script" uid="uid://clttf8lo7dc0o" path="res://szenen/Kartenpuzzlen/Kartenpuzzle.gd" id="1_4kvqp"]
-[ext_resource type="Texture2D" uid="uid://dghcrhfew5euc" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png" id="2_36agm"]
+[ext_resource type="Texture2D" uid="uid://c8255ra8s1ry3" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png" id="2_36agm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kvqp"]
 content_margin_left = 10.0
