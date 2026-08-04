@@ -1,10 +1,7 @@
-res://szenen/GAME.tscn
+res://szenen/Hauptmenu/Hauptmenu.tscn
 res://theme/MainTheme.tres
 res://ressourcen/shader/Blur.gdshader
 res://ressourcen/shader/Sharpen.gdshader
 res://ressourcen/shader/WaterDarker.gdshader
 res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn
-res://szenen/Länderraten/Länderraten.tscn
-res://szenen/Länderraten/Länderraten.gd
-res://szenen/karten/Weltkarte.tscn
-res://szenen/Karte.gd
+res://szenen/Kartenpuzzlen/Kartenpuzzle.gd

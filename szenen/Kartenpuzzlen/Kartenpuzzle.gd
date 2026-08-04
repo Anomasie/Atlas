@@ -3,9 +3,9 @@ extends PuzzleKarte
 signal ok
 
 const DIFFICULTY_PATHS : Array = [
-	"",
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
 	"res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png",
+	""
 ]
 
 var continue_game : bool = true
@@ -13,6 +13,7 @@ var continue_game : bool = true
 @onready var CountryLabel = $CanvasLayer/Control/LabelContainer/CountryLabel
 @onready var OKButton = $CanvasLayer/Control/OKButton
 @onready var DifficultyOption = $CanvasLayer/Control/Options/Lines/DifficultyOption
+@onready var BackgroundKarte = $Karte
 
 func _ready() -> void:
 	AllSprites = $AllSprites
@@ -24,7 +25,13 @@ func _input(event) -> void:
 	handle_input_click(event)
 
 func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
-	print("load difficulty in Kartenpuzzle: ", index)
+	if DIFFICULTY_PATHS[index]:
+		BackgroundKarte.set_texture(
+			load(DIFFICULTY_PATHS[index])
+		)
+		BackgroundKarte.show()
+	else:
+		BackgroundKarte.hide()
 
 func run_game() -> void:
 	while continue_game:

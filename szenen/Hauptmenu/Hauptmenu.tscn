@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfgpf40rudv26"]
 
 [ext_resource type="Script" uid="uid://g02bumek677i" path="res://szenen/Hauptmenu/Hauptmenu.gd" id="1_6d0cj"]
-[ext_resource type="Texture2D" uid="uid://dcg4ebwlkijby" path="res://TestBackground.png" id="2_itusj"]
+[ext_resource type="Texture2D" uid="uid://c8255ra8s1ry3" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png" id="2_itusj"]
 
 [node name="Hauptmenu" type="Control" unique_id=241467984]
 layout_mode = 3
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6d0cj")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=699224290]
+[node name="Background" type="TextureRect" parent="." unique_id=699224290]
 modulate = Color(0.3180198, 0.31801978, 0.31801975, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -45,6 +45,12 @@ Land
 Fluss"
 horizontal_alignment = 1
 
+[node name="Länderplatzieren" type="Button" parent="Lines" unique_id=788861084]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Länder positionieren"
+
 [node name="Länderraten" type="Button" parent="Lines" unique_id=312670196]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -57,12 +63,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Länderpuzzeln"
 
-[node name="Länderplatzieren" type="Button" parent="Lines" unique_id=788861084]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 6
-text = "Länder positionieren"
-
+[connection signal="pressed" from="Lines/Länderplatzieren" to="." method="_on_länderplatzieren_pressed"]
 [connection signal="pressed" from="Lines/Länderraten" to="." method="_on_länderraten_pressed"]
 [connection signal="pressed" from="Lines/Kartenpuzzle" to="." method="_on_kartenpuzzle_pressed"]
-[connection signal="pressed" from="Lines/Länderplatzieren" to="." method="_on_länderplatzieren_pressed"]

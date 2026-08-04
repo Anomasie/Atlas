@@ -1,8 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1785816571
+::res://::1785833264
 icon.svg::CompressedTexture2D::905814019733503855::1785606060::1785606109::1::::<><><>0<>0<>0136192b2cdd932a9fd4b6ecfc43a501<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+Ideas.txt::TextFile::-1::1785819975::0::1::::<><><>0<>0<><>::
 TestBackground.png::CompressedTexture2D::7313794027868098846::1720790267::1785774904::1::::<><><>0<>0<>ac8dd7f9d86687b4edbd3d7c43f56fac<>res://.godot/imported/TestBackground.png-eb4cc55ed2db601ba08dccd397224a99.ctex::
-::res://karten/::1785819555
+::res://karten/::1785820754
 Länder.csv::Translation::8885691838996131235::1785775724::1785775730::1::::<><><>0<>0<>f2c96af895d5c2257b3e9d22cb8dac86<>::
 ::res://karten/Drüberlegen/::1785817862
 EigentlicheKarte-Physisch-1.png::CompressedTexture2D::7594997925267630666::1785659614::1785658369::1::::<><><>0<>0<>aafe5923b25d36cbf1a2c3afc6394495<>res://.godot/imported/EigentlicheKarte-Physisch-1.png-7c1d646844695e22a9907ca276dfc660.ctex::
@@ -16,7 +17,7 @@ physical_world_map.jpg::CompressedTexture2D::1310963454235646817::1785599229::17
 World-Country-Map.jpg::CompressedTexture2D::8121396942739927104::1785570627::1785772011::1::::<><><>0<>0<>3b7528c1b17f5d06369bc65f05d445e2<>res://.godot/imported/World-Country-Map.jpg-849ad7eb6e5291ccf8431435e6b2e83c.ctex::
 worldmap-countries-hd.jpg::CompressedTexture2D::3433153101230407419::1785599071::1785772010::1::::<><><>0<>0<>eba82ad9e96e460fbad6f7bfc5e9c078<>res://.godot/imported/worldmap-countries-hd.jpg-3b479958ee929a08d1e3daf2fd905c5f.ctex::
 worldmap-physical-hd.jpg::CompressedTexture2D::7192025856961505786::1785596339::1785772010::1::::<><><>0<>0<>a7ff9b4e07392f3e92bc94459ee9a031<>res://.godot/imported/worldmap-physical-hd.jpg-59f49338aa49c348bc1aeafb121e9276.ctex::
-::res://karten/weltkarte/::1785819628
+::res://karten/weltkarte/::1785819639
 Weltkarte-Aegypten-7.png::CompressedTexture2D::1082234701793842596::1785819624::1785775863::1::::<><><>0<>0<>c3b9fb5213bea2c05a78774420695038<>res://.godot/imported/Weltkarte-Aegypten-7.png-7b2e691dcbfbddd31b49e567bbbe1c90.ctex::
 Weltkarte-Aequatorialguinea-38.png::CompressedTexture2D::3848962070965799493::1785819627::1785775889::1::::<><><>0<>0<>f5d7e1423d2d86b9929642cbf2e969cb<>res://.godot/imported/Weltkarte-Aequatorialguinea-38.png-e856da5cdeabafc21a6bf372c69cc2b5.ctex::
 Weltkarte-Aethiopien-28.png::CompressedTexture2D::196900092237140840::1785819626::1785775892::1::::<><><>0<>0<>67cbe1279087b7639e1cf888a9c38834<>res://.godot/imported/Weltkarte-Aethiopien-28.png-e1bd0c142f3c982694a1b2f2defa4ee2.ctex::
@@ -100,14 +101,15 @@ Kartenpuzzle.tscn::PackedScene::8735354589426351280::1785817872::0::1::::<><><>0
 ::res://szenen/Länderplatzieren/::1785788204
 Länderplatzieren.gd::GDScript::3993851161853523080::1785788148::0::1::::<>PuzzleKarte<><>0<>0<><>::
 Länderplatzieren.tscn::PackedScene::7261459853985512061::1785788204::0::1::::<><><>0<>0<><>::uid://bw5we61celoo3::::res://szenen/Länderplatzieren/Länderplatzieren.gd<>uid://dghcrhfew5euc::::res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png
-::res://szenen/Länderraten/::1785819634
+::res://szenen/Länderraten/::1785819770
 Länderraten.gd::GDScript::6663989812549396264::1785819634::0::1::::<>Control<><>0<>0<><>::
-Länderraten.tscn::PackedScene::1094276766284670868::1785819634::0::1::::<><><>0<>0<><>::uid://c17c66any7ise::::res://szenen/Länderraten/Länderraten.gd<>uid://d238ukxiv5cgk::::res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png<>uid://d2qp1rcqfwuxx::::res://szenen/karten/Weltkarte.tscn
+Länderraten.tscn::PackedScene::1094276766284670868::1785819770::0::1::::<><><>0<>0<><>::uid://c17c66any7ise::::res://szenen/Länderraten/Länderraten.gd<>uid://d238ukxiv5cgk::::res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png<>uid://d2qp1rcqfwuxx::::res://szenen/karten/Weltkarte.tscn
 ::res://szenen/tests/::1785662789
 Test.tscn::PackedScene::7932757369885711510::1785662789::0::1::::<><><>0<>0<><>::uid://l6keywso433d::::res://karten/weltkarte/Weltkarte-Aethiopien-29.png
-::res://theme/::1785818334
+::res://theme/::1785819867
 MainTheme.tres::Theme::8984836791973754383::1785818334::0::1::::<><><>0<>0<><>::uid://c1vr4ij087cmb::::res://theme/fonts/Some Time Later.otf<>uid://ddcufdltt36wg::::res://ressourcen/StyleBoxNormalButton.tres<>uid://dwa2umrp18m40::::res://theme/fonts/Bimbo_JVE.ttf<>uid://cn5y4vksf4eqb::::res://ressourcen/StyleBoxPanel.tres
 Quellen.txt::TextFile::-1::1785783915::0::1::::<><><>0<>0<><>::
+ThemeExplained.txt::TextFile::-1::1785819867::0::1::::<><><>0<>0<><>::
 ::res://theme/fonts/::1785772563
 Bimbo_JVE.ttf::FontFile::8705092343058272875::1319646450::1785772563::1::::<><><>0<>0<>3aa28dec7c981d54b0cbbe28405111d8<>res://.godot/imported/Bimbo_JVE.ttf-09c46c5dfdfedabed680cd8c4af97cf4.fontdata::
 Cairopixel.ttf::FontFile::1495164667001159536::1765579732::1785696273::1::::<><><>0<>0<>5deb765ee7d64975f87f95ce109010a9<>res://.godot/imported/Cairopixel.ttf-24d04d3e0887e29cb8ee4f823c970a30.fontdata::
