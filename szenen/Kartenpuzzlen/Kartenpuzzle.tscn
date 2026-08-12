@@ -100,11 +100,11 @@ layout_mode = 2
 layout_mode = 2
 selected = 0
 item_count = 3
-popup/item_0/text = "simple"
+popup/item_0/text = "politische Karte"
 popup/item_0/id = 0
-popup/item_1/text = "middle"
+popup/item_1/text = "physische Karte"
 popup/item_1/id = 2
-popup/item_2/text = "hard"
+popup/item_2/text = "keine Karte"
 popup/item_2/id = 1
 
 [connection signal="selected" from="." to="." method="_on_selected"]

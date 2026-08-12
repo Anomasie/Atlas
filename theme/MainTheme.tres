@@ -66,5 +66,6 @@ MainLabel/fonts/font = ExtResource("1_bgaje")
 NoGridContainer/base_type = &"GridContainer"
 NoGridContainer/constants/h_separation = 0
 NoGridContainer/constants/v_separation = 0
+OptionButton/styles/normal = ExtResource("1_cc0qq")
 Panel/styles/panel = ExtResource("3_hrn88")
 PanelContainer/styles/panel = ExtResource("3_hrn88")
