@@ -1,8 +1,8 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1786598119
+::res://::1786626799
 icon.png::CompressedTexture2D::3756574423459987695::1786596145::1786538442::1::::<><><>0<>0<>802b015c97ce73dc33adf2b94195969c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 Ideas.txt::TextFile::-1::1786598119::0::1::::<><><>0<>0<><>::
-::res://karten/::1786598371
+::res://karten/::1786598372
 Länder.csv::Translation::8885691838996131235::1786598368::1786598372::1::::<><><>0<>0<>f2c96af895d5c2257b3e9d22cb8dac86<>::
 ::res://karten/Drüberlegen/::1785817862
 EigentlicheKarte-Physisch-1.png::CompressedTexture2D::7594997925267630666::1785659614::1785658369::1::::<><><>0<>0<>aafe5923b25d36cbf1a2c3afc6394495<>res://.godot/imported/EigentlicheKarte-Physisch-1.png-7c1d646844695e22a9907ca276dfc660.ctex::
@@ -72,8 +72,8 @@ Weltkarte-Togo-22.png::CompressedTexture2D::6444860094767924163::1786596230::178
 Weltkarte-Tschad-9.png::CompressedTexture2D::152443095210208083::1786596228::1786595959::1::::<><><>0<>0<>7e438aa1c507ec29955d7691e65df5fd<>res://.godot/imported/Weltkarte-Tschad-9.png-7952a9c81fe0c41051fc6c20934e8ad1.ctex::
 Weltkarte-Tunesien-5.png::CompressedTexture2D::4773356111159365817::1786596227::1786595960::1::::<><><>0<>0<>995aabd8b95089c518875a89c9395807<>res://.godot/imported/Weltkarte-Tunesien-5.png-d6b956a0a3a18163eb89842fd4eaf961.ctex::
 Weltkarte-Uganda-34.png::CompressedTexture2D::4785873284361510659::1786596231::1786595960::1::::<><><>0<>0<>493530372cf9a08bbd1bae7b57ed475e<>res://.godot/imported/Weltkarte-Uganda-34.png-ed7033de48623404644613b9193c9351.ctex::
-Weltkarte-Westsahara-3.png::CompressedTexture2D::4714126142859855621::1786596227::1786595960::1::::<><><>0<>0<>7c604a09ffc2fac5850d3b1b3d70c1af<>res://.godot/imported/Weltkarte-Westsahara-3.png-7af9a5e1f800e1fc8570ae494489573d.ctex::
 Weltkarte-WestSahara-3.png::CompressedTexture2D::777096825585583071::1785819624::1785819627::1::::<><><>0<>0<>13a5f70ef043d5df5d0453803737f43c<>res://.godot/imported/Weltkarte-WestSahara-3.png-3c8158b510395062c8a74f205dcd25e2.ctex::
+Weltkarte-Westsahara-3.png::CompressedTexture2D::4714126142859855621::1786596227::1786595960::1::::<><><>0<>0<>7c604a09ffc2fac5850d3b1b3d70c1af<>res://.godot/imported/Weltkarte-Westsahara-3.png-7af9a5e1f800e1fc8570ae494489573d.ctex::
 Weltkarte-ZentralafrikanischeRepublik-26.png::CompressedTexture2D::8981555568158352615::1786596230::1786595960::1::::<><><>0<>0<>04be9ea197e239bf14e97dcad975ba67<>res://.godot/imported/Weltkarte-ZentralafrikanischeRepublik-26.png-659702fda02ac38f8fb7e831a3c91b4c.ctex::
 ::res://ressourcen/::1785786919
 StyleBoxNormalButton.tres::StyleBoxFlat::7375180781779073182::1785786919::0::1::::<><><>0<>0<><>::
@@ -97,9 +97,9 @@ Weltkarte.tscn::PackedScene::9088348955625256565::1785819163::0::1::::<><><>0<>0
 ::res://szenen/Kartenpuzzlen/::1786598329
 Kartenpuzzle.gd::GDScript::5585306127506164480::1786598187::0::1::::<>PuzzleKarte<><>0<>0<><>::
 Kartenpuzzle.tscn::PackedScene::8735354589426351280::1786598329::0::1::::<><><>0<>0<><>::uid://clttf8lo7dc0o::::res://szenen/Kartenpuzzlen/Kartenpuzzle.gd<>uid://c8255ra8s1ry3::::res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png
-::res://szenen/Länderplatzieren/::1786598336
+::res://szenen/Länderplatzieren/::1786598467
 Länderplatzieren.gd::GDScript::3993851161853523080::1785788148::0::1::::<>PuzzleKarte<><>0<>0<><>::
-Länderplatzieren.tscn::PackedScene::7261459853985512061::1786598336::0::1::::<><><>0<>0<><>::uid://bw5we61celoo3::::res://szenen/Länderplatzieren/Länderplatzieren.gd<>uid://dghcrhfew5euc::::res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png
+Länderplatzieren.tscn::PackedScene::7261459853985512061::1786598467::0::1::::<><><>0<>0<><>::uid://bw5we61celoo3::::res://szenen/Länderplatzieren/Länderplatzieren.gd<>uid://dghcrhfew5euc::::res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png
 ::res://szenen/Länderraten/::1786598319
 Länderraten.gd::GDScript::6663989812549396264::1786597873::0::1::::<>Control<><>0<>0<><>::
 Länderraten.tscn::PackedScene::1094276766284670868::1786598319::0::1::::<><><>0<>0<><>::uid://c17c66any7ise::::res://szenen/Länderraten/Länderraten.gd<>uid://d238ukxiv5cgk::::res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png<>uid://d2qp1rcqfwuxx::::res://szenen/karten/Weltkarte.tscn
