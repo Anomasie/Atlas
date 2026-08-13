@@ -1,57 +1,166 @@
-Key;German;Neighbors
-Aegypten;Ägypten;Libyen,Palestina,Israel,Jordan,Sudan
-Aequatorialguinea;Äquatorialguinea;Gabun,Kamerun
-Aethiopien;Äqthiopien;Eritrea,Somaliland,Somalia,Kenia,Suedsudan,Sudan,Dschibuti
-Algerien;Algerien;Tunesien,Libyen,Niger,Mali,Mauretanien,Marokko
-Angola;Angola;DemokratischeRepublikKongo,Kongo,Sambia,Namibia
-Benin;Benin;Nigeria,Niger,BurkinaFaso,Togo
-Botswana;Botswana;Namibia,Simbabwe,Suedafrika
-BurkinaFaso;Burkina Faso;Benin,Togo,Ghana,Elfenbeinkueste,Mali,Niger
-Burundi;Burundi;DemokratischeRepublikKongo,Ruanda,Tansania
-DemokratischeRepublikKongo;Demokratische Republik Kongo;Suedsudan,Uganda,Ruanda,Tansania,ZentralafrikanischeRepublik,Kongo,Angola,Sambia,Burundi
-Dschibuti;Dschibuti;Eritrea,Aethiopien,Somaliland
-Elfenbeinkueste;Elfenbeinküste;Ghana,BurkinaFaso,Mali,Guinea,Liberia
-Eritrea;Eritrea;Dschibuti,Aethiopien,Sudan
-Eswatini;Eswatini;Suedafrika,Mosambik
-Gabun;Gabun;Aequatorialguinea,Kongo,Kamerun
-Gambien;Gambien;Senegal
-Ghana;Ghana;Togo,BurkinaFaso,Elfenbeinkueste
-Guinea;Guinea;Mali,GuineaBissau,Senegal,SierraLeone,Liberia,Elfenbeinkueste
-GuineaBissau;Guinea-Bissau;Guinea,Senegal
-Kamerun;Kamerun;ZentralafrikanischeRepublik,Tschad,Nigeria,Gabun,Kongo,Aequatorialguinea
-KapVerde;Kap Verde;
-Kenia;Kenia;Somalia,Aethiopien,Suedsudan,Uganda,Tansania
-Komoren;Komoren;
-Kongo;Kongo;DemokratischeRepublikKongo,ZentralafrikanischeRepublik,Kamerun,Gabun,Angola
-Lesotho;Lesotho;Suedafrika
-Liberia;Liberia;Elfenbeinkueste,Guinea,SierraLeone
-Libyen;Libyen;Algerien,Tunesien,Aegypten,Sudan,Tschad,Niger
-Madagaskar;Madagaskar;
-Malawi;Malawi;Tansania,Mosambik,Sambia
-Mali;Mali;Algerien,Mauretanien,Niger,Senegal,Guinea,Elfenbeinkueste,BurkinaFaso
-Marokko;Marokko;WestSahara,Algerien,Mauretanien
-Mauretanien;Mauretanien;Mali,Algerien,WestSahara,Senegal,Mali
-Mauritius;Mauritius;
-Mosambik;Mosambik;Tansania,Malawi,Sambia,Simbabwe,Suedafrika,Eswatini
-Namibia;Namibia;Angola,Botswana,Sambia,Suedafrika
-Niger;Niger;Libyen,Tschad,Nigeria,Benin,BurkinaFaso,Mali,Algerien
-Nigeria;Nigeria;Kamerun,Tschad,Niger,Benin
-Ruanda;Ruanda;DemokratischeRepublikKongo,Burundi,Uganda,Tansania
-Sambia;Sambia;DemokratischeRepublikKongo,Angola,Namibia,Simbabwe,Mosambik,Malawi,Tansania
-Senegal;Senegal;Gambien,Mauretanien,Mali,Guinea,GuineaBissau
-Seychellen;Seychellen;
-SierraLeone;Sierra Leone;Liberia,Guinea
-Simbabwe;Simbabwe;Sambia,Botswana,Suedafrika,Mosambik
-Somalia;Somalia;Somaliland,Aethiopien,Kenia
-Somaliland;Somaliland;Somalia,Aethiopien,Dschibuti
-Sudan;Sudan;Aegypten,Libyen,Tschad,ZentralafrikanischeRepublik,Suedsudan,Eritrea,Aethiopien
-Suedafrika;Südafrika;Lesotho,Eswatini,Mosambik,Namibia,Botswana,Simbabwe
-Suedsudan;Suedsudan;Sudan,Aethiopien,Kenia,Uganda,ZentralafrikanischeRepublik,DemokratischeRepublikKongo
-Tansania;Tansania;DemokratischeRepubkliKongo,Kenia,Ruanda,Burundi,Sambia,Malawi,Mosambik
-Togo;Togo;Benin,BurkinaFaso,Ghana
-Tschad;Tschad;ZentralafrikanischeRepublik,Sudan,Libyen,Niger,Nigeria,Kamerun
-Tunesien;Tunesien;Algerien,Libyen
-Uganda;Uganda;DemokratischeRepublikKongo,Suedsudan,Kenia,Ruanda
-WestSahara;West-Sahara;Marokko,Mauretanien
-ZentralafrikanischeRepublik;Zentralafrikanische Republik;DemokratischeRepublikKongo, Suedsudan,Tschad,Sudan,Kamerun,Kongo
-SaoTomeUndPrincipe;Sao Tome Und Principe;
+Key;German;Region;Neighbors
+Aegypten;Ägypten;Orient;Libyen,Palestina,Israel,Jordan,Sudan
+Aequatorialguinea;Äquatorialguinea;Ostafrika;Gabun,Kamerun
+Aethiopien;Äqthiopien;Westafrika;Eritrea,Somaliland,Somalia,Kenia,Suedsudan,Sudan,Dschibuti
+Albanien;Albanien;Osteuropa;Montenegro,Kosovo,Nordmazedonien,Griechenland
+Algerien;Algerien;Orient;Tunesien,Libyen,Niger,Mali,Mauretanien,Marokko
+Andorra;Andorra;Westeuropa;Spanien,Frankreich
+Angola;Angola;Sudafrika;DemokratischeRepublikKongo,Kongo,Sambia,Namibia
+AntiguaBarbuda;Antigua und Barbuda;Karibik;
+ArabischeEmirate;Vereinigte Arabische Emirate;Orient;SaudiArabien,Oman
+Argentinien;Argentinien;Sudamerika;Chile,Bolivien,Paraguay,Uruguay,Brasilien
+Armenien;Armenien;Orient;Iran,Aserbaidschan,Turkei,Georgien
+Aserbaidschan;Aserbaidschan;Orient;Armenien,Georgien,Russland,Iran
+Bahrain;Bahrain;Orient;SaudiArabien
+Barbados;Barbados;Karibik;
+Belarus;Belarus;Osteuropa;Russland,Lettland,Litauen,Polen,Ukraine
+Belgien;Belgien;Westeuropa;Niederlande,Deutschland,Luxemburg,Frankreich
+Belize;Belize;Karibik;Guatemala,Mexiko
+Benin;Benin;Ostafrika;Nigeria,Niger,BurkinaFaso,Togo
+Bolivien;Bolivien;Sudamerika;Brasilien,Paraguay,Argentinien,Chile,Peru
+BosnienHerzegowina;Bosnien-Herzegowina;Osteuropa;Kroatien,Serbien,Montenegro
+Botswana;Botswana;Südafrika;Namibia,Simbabwe,Suedafrika
+Brasilien;Brasilien;Sudamerika;FranzGuyana,Guyana,Venezuela,Suriname,Kolumbien,Peru,Bolivien,Paraguay,Uruguay,Argentinien
+Bulgarien;Bulgarien;Osteuropa;Rumanien,Serbien,Nordmazedonien,Griechenland,Turkei
+BurkinaFaso;Burkina Faso;Sahara;Benin,Togo,Ghana,Elfenbeinkueste,Mali,Niger
+Burundi;Burundi;Zentralafrika;DemokratischeRepublikKongo,Ruanda,Tansania
+Chile;Chile;Sudamerika;Peru,Bolivien,Argentinien
+China;China;Ostasien;
+CostaRica;Costa Rica;Karibik;Nicaragua,Panama
+Danemark;Danemark;Westeuropa;Schweden,Deutschland
+DemokratischeRepublikKongo;Demokratische Republik Kongo;Zentralafrika;Suedsudan,Uganda,Ruanda,Tansania,ZentralafrikanischeRepublik,Kongo,Angola,Sambia,Burundi
+Deutschland;Deutschland;Westeuropa;Danemark,Polen,Tschechien,Osterreich,Schweiz,Frankreich,Luxemburg,Belgien,Niederlande
+Dominica;Dominica;Karibik;
+DominikanischeRepublik;DominikanischeRepublik;Karibik;
+Dschibuti;Dschibuti;Westafrika;Eritrea,Aethiopien,Somaliland
+Ecuador;Ecuador;Sudamerika;Kolumbien,Peru
+Elfenbeinkueste;Elfenbeinküste;Ostafrika;Ghana,BurkinaFaso,Mali,Guinea,Liberia
+ElSalvador;El Salvador;Karibik;Honduras,Guatemala
+Eritrea;Eritrea;Westafrika;Dschibuti,Aethiopien,Sudan
+Estland;Estland;Osteuropa;Russland,Lettland
+Eswatini;Eswatini;Südafrika;Suedafrika,Mosambik
+Falklandinseln;Falklandinseln;Sudamerika;
+Finnland;Finnland;Westeuropa;Norwegen,Schweden,Russland
+Frankreich;Frankreich;Westeuropa;Belgien,Luxemburg,Deutschland,Schweiz,Italien,Andorra,Spanien,Monako
+FranzGuyana;Französisch-Guyana;Sudamerika;Suriname,Brasilien
+Gabun;Gabun;Ostafrika;Aequatorialguinea,Kongo,Kamerun
+Gambien;Gambien;Ostafrika;Senegal
+Gaza;Gaza;Orient;Israel,Agypten
+GB;GB;Westeuropa;Irland
+Georgien;Georgien;Orient;Russland,Turkei,Armenien,Aserbaidschan
+Ghana;Ghana;Ostafrika;Togo,BurkinaFaso,Elfenbeinkueste
+Grenada;Grenada;Karibik;
+Griechenland;Griechenland;Osteuropa;Turkei,Bulgarien,Nordmazedonien,Albanien
+Gronland;Grönland;Westeuropa;
+Guadeloupe;Guadeloupe;Karibik;
+Guatemala;Guatemala;Karibik;Mexiko,Belize,ElSalvador,Honduras
+Guinea;Guinea;Ostafrika;Mali,GuineaBissau,Senegal,SierraLeone,Liberia,Elfenbeinkueste
+GuineaBissau;Guinea-Bissau;Ostafrika;Guinea,Senegal
+Guyana;Guyana;Sudamerika;Venezuela,Brasilien,Suriname
+Haiti;Haiti;Karibik;
+Honduras;Honduras;Karibik;Guatemala,ElSalvador,Nicaragua
+Irak;Irak;Orient;Iran,Kuwait,SaudiArabien,Jordanien,Syrien,Turkei
+Iran;Iran;Orient;
+Irland;Irland;Westeuropa;GB
+Island;Island;Westeuropa;
+Israel;Israel;Orient;Gaza,Libanon,Syrien,Jordanien,Agypten
+Italien;Italien;Westeuropa;Frankreich,Schweiz,Osterreich,Slowenien,Monako
+Jamaika;Jamaika;Karibik;
+Japan;Japan;Ostasien;
+Jemen;Jemen;Orient;Oman,SaudiArabien
+Jordanien;Jordanien;Orient;Syrien,Israel,Irak,SaudiArabien
+Jordanien;Jordanien;Orient;Israel,Syrien,Irak,SaudiArabien
+Jungferninseln;Jungferninseln;Karibik;
+Kamerun;Kamerun;Ostafrika;ZentralafrikanischeRepublik,Tschad,Nigeria,Gabun,Kongo,Aequatorialguinea
+Kanada;Kanada;Nordamerika;USA
+KapVerde;Kap Verde;Ostafrika;
+Kasachstan;Kasachstan;Himalaya;
+Katar;Katar;Orient;SaudiArabien,Bahrain
+Kenia;Kenia;Westafrika;Somalia,Aethiopien,Suedsudan,Uganda,Tansania
+Kolumbien;Kolumbien;Südamerika;Panama,Venezuela,Brasilien,Ecuador,Peru
+Komoren;Komoren;Westafrika;
+Kongo;Kongo;Ostafrika;DemokratischeRepublikKongo,ZentralafrikanischeRepublik,Kamerun,Gabun,Angola
+Kosovo;Kosovo;Osteuropa;Serbien,Nordmazedonien,Albanien,Montenegro
+Kroatien;Kroatien;Osteuropa;Slowenien,Ungarn,Serbien,BosnienHerzegowina
+Kuba;Kuba;Karibik;
+Lesotho;Lesotho;Südafrika;Suedafrika
+Lettland;Lettland;Osteuropa;Russland,Estland,Belarus,Litauen
+Libanon;Libanon;Orient;Syrien,Israel
+Liberia;Liberia;Ostafrika;Elfenbeinkueste,Guinea,SierraLeone
+Libyen;Libyen;Orient;Algerien,Tunesien,Aegypten,Sudan,Tschad,Niger
+Liechtenstein;Liechtenstein;Westeuropa;Schweiz,Osterreich
+Litauen;Litauen;Osteuropa;Lettland,Belarus,Russland,Polen
+Luxemburg;Luxemburg;Westeuropa;Belgien,Deutschland,Frankreich
+Madagaskar;Madagaskar;Sudafrika;
+Malawi;Malawi;Sudafrika;Tansania,Mosambik,Sambia
+Mali;Mali;Sahara;Algerien,Mauretanien,Niger,Senegal,Guinea,Elfenbeinkueste,BurkinaFaso
+Marokko;Marokko;Orient;WestSahara,Algerien,Mauretanien
+Martinique;Martinique;Karibik;
+Mauretanien;Mauretanien;Sahara;Mali,Algerien,WestSahara,Senegal,Mali
+Mauritius;Mauritius;Sudafrika;
+Mexiko;Mexiko;Nordamerika;USA,Guatemala,Belize
+Moldau;Moldau;Osteuropa;Ukraine,Rumanien
+Monako;Monaco;Westeuropa;Frankreich,Italien
+Mongolei;Mongolei;Ostasien;
+Montenegro;Montenegro;Osteuropa;Kosovo,Albanien,BosnienHerzegowina,Serbien
+Montserrat;Montserrat;Karibik;
+Mosambik;Mosambik;Sudafrika;Tansania,Malawi,Sambia,Simbabwe,Suedafrika,Eswatini
+Namibia;Namibia;Sudafrika;Angola,Botswana,Sambia,Suedafrika
+Nicaragua;Nicaragua;Karibik;Honduras,CostaRica
+Niederlande;Niederlande;Westeuropa;Deutschland,Belgien
+Niger;Niger;Sahara;Libyen,Tschad,Nigeria,Benin,BurkinaFaso,Mali,Algerien
+Nigeria;Nigeria;Ostafrika;Kamerun,Tschad,Niger,Benin
+Nordkorea;Nordkorea;Ostasien;China,Sudkorea
+Nordmazedonien;Nordmazedonien;Osteuropa;Kosovo,Serbien,Bulgarien,Griechenland,Albanien
+Norwegen;Norwegen;Westeuropa;Schweden,Finnland,Russland
+Oman;Oman;Orient;ArabischeEmirate,SaudiArabien,Jemen
+Osterreich;Osterreich;Westeuropa;Deutschland,Liechtenstein,Italien,Tschechien,Schweiz,Slowakei,Ungarn,Slowenien
+Panama;Panama;Karibik;CostaRica,Kolumbien
+Paraguay;Paraguay;Sudamerika;Brasilien,Argentinien,Bolivien
+Peru;Peru;Sudamerika;Ecuador,Kolumbien,Brasilien,Bolivien,Chile
+Polen;Polen;Osteuropa;Russland,Litauen,Belarus,Ukraine,Slowakei,Tschechien,Deutschland
+Portugal;Portugal;Westeuropa;Spanien
+PuertoRico;Puerto Rico;Karibik;
+Rojava;Rojava;Orient;Syrien,Irak,Turkei
+Ruanda;Ruanda;Zentralafrika;DemokratischeRepublikKongo,Burundi,Uganda,Tansania
+Rumanien;Rumanien;Osteuropa;Moldau,Ukraine,Bulgarien,Serbien,Ungarn
+Sambia;Sambia;Zentralafrika;DemokratischeRepublikKongo,Angola,Namibia,Simbabwe,Mosambik,Malawi,Tansania
+SaoTomeUndPrincipe;Sao Tome Und Principe;Ostafrika;
+Schweden;Schweden;Westeuropa;Norwegen,Danemark,Finnland
+Schweiz;Schweiz;Westeuropa;Deutschland,Frankreich,Liechtenstein,Frankreich,Italien,Osterreich
+Senegal;Senegal;Ostafrika;Gambien,Mauretanien,Mali,Guinea,GuineaBissau
+Serbien;Serbien;Osteuropa;Ungarn,Rumanien,Bulgarien,Nordmazedonien,Kosovo,Montenegro,BosnienHerzegowina,Kroatien
+Seychellen;Seychellen;Südafrika;
+SierraLeone;Sierra Leone;Ostafrika;Liberia,Guinea
+Simbabwe;Simbabwe;Sudafrika;Sambia,Botswana,Suedafrika,Mosambik
+Slowakei;Slowakei;Osteuropa;Polen,Tschechien,Osterreich,Ungarn,Ukraine
+Slowenien;Slowenien;Osteuropa;Italien,Osterreich,Kroatien,Ungarn
+Somalia;Somalia;Westafrika;Somaliland,Aethiopien,Kenia
+Somaliland;Somaliland;Westafrika;Somalia,Aethiopien,Dschibuti
+Spanien;Spanien;Westeuropa;Portugal,Andorra,Frankreich
+StKittsNevis;St. Kitts und Nevis;Karibik;
+StLucia;St. Lucia;Karibik;
+StVincentGrenadien;St. Vincent und Grenadien;Karibik;
+Sudan;Sudan;Sahara;Aegypten,Libyen,Tschad,ZentralafrikanischeRepublik,Suedsudan,Eritrea,Aethiopien
+Sudkorea;Südkorea;Ostasien;Nordkorea
+Suedafrika;Südafrika;Südafrika;Lesotho,Eswatini,Mosambik,Namibia,Botswana,Simbabwe
+Suedsudan;Südsudan;Zentralafrika;Sudan,Aethiopien,Kenia,Uganda,ZentralafrikanischeRepublik,DemokratischeRepublikKongo
+Suriname;Suriname;Sudamerika;Guyana,FranzGuyana,Brasilien
+Syrien;Syrien;Orient;Turkei,Rojava,Libanon,Israel,Jordanien,Irak
+Tansania;Tansania;Westafrika;DemokratischeRepubkliKongo,Kenia,Ruanda,Burundi,Sambia,Malawi,Mosambik
+Togo;Togo;Ostafrika;Benin,BurkinaFaso,Ghana
+TrinidadTobago;Trinidad und Tobago;Karibik;Venezuela
+Tschad;Tschad;Sahara;ZentralafrikanischeRepublik,Sudan,Libyen,Niger,Nigeria,Kamerun
+Tschechien;Tschechien;Osteuropa;Polen,Deutschland,Osterreich,Slowakei
+Tunesien;Tunesien;Orient;Algerien,Libyen
+Turkei;Turkei;Orient;
+Uganda;Uganda;Zentralafrika;DemokratischeRepublikKongo,Suedsudan,Kenia,Ruanda
+Ukraine;Ukraine;Osteuropa;Russland,Moldau,Rumanien,Ungarn,Slowakei,Polen,Belarus
+Ungarn;Ungarn;Osteuropa;Slowakei,Ukraine,Rumanien,Serbien,Kroatien,Slowenien,Osterreich
+Ungarn;Ungarn;Osteuropa;Rumanien,Serbien,Kroatien,Slowenien,Osterreich,Slowakei,Ukraine
+Uruguay;Uruguay;Sudamerika;Brasilien,Argentinien
+USA;USA;Nordamerika;Kanada,Mexiko
+Venezuela;Venezuela;Sudamerika;Kolumbien,Trinidad,Tobago,Guyana
+WestSahara;West-Sahara;Sahara;Marokko,Mauretanien
+ZentralafrikanischeRepublik;Zentralafrikanische Republik;Zentralafrika;DemokratischeRepublikKongo, Suedsudan,Tschad,Sudan,Kamerun,Kongo
+Zypern;Zypern;Osteuropa;

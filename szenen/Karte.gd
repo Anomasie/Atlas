@@ -7,6 +7,7 @@ const HIGHLIGHT_IN_TIME : float = 0.2
 const HIGHLIGHT_OUT_TIME : float = 0.3
 
 @onready var AllSprites
+@onready var RegionSprites
 @onready var Cam
 
 var cam_dragging : bool = false
@@ -17,6 +18,18 @@ var highlighted_countries : Array = []
 
 func _input(event: InputEvent) -> void:
 	handle_input(event)
+
+func check_country_is_clicked(node: Sprite2D, koordinaten: Vector2) -> bool:
+	if not node:
+		return false
+	var image : Image = node.get_texture().get_image()
+	var check_koords : Vector2i = koordinaten - node.position
+	if image.get_width() > check_koords.x and check_koords.x >= 0 and image.get_height() > check_koords.y and check_koords.y >= 0:
+		var color = image.get_pixel(check_koords.x, check_koords.y)
+		if color == Color.WHITE:
+			print("found click in ", node.name)
+			return true
+	return false
 
 func handle_input(event: InputEvent) -> void:
 	if not Cam:
@@ -34,15 +47,37 @@ func handle_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("zoom_out"):
 		Cam.zoom /= 1.1
 
-func get_country(koordinaten: Vector2) -> String:
-	for kid in AllSprites.get_children():
-		if kid.visible and kid is Sprite2D and kid.get_texture():
-			var image : Image = kid.get_texture().get_image()
-			var check_koords : Vector2i = koordinaten - kid.position
-			if image.get_width() > check_koords.x and check_koords.x >= 0 and image.get_height() > check_koords.y and check_koords.y >= 0:
-				var color = image.get_pixel(check_koords.x, check_koords.y)
-				if color == Color.WHITE:
-					return kid.name
+func get_country(koordinaten: Vector2, guess:String = "") -> String:
+	if guess and AllSprites.get_node(guess) is Sprite2D and check_country_is_clicked(AllSprites.get_node(guess), koordinaten):
+#		print("clicked on guess!")
+		return guess
+#	print("get country not guess")
+	if RegionSprites and RegionSprites.get_children():
+#		print("search by region!")
+		for region in RegionSprites.get_children():
+#			print("check ", region.name)
+			if region.visible and region is Sprite2D and check_country_is_clicked(region, koordinaten):
+#				print("search in region ", region.name)
+				return get_country_in_region(region.name, koordinaten)
+	else:
+#		print("search without region!")
+		for kid in AllSprites.get_children():
+			if kid.visible and kid is Sprite2D and check_country_is_clicked(kid, koordinaten):
+				return kid.name
+		print("ERROR Karte.gd.get_country(): Country not found")
+	return ""
+
+func get_country_in_region(region: String, koordinaten):
+	for country in Global.countries.keys():
+#		print("checking:::: ", country)
+		if Global.countries[country]["Region"] == region:
+#			print(country, " indeed lies in ", region)
+			if check_country_is_clicked(
+				AllSprites.get_node(country),
+				koordinaten
+			):
+#				print("clicked on ", country, "!")
+				return country
 	return ""
 
 func highlight(list_of_countries:Array=[], highlight_color: Color = HIGHLIGHT_COLOR) -> void:
@@ -91,9 +126,27 @@ func load_countries(to_add_ones : Array = []) -> void:
 				else:
 					AllSprites.get_node(item).show()
 
+func load_regions() -> void:
+	var dir = DirAccess.open("res://karten/weltkarte")
+	var file_names = dir.get_files()
+	for item in file_names:
+		if len(item.split("-")) > 1:
+			var item_type : String = item.split("-")[0]
+			var item_name : String = item.split("-")[1]
+			if item_type == "Region" and item.ends_with(".png"):
+				var new_texture = Sprite2D.new()
+				new_texture.set_texture( load("res://karten/weltkarte/"+item) )
+				new_texture.set_name(item_name)
+				new_texture.self_modulate = NORMAL_COLOR
+				new_texture.material = self.material
+				new_texture.centered = false
+#				new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+				RegionSprites.add_child(new_texture)
+#				print("set name ", item_name, " at \t ", new_texture.name, "\t with no ", item)
+
 func random_cohesive_countries(start_country:String = Global.countries.keys().pick_random(), length=6) -> Array:
 	var result : Array = [start_country]
-	print("start with: ", start_country)
+#	print("start with: ", start_country)
 	for _i in length - 1:
 		var new_entry : String = start_country
 		while new_entry in result:
@@ -102,6 +155,6 @@ func random_cohesive_countries(start_country:String = Global.countries.keys().pi
 				print("ERROR: ", key, " not in Global.countries!")
 			else:
 				new_entry = Global.countries[key]["Neighbors"].pick_random()
-		print("add: ", new_entry)
+#		print("add: ", new_entry)
 		result.append(new_entry)
 	return result

@@ -1,0 +1,8 @@
+res://szenen/Karte.gd
+res://szenen/karten/Weltkarte.tscn
+res://theme/MainTheme.tres
+res://ressourcen/shader/Blur.gdshader
+res://ressourcen/shader/Sharpen.gdshader
+res://ressourcen/shader/WaterDarker.gdshader
+res://szenen/Länderraten/Länderraten.tscn
+res://szenen/karten/Weltkarte.gd

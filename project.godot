@@ -13,7 +13,7 @@ config_version=5
 config/name="Stadt Land Fluss"
 run/main_scene="uid://b8pajf0t3f8re"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="uid://bmmu6sd6xic2f"
+config/icon="uid://btryh5dcl1nut"
 
 [autoload]
 

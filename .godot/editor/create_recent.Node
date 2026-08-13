@@ -1,5 +1,6 @@
-Control
 CanvasLayer
+Node2D
+Control
 Label
 GridContainer
 PanelContainer
@@ -11,4 +12,3 @@ SubViewportContainer
 SubViewport
 Panel
 Sprite2D
-Button

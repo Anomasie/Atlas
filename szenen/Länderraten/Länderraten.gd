@@ -107,6 +107,7 @@ func run_game() -> void:
 		##### SHOW GOAL
 		# show goal
 		Aufgabe.text = "Finde " + Global.get_country_name(goal) + "!"
+		Weltkarte.guess = goal
 		##### PLAYER'S TURN
 		# await player's choice
 		var choice : String = await Weltkarte.country_selected
