@@ -1,9 +1,9 @@
 Key;German;Region;Neighbors
-Aegypten;Ägypten;Orient;Libyen,Palestina,Israel,Jordan,Sudan
+Aegypten;Ägypten;Sahara;Libyen,Palestina,Israel,Jordan,Sudan
 Aequatorialguinea;Äquatorialguinea;Ostafrika;Gabun,Kamerun
 Aethiopien;Äqthiopien;Westafrika;Eritrea,Somaliland,Somalia,Kenia,Suedsudan,Sudan,Dschibuti
 Albanien;Albanien;Osteuropa;Montenegro,Kosovo,Nordmazedonien,Griechenland
-Algerien;Algerien;Orient;Tunesien,Libyen,Niger,Mali,Mauretanien,Marokko
+Algerien;Algerien;Sahara;Tunesien,Libyen,Niger,Mali,Mauretanien,Marokko
 Andorra;Andorra;Westeuropa;Spanien,Frankreich
 Angola;Angola;Sudafrika;DemokratischeRepublikKongo,Kongo,Sambia,Namibia
 AntiguaBarbuda;Antigua und Barbuda;Karibik;
@@ -41,7 +41,7 @@ Estland;Estland;Osteuropa;Russland,Lettland
 Eswatini;Eswatini;Südafrika;Suedafrika,Mosambik
 Falklandinseln;Falklandinseln;Sudamerika;
 Finnland;Finnland;Westeuropa;Norwegen,Schweden,Russland
-Frankreich;Frankreich;Westeuropa;Belgien,Luxemburg,Deutschland,Schweiz,Italien,Andorra,Spanien,Monako
+Frankreich;Frankreich;Westeuropa;Belgien,Luxemburg,Deutschland,Schweiz,Italien,Andorra,Spanien,Monaco
 FranzGuyana;Französisch-Guyana;Sudamerika;Suriname,Brasilien
 Gabun;Gabun;Ostafrika;Aequatorialguinea,Kongo,Kamerun
 Gambien;Gambien;Ostafrika;Senegal
@@ -64,11 +64,10 @@ Iran;Iran;Orient;
 Irland;Irland;Westeuropa;GB
 Island;Island;Westeuropa;
 Israel;Israel;Orient;Gaza,Libanon,Syrien,Jordanien,Agypten
-Italien;Italien;Westeuropa;Frankreich,Schweiz,Osterreich,Slowenien,Monako
+Italien;Italien;Westeuropa;Frankreich,Schweiz,Osterreich,Slowenien
 Jamaika;Jamaika;Karibik;
 Japan;Japan;Ostasien;
 Jemen;Jemen;Orient;Oman,SaudiArabien
-Jordanien;Jordanien;Orient;Syrien,Israel,Irak,SaudiArabien
 Jordanien;Jordanien;Orient;Israel,Syrien,Irak,SaudiArabien
 Jungferninseln;Jungferninseln;Karibik;
 Kamerun;Kamerun;Ostafrika;ZentralafrikanischeRepublik,Tschad,Nigeria,Gabun,Kongo,Aequatorialguinea
@@ -87,20 +86,20 @@ Lesotho;Lesotho;Südafrika;Suedafrika
 Lettland;Lettland;Osteuropa;Russland,Estland,Belarus,Litauen
 Libanon;Libanon;Orient;Syrien,Israel
 Liberia;Liberia;Ostafrika;Elfenbeinkueste,Guinea,SierraLeone
-Libyen;Libyen;Orient;Algerien,Tunesien,Aegypten,Sudan,Tschad,Niger
+Libyen;Libyen;Sahara;Algerien,Tunesien,Aegypten,Sudan,Tschad,Niger
 Liechtenstein;Liechtenstein;Westeuropa;Schweiz,Osterreich
 Litauen;Litauen;Osteuropa;Lettland,Belarus,Russland,Polen
 Luxemburg;Luxemburg;Westeuropa;Belgien,Deutschland,Frankreich
 Madagaskar;Madagaskar;Sudafrika;
 Malawi;Malawi;Sudafrika;Tansania,Mosambik,Sambia
 Mali;Mali;Sahara;Algerien,Mauretanien,Niger,Senegal,Guinea,Elfenbeinkueste,BurkinaFaso
-Marokko;Marokko;Orient;WestSahara,Algerien,Mauretanien
+Marokko;Marokko;Sahara;WestSahara,Algerien,Mauretanien
 Martinique;Martinique;Karibik;
 Mauretanien;Mauretanien;Sahara;Mali,Algerien,WestSahara,Senegal,Mali
 Mauritius;Mauritius;Sudafrika;
 Mexiko;Mexiko;Nordamerika;USA,Guatemala,Belize
 Moldau;Moldau;Osteuropa;Ukraine,Rumanien
-Monako;Monaco;Westeuropa;Frankreich,Italien
+Monaco;Monaco;Westeuropa;Frankreich,Italien
 Mongolei;Mongolei;Ostasien;
 Montenegro;Montenegro;Osteuropa;Kosovo,Albanien,BosnienHerzegowina,Serbien
 Montserrat;Montserrat;Karibik;
@@ -140,7 +139,7 @@ Somaliland;Somaliland;Westafrika;Somalia,Aethiopien,Dschibuti
 Spanien;Spanien;Westeuropa;Portugal,Andorra,Frankreich
 StKittsNevis;St. Kitts und Nevis;Karibik;
 StLucia;St. Lucia;Karibik;
-StVincentGrenadien;St. Vincent und Grenadien;Karibik;
+StVincentGrenadinen;St. Vincent und Grenadinen;Karibik;
 Sudan;Sudan;Sahara;Aegypten,Libyen,Tschad,ZentralafrikanischeRepublik,Suedsudan,Eritrea,Aethiopien
 Sudkorea;Südkorea;Ostasien;Nordkorea
 Suedafrika;Südafrika;Südafrika;Lesotho,Eswatini,Mosambik,Namibia,Botswana,Simbabwe
@@ -152,7 +151,7 @@ Togo;Togo;Ostafrika;Benin,BurkinaFaso,Ghana
 TrinidadTobago;Trinidad und Tobago;Karibik;Venezuela
 Tschad;Tschad;Sahara;ZentralafrikanischeRepublik,Sudan,Libyen,Niger,Nigeria,Kamerun
 Tschechien;Tschechien;Osteuropa;Polen,Deutschland,Osterreich,Slowakei
-Tunesien;Tunesien;Orient;Algerien,Libyen
+Tunesien;Tunesien;Sahara;Algerien,Libyen
 Turkei;Turkei;Orient;
 Uganda;Uganda;Zentralafrika;DemokratischeRepublikKongo,Suedsudan,Kenia,Ruanda
 Ukraine;Ukraine;Osteuropa;Russland,Moldau,Rumanien,Ungarn,Slowakei,Polen,Belarus
@@ -164,3 +163,4 @@ Venezuela;Venezuela;Sudamerika;Kolumbien,Trinidad,Tobago,Guyana
 WestSahara;West-Sahara;Sahara;Marokko,Mauretanien
 ZentralafrikanischeRepublik;Zentralafrikanische Republik;Zentralafrika;DemokratischeRepublikKongo, Suedsudan,Tschad,Sudan,Kamerun,Kongo
 Zypern;Zypern;Osteuropa;
+Russland;Russland;Osteuropa;Finnland,Estland,Lettland,Litauen,Belarus,Ukraine,Aserbaidschan,Georgien,China,Mongolei,Kasachstan,Mongolei

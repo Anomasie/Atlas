@@ -20,7 +20,8 @@ func _input(event: InputEvent) -> void:
 	handle_input(event)
 
 func check_country_is_clicked(node: Sprite2D, koordinaten: Vector2) -> bool:
-	if not node:
+	if not node.get_texture():
+		print("ERROR in Karte.gd.check_country_is_clicked: Node invalid ", node.name)
 		return false
 	var image : Image = node.get_texture().get_image()
 	var check_koords : Vector2i = koordinaten - node.position
@@ -48,19 +49,22 @@ func handle_input(event: InputEvent) -> void:
 		Cam.zoom /= 1.1
 
 func get_country(koordinaten: Vector2, guess:String = "") -> String:
+	print("get country, guess: ", guess)
+	if not AllSprites.get_node(guess):
+		print("ERROR in Karte.gd.get_country: No guess node existing named ", guess)
 	if guess and AllSprites.get_node(guess) is Sprite2D and check_country_is_clicked(AllSprites.get_node(guess), koordinaten):
-#		print("clicked on guess!")
+		print("clicked on guess!")
 		return guess
-#	print("get country not guess")
+	print("get country not guess")
 	if RegionSprites and RegionSprites.get_children():
-#		print("search by region!")
+		print("search by region!")
 		for region in RegionSprites.get_children():
-#			print("check ", region.name)
+			print("check ", region.name)
 			if region.visible and region is Sprite2D and check_country_is_clicked(region, koordinaten):
-#				print("search in region ", region.name)
+				print("search in region ", region.name)
 				return get_country_in_region(region.name, koordinaten)
 	else:
-#		print("search without region!")
+		print("search without region")
 		for kid in AllSprites.get_children():
 			if kid.visible and kid is Sprite2D and check_country_is_clicked(kid, koordinaten):
 				return kid.name
@@ -68,16 +72,17 @@ func get_country(koordinaten: Vector2, guess:String = "") -> String:
 	return ""
 
 func get_country_in_region(region: String, koordinaten):
-	for country in Global.countries.keys():
-#		print("checking:::: ", country)
-		if Global.countries[country]["Region"] == region:
-#			print(country, " indeed lies in ", region)
-			if check_country_is_clicked(
-				AllSprites.get_node(country),
-				koordinaten
-			):
-#				print("clicked on ", country, "!")
-				return country
+	print("checking now in ", region)
+	for country in Global.countries_by_region[region].keys():
+		print("checking:::: ", country)
+		if not AllSprites.get_node(country):
+			print("ERROR in Karte.gd.get_country_in_region: No node exists named ", country)
+		if check_country_is_clicked(
+			AllSprites.get_node(country),
+			koordinaten
+		):
+			print("clicked on ", country, "!")
+			return country
 	return ""
 
 func highlight(list_of_countries:Array=[], highlight_color: Color = HIGHLIGHT_COLOR) -> void:
@@ -127,15 +132,15 @@ func load_countries(to_add_ones : Array = []) -> void:
 					AllSprites.get_node(item).show()
 
 func load_regions() -> void:
-	var dir = DirAccess.open("res://karten/weltkarte")
+	var dir = DirAccess.open("res://karten/regionen")
 	var file_names = dir.get_files()
 	for item in file_names:
 		if len(item.split("-")) > 1:
-			var item_type : String = item.split("-")[0]
+#			print("thinking about adding ", item)
 			var item_name : String = item.split("-")[1]
-			if item_type == "Region" and item.ends_with(".png"):
+			if item.ends_with(".png"):
 				var new_texture = Sprite2D.new()
-				new_texture.set_texture( load("res://karten/weltkarte/"+item) )
+				new_texture.set_texture( load("res://karten/regionen/"+item) )
 				new_texture.set_name(item_name)
 				new_texture.self_modulate = NORMAL_COLOR
 				new_texture.material = self.material
@@ -144,7 +149,9 @@ func load_regions() -> void:
 				RegionSprites.add_child(new_texture)
 #				print("set name ", item_name, " at \t ", new_texture.name, "\t with no ", item)
 
-func random_cohesive_countries(start_country:String = Global.countries.keys().pick_random(), length=6) -> Array:
+func random_cohesive_countries(start_country:String = "", length=6) -> Array:
+	while not start_country or not Global.countries[start_country]["Neighbors"]:
+		start_country = Global.countries.keys().pick_random()
 	var result : Array = [start_country]
 #	print("start with: ", start_country)
 	for _i in length - 1:

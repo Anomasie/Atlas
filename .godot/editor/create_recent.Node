@@ -1,7 +1,8 @@
+CheckBox
+Label
 CanvasLayer
 Node2D
 Control
-Label
 GridContainer
 PanelContainer
 OptionButton

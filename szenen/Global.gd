@@ -1,6 +1,17 @@
 extends Node
 
+const REGION_LIST = {
+	"Afrika": ["Westafrika", "Ostafrika", "Sahara", "Südafrika", "Zentralafrika"],
+	"Europa": ["Westeuropa", "Osteuropa"],
+	"Nordamerika": ["Nordamerika"],
+	"Südamerika": ["Sudamerika"],
+	"Karibik": ["Karibik"],
+	"Ozeanien": [""],
+	"Asien": ["Ostasien", "Himalaya", "Orient"]
+}
+
 var countries : Dictionary = {}
+var countries_by_region : Dictionary = {}
 var language : String = "German"
 
 func _ready() -> void:
@@ -17,14 +28,22 @@ func load_country_list() -> void:
 	var file_text : PackedStringArray = file.get_as_text().split("\n", false)
 	var keys = file_text[0].split(";")
 	file_text.remove_at(0)
+	countries = {}
+	countries_by_region = {}
 	for row in file_text:
 		var row_split = row.split(";", true)
-		countries[row_split[0]] = {}
+		var this_name : String = row_split[0]
+		countries[this_name] = {}
 		for i in range(1,len(keys)):
 			if keys[i] != "Neighbors":
-				countries[row_split[0]][keys[i]] = row_split[i]
+				countries[this_name][keys[i]] = row_split[i]
 			else:
-				countries[row_split[0]][keys[i]] = Array(row_split[i].split(","))
+				countries[this_name][keys[i]] = Array(row_split[i].split(","))
+		# add to countries_by_region
+		var this_region : String = countries[this_name]["Region"]
+		if not this_region in countries_by_region.keys():
+			countries_by_region[this_region] = {}
+		countries_by_region[this_region][this_name] = countries[this_name]
 
 func wait(wait_time: float = 1.0) -> void:
 	if wait_time > 0:

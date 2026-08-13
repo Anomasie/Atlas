@@ -10,6 +10,7 @@ func _ready() -> void:
 	Cam = $Cam
 	load_countries()
 	load_regions()
+#	print(RegionSprites.get_children())
 
 func _on_button_pressed() -> void:
 	print("=========> CLICK!!!")

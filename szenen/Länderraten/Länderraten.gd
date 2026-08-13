@@ -15,6 +15,7 @@ const WRONG_COLOR : Color = Color.GREEN_YELLOW
 @onready var DifficultyOption = $Top/Control/Options/Lines/DifficultyOption
 @onready var GelernteCounter = $Top/Control/Statistik/Grid/GelernteCounter
 @onready var FehlendeCounter = $Top/Control/Statistik/Grid/FehlendeCounter
+@onready var Grid = $Top/Control/Statistik/Grid
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
@@ -28,6 +29,7 @@ func _ready() -> void:
 	OKButton.hide()
 	Angeklickt.text = ""
 	Aufgabe.text = ""
+	load_region_checkboxes()
 	run_game()
 
 func open() -> void:
@@ -36,10 +38,10 @@ func open() -> void:
 func close() -> void:
 	self.queue_free()
 
-func get_active_countries(list_of_countries: Dictionary, duplicate_by_unknownness:bool = true) -> Array:
+func get_active_countries(list_of_countries: Dictionary, duplicate_by_unknownness:bool, enabled_regions:Array[String] = get_active_regions()) -> Array:
 	var list : Array[String] = []
 	for key in list_of_countries.keys():
-		if list_of_countries[key] < 0:
+		if list_of_countries[key] < 0 and Global.countries[key]["Region"] in enabled_regions:
 			if duplicate_by_unknownness:
 				for i in -list_of_countries[key]:
 					list.append(key)
@@ -47,12 +49,24 @@ func get_active_countries(list_of_countries: Dictionary, duplicate_by_unknownnes
 				list.append(key)
 	return list
 
+func get_active_regions() -> Array[String]:
+	return ["Sahara"]
+
 func get_known_countries(list_of_countries: Dictionary) -> Array:
 	var list : Array[String] = []
 	for key in list_of_countries.keys():
 		if list_of_countries[key] >= 0:
 			list.append(key)
 	return list
+
+func get_new_goal(current_countries : Dictionary, last_goal:String, last_choice:String) -> String:
+	var choose_out_of : Array = get_active_countries(current_countries, true)#, get_active_regions())
+	if len(choose_out_of) > 0:
+		choose_out_of.erase(last_goal)
+	if len(choose_out_of) > 0:
+		choose_out_of.erase(last_choice)
+	# pick next goal
+	return choose_out_of.pick_random()
 
 func get_unknown_countries(known_countries: Dictionary) -> Array:
 	var list : Array[String] = []
@@ -80,26 +94,32 @@ func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
 		load(DIFFICULTY_PATHS[index])
 	)
 
+func load_region_checkboxes() -> void:
+	for region in Global.REGION_LIST:
+		# add label
+		var new_label : Label = Label.new()
+		new_label.text = region + ":"
+		Grid.add_child(new_label)
+		# add checkbox
+		var new_checkbox : CheckBox = CheckBox.new()
+		Grid.add_child(new_checkbox)
+
 func run_game() -> void:
 	# choose start countries
 	var current_countries : Dictionary = {}
 	update_ui(current_countries)
 	while len(current_countries.keys()) < NO_START_COUNTRIES:
-		var next_country : String = Global.countries.keys().pick_random()
+		var next_country : String = Global.countries_by_region[get_active_regions().pick_random()].keys().pick_random()
 		if not next_country in current_countries.keys():
 			current_countries[next_country] = -1
 	
 	var last_goal : String = ""
 	var last_choice : String = ""
 	while continue_game:
-		print("Current Countries: ", current_countries, "\nActive Countries: ", get_active_countries(current_countries, true))
+		print("Current Countries: ", current_countries, "\nActive Countries: ", get_active_countries(current_countries, true))#, get_active_regions()))
 		##### CHOOSE GOAL
-		# erase last country
-		var choose_out_of : Array = get_active_countries(current_countries, true)
-		choose_out_of.erase(last_goal)
-		choose_out_of.erase(last_choice)
 		# pick next goal
-		var goal : String = choose_out_of.pick_random() #least_known_countries(choose_out_of, current_countries).pick_random()
+		var goal : String = get_new_goal(current_countries, last_goal, last_choice) #least_known_countries(choose_out_of, current_countries).pick_random()
 		last_goal = goal
 		# add goal to current_countries
 		if not goal in current_countries.keys():
@@ -144,8 +164,9 @@ func run_game() -> void:
 		Angeklickt.text = ""
 		Aufgabe.text = ""
 		##### END GAME?
-		if len(get_known_countries(current_countries)) == len(Global.countries.keys()):
+		if len(get_active_countries(current_countries, true)) == 0:
 			continue_game = false
+			Aufgabe.text = "Herzlichen Glückwunsch! Du kennst alle Länder."
 		# if not enough current_countries: add one
 		while len(get_active_countries(current_countries, false)) < 4 and get_unknown_countries(current_countries):
 			print("add country! ", get_active_countries(current_countries, false), " has length smaller than 4.")
