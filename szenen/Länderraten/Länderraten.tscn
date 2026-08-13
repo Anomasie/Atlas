@@ -105,9 +105,9 @@ item_count = 3
 popup/item_0/text = "politische Karte"
 popup/item_0/id = 0
 popup/item_1/text = "physische Karte"
-popup/item_1/id = 0
+popup/item_1/id = 1
 popup/item_2/text = "keine Karte"
-popup/item_2/id = 0
+popup/item_2/id = 2
 
 [node name="Statistik" type="PanelContainer" parent="Top/Control" unique_id=426769987]
 layout_mode = 1

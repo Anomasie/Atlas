@@ -19,6 +19,7 @@ func _ready() -> void:
 	AllSprites = $AllSprites
 	Cam = $Cam
 	CountryContainer.hide()
+	load_difficulty(DifficultyOption.get_selected_id())
 	run_game()
 
 func _input(event) -> void:

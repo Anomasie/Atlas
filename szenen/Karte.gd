@@ -97,7 +97,11 @@ func random_cohesive_countries(start_country:String = Global.countries.keys().pi
 	for _i in length - 1:
 		var new_entry : String = start_country
 		while new_entry in result:
-			new_entry = Global.countries[result.pick_random()]["Neighbors"].pick_random()
+			var key : String = result.pick_random()
+			if not new_entry in Global.countries.keys():
+				print("ERROR: ", key, " not in Global.countries!")
+			else:
+				new_entry = Global.countries[key]["Neighbors"].pick_random()
 		print("add: ", new_entry)
 		result.append(new_entry)
 	return result

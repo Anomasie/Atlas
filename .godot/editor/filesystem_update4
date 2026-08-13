@@ -5,3 +5,6 @@ res://ressourcen/shader/Sharpen.gdshader
 res://ressourcen/shader/WaterDarker.gdshader
 res://szenen/Länderraten/Länderraten.tscn
 res://szenen/Länderraten/Länderraten.gd
+res://szenen/Kartenpuzzlen/Kartenpuzzle.gd
+res://szenen/Länderplatzieren/Länderplatzieren.tscn
+res://szenen/Karte.gd

@@ -10,3 +10,5 @@ Planned features
 
 - Möglichkeit, Land abzubrechen und Lösung anzuzeigen
 - Pfeil, der auf Land zeigt, oder es wird immer an gleicher Stelle geladen
+
+- Gebiet auswählen, das man lernen möchte (z. B. Ostafrika, Orient, ...)
