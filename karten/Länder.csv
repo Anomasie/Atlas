@@ -1,6 +1,6 @@
 Key;German;Neighbors
 Aegypten;Ägypten;Libyen,Palestina,Israel,Jordan,Sudan
-Aequatorialguinea;Äquatorialguinea;Gabun,Kamerun,SaoTomeUndPrincipe
+Aequatorialguinea;Äquatorialguinea;Gabun,Kamerun
 Aethiopien;Äqthiopien;Eritrea,Somaliland,Somalia,Kenia,Suedsudan,Sudan,Dschibuti
 Algerien;Algerien;Tunesien,Libyen,Niger,Mali,Mauretanien,Marokko
 Angola;Angola;DemokratischeRepublikKongo,Kongo,Sambia,Namibia
@@ -13,25 +13,25 @@ Dschibuti;Dschibuti;Eritrea,Aethiopien,Somaliland
 Elfenbeinkueste;Elfenbeinküste;Ghana,BurkinaFaso,Mali,Guinea,Liberia
 Eritrea;Eritrea;Dschibuti,Aethiopien,Sudan
 Eswatini;Eswatini;Suedafrika,Mosambik
-Gabun;Gabun;Aequatorialguinea,SaoTomeUndPrincipe,Kongo,Kamerun
+Gabun;Gabun;Aequatorialguinea,Kongo,Kamerun
 Gambien;Gambien;Senegal
 Ghana;Ghana;Togo,BurkinaFaso,Elfenbeinkueste
 Guinea;Guinea;Mali,Guinea-Bissau,Senegal,SierraLeone,Liberia,Elfenbeinkueste
 GuineaBissau;Guinea-Bissau;Guinea,Senegal
-Kamerun;Kamerun;ZentralafrikanischeRepublik,Tschad,Nigeria,Gabun,Kongo,Aequatorialguinea,SaoTomeUndPrincipe
+Kamerun;Kamerun;ZentralafrikanischeRepublik,Tschad,Nigeria,Gabun,Kongo,Aequatorialguinea
 KapVerde;Kap Verde;
 Kenia;Kenia;Somalia,Aethiopien,Suedsudan,Uganda,Tansania
-Komoren;Komoren;Madagaskar,Tansania,Mosambik
+Komoren;Komoren;
 Kongo;Kongo;DemokratischeRepublikKongo,ZentralafrikanischeRepublik,Kamerun,Gabun,Angola
 Lesotho;Lesotho;Suedafrika
 Liberia;Liberia;Elfenbeinkueste,Guinea,SierraLeone
 Libyen;Libyen;Algerien,Tunesien,Aegypten,Sudan,Tschad,Niger
-Madagaskar;Madagaskar;Mauritius,Seychellen
+Madagaskar;Madagaskar;
 Malawi;Malawi;Tansania,Mosambik,Sambia
 Mali;Mali;Algerien,Mauretanien,Niger,Senegal,Guinea,Elfenbeinkueste,BurkinaFaso
 Marokko;Marokko;WestSahara,Algerien,Mauretanien
 Mauretanien;Mauretanien;Mali,Algerien,WestSahara,Senegal,Mali
-Mauritius;Mauritius;Madagaskar,Seychellen
+Mauritius;Mauritius;
 Mosambik;Mosambik;Tansania,Malawi,Sambia,Simbabwe,Suedafrika,Eswatini
 Namibia;Namibia;Angola,Botswana,Sambia,Suedafrika
 Niger;Niger;Libyen,Tschad,Nigeria,Benin,BurkinaFaso,Mali,Algerien
@@ -39,7 +39,7 @@ Nigeria;Nigeria;Kamerun,Tschad,Niger,Benin
 Ruanda;Ruanda;DemokratischeRepublikKongo,Burundi,Uganda,Tansania
 Sambia;Sambia;DemokratischeRepublikKongo,Angola,Namibia,Simbabwe,Mosambik,Malawi,Tansania
 Senegal;Senegal;Gambien,Mauretanien,Mali,Guinea,Guinea-Bissau
-Seychellen;Seychellen;Madagaskar,Mauritius
+Seychellen;Seychellen;
 SierraLeone;Sierra Leone;Liberia,Guinea
 Simbabwe;Simbabwe;Sambia,Botswana,Suedafrika,Mosambik
 Somalia;Somalia;Somaliland,Aethiopien,Kenia
@@ -54,4 +54,4 @@ Tunesien;Tunesien;Algerien,Libyen
 Uganda;Uganda;DemokratischeRepublikKongo,Suedsudan,Kenia,Ruanda
 WestSahara;West-Sahara;Marokko,Mauretanien
 ZentralafrikanischeRepublik;Zentralafrikanische Republik;DemokratischeRepublikKongo, Suedsudan,Tschad,Sudan,Kamerun,Kongo
-SaoTomeUndPrincipe;Sao Tome Und Principe;Aequatorialguinea,Kamerun,Gabun
+SaoTomeUndPrincipe;Sao Tome Und Principe;

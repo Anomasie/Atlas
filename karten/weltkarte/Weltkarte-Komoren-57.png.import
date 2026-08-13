@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfyr05jpbsiys"
-path="res://.godot/imported/Weltkarte-Kap verde-54.png-0cdc4dac7d311f21f5489cb3a19d4b9b.ctex"
+uid="uid://bljq0xsyckpsl"
+path="res://.godot/imported/Weltkarte-Komoren-57.png-d427cd2a32388c6f4f4eb32f6865cce3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karten/weltkarte/Weltkarte-Kap verde-54.png"
-dest_files=["res://.godot/imported/Weltkarte-Kap verde-54.png-0cdc4dac7d311f21f5489cb3a19d4b9b.ctex"]
+source_file="res://karten/weltkarte/Weltkarte-Komoren-57.png"
+dest_files=["res://.godot/imported/Weltkarte-Komoren-57.png-d427cd2a32388c6f4f4eb32f6865cce3.ctex"]
 
 [params]
 

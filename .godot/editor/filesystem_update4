@@ -1,0 +1,7 @@
+res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn
+res://theme/MainTheme.tres
+res://ressourcen/shader/Blur.gdshader
+res://ressourcen/shader/Sharpen.gdshader
+res://ressourcen/shader/WaterDarker.gdshader
+res://szenen/Länderraten/Länderraten.tscn
+res://szenen/Länderraten/Länderraten.gd

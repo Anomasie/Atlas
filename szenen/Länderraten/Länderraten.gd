@@ -36,19 +36,30 @@ func open() -> void:
 func close() -> void:
 	self.queue_free()
 
-func get_known_countries(list_of_countries: Dictionary) -> int:
-	var counter : int = 0
+func get_active_countries(list_of_countries: Dictionary, duplicate_by_unknownness:bool = true) -> Array:
+	var list : Array[String] = []
+	for key in list_of_countries.keys():
+		if list_of_countries[key] < 0:
+			if duplicate_by_unknownness:
+				for i in -list_of_countries[key]:
+					list.append(key)
+			else:
+				list.append(key)
+	return list
+
+func get_known_countries(list_of_countries: Dictionary) -> Array:
+	var list : Array[String] = []
 	for key in list_of_countries.keys():
 		if list_of_countries[key] >= 0:
-			counter += 1
-	return counter
+			list.append(key)
+	return list
 
-func get_unknown_countries(known_countries: Dictionary) -> int:
-	var counter : int = 0
+func get_unknown_countries(known_countries: Dictionary) -> Array:
+	var list : Array[String] = []
 	for key in Global.countries.keys():
 		if key not in known_countries.keys():
-			counter += 1
-	return counter
+			list.append(key)
+	return list
 
 func least_known_countries(list_of_countries : Array, current_countries : Dictionary) -> Array:
 	var minimum : int = 0
@@ -81,13 +92,14 @@ func run_game() -> void:
 	var last_goal : String = ""
 	var last_choice : String = ""
 	while continue_game:
+		print("Current Countries: ", current_countries, "\nActive Countries: ", get_active_countries(current_countries, true))
 		##### CHOOSE GOAL
 		# erase last country
-		var choose_out_of : Array = Global.countries.keys()
+		var choose_out_of : Array = get_active_countries(current_countries, true)
 		choose_out_of.erase(last_goal)
 		choose_out_of.erase(last_choice)
 		# pick next goal
-		var goal : String = least_known_countries(choose_out_of, current_countries).pick_random()
+		var goal : String = choose_out_of.pick_random() #least_known_countries(choose_out_of, current_countries).pick_random()
 		last_goal = goal
 		# add goal to current_countries
 		if not goal in current_countries.keys():
@@ -103,7 +115,7 @@ func run_game() -> void:
 		# compare choice with goal
 #		print(choice, ", ", goal)
 		if choice == goal:
-			current_countries[goal] += 1
+			current_countries[goal] /= 2
 			Angeklickt.text = "Richtig! Das ist "+Global.get_country_name(choice)+"!"
 			### show highlight
 			await Weltkarte.highlight([goal], RIGHT_COLOR)
@@ -122,6 +134,7 @@ func run_game() -> void:
 			var similar_one : String = similar_sounding_countries(Global.countries.keys(), goal).pick_random()
 			if similar_one and not similar_one in current_countries.keys():
 				current_countries[similar_one] = -1
+			# all countries known
 		##### change ui
 		update_ui(current_countries)
 		##### CLOSE
@@ -129,6 +142,14 @@ func run_game() -> void:
 		await Weltkarte.hide_highlight()
 		Angeklickt.text = ""
 		Aufgabe.text = ""
+		##### END GAME?
+		if len(get_known_countries(current_countries)) == len(Global.countries.keys()):
+			continue_game = false
+		# if not enough current_countries: add one
+		while len(get_active_countries(current_countries, false)) < 4 and get_unknown_countries(current_countries):
+			print("add country! ", get_active_countries(current_countries, false), " has length smaller than 4.")
+			current_countries[get_unknown_countries(current_countries).pick_random()] = -1
+		print()
 
 func self_ok() -> void:
 	await Global.wait(0.25)
@@ -148,8 +169,8 @@ func similar_sounding_countries(choose_out_of:Array, country: String) -> Array:
 	return result
 
 func update_ui(current_countries:Dictionary) -> void:
-	GelernteCounter.text = str(get_known_countries(current_countries))
-	FehlendeCounter.text = str(get_unknown_countries(current_countries))
+	GelernteCounter.text = str(len(get_known_countries(current_countries)))
+	FehlendeCounter.text = str(len(get_unknown_countries(current_countries)))
 
 func _on_button_pressed() -> void:
 	ok.emit()
