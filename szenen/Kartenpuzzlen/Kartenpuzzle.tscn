@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clttf8lo7dc0o" path="res://szenen/Kartenpuzzlen/Kartenpuzzle.gd" id="1_4kvqp"]
 [ext_resource type="Texture2D" uid="uid://c8255ra8s1ry3" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png" id="2_36agm"]
+[ext_resource type="PackedScene" uid="uid://dokmu5qajivgt" path="res://szenen/karten/Puzzlekarte.tscn" id="3_8r6do"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kvqp"]
 content_margin_left = 10.0
@@ -35,12 +36,8 @@ offset_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource("2_36agm")
 
-[node name="AllSprites" type="Node2D" parent="." unique_id=279698405]
-
-[node name="Cam" type="Camera2D" parent="." unique_id=1634769591]
-position = Vector2(960, 540)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+[node name="Puzzlekarte" parent="." unique_id=33769356 instance=ExtResource("3_8r6do")]
+layout_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=675518290]
 
@@ -107,8 +104,21 @@ popup/item_1/id = 1
 popup/item_2/text = "keine Karte"
 popup/item_2/id = 2
 
-[connection signal="selected" from="." to="." method="_on_selected"]
-[connection signal="unselected" from="." to="." method="_on_unselected"]
+[node name="Button" type="Button" parent="CanvasLayer/Control" unique_id=978954635]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Auflösung"
+
+[connection signal="selected" from="Puzzlekarte" to="." method="_on_puzzlekarte_selected"]
+[connection signal="unselected" from="Puzzlekarte" to="." method="_on_puzzlekarte_unselected"]
 [connection signal="pressed" from="CanvasLayer/Control/OKButton" to="." method="_on_ok_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]

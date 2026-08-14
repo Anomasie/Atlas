@@ -50,7 +50,7 @@ func handle_input(event: InputEvent) -> void:
 
 func get_country(koordinaten: Vector2, guess:String = "") -> String:
 #	print("get country, guess: ", guess)
-	if not AllSprites.get_node(guess):
+	if guess and not AllSprites.get_node(guess):
 		print("ERROR in Karte.gd.get_country: No guess node existing named ", guess)
 	if guess and AllSprites.get_node(guess) is Sprite2D and check_country_is_clicked(AllSprites.get_node(guess), koordinaten):
 #		print("clicked on guess!")
@@ -152,14 +152,19 @@ func load_regions() -> void:
 func random_cohesive_countries(start_country:String = "", length=6) -> Array:
 	while not start_country or not Global.countries[start_country]["Neighbors"]:
 		start_country = Global.countries.keys().pick_random()
+	print("start country in Karte.gd: ", start_country)
 	var result : Array = [start_country]
 #	print("start with: ", start_country)
 	for _i in length - 1:
 		var new_entry : String = start_country
-		while new_entry in result:
+		var counter : int = 0
+		while new_entry in result and counter < 1000:
+			counter += 1
 			var key : String = result.pick_random()
 			if not new_entry in Global.countries.keys():
-				print("ERROR: ", key, " not in Global.countries!")
+				print("ERROR in Karte.random_cohesive_countries: ", new_entry, " not in Global.countries!")
+			elif not key in Global.countries.keys():
+				print("ERROR in Karte.random_cohesive_countries: ", key, " not in Global.countries!")
 			else:
 				new_entry = Global.countries[key]["Neighbors"].pick_random()
 #		print("add: ", new_entry)

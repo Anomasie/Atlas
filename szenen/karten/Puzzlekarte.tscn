@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://d2qp1rcqfwuxx"]
+[gd_scene format=3 uid="uid://dokmu5qajivgt"]
 
-[ext_resource type="Script" uid="uid://dk4255cncv8hb" path="res://szenen/karten/Weltkarte.gd" id="1_r4vwi"]
+[ext_resource type="Script" uid="uid://c3pqi450i4ytd" path="res://szenen/karten/PuzzleKarte.gd" id="1_c5kpk"]
 
-[node name="Weltkarte" type="Control" unique_id=33769356]
+[node name="Puzzlekarte" type="Control" unique_id=33769356]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_r4vwi")
+script = ExtResource("1_c5kpk")
 
 [node name="AllSprites" type="Node2D" parent="." unique_id=1113023665]
 

@@ -1,6 +1,7 @@
-extends PuzzleKarte
+extends Control
 
 signal ok
+signal open_main_menu
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
@@ -14,16 +15,18 @@ var continue_game : bool = true
 @onready var OKButton = $CanvasLayer/Control/OKButton
 @onready var DifficultyOption = $CanvasLayer/Control/Options/Lines/DifficultyOption
 @onready var BackgroundKarte = $Karte
+@onready var Weltkarte = $Puzzlekarte
 
 func _ready() -> void:
-	AllSprites = $AllSprites
-	Cam = $Cam
 	CountryContainer.hide()
 	load_difficulty(DifficultyOption.get_selected_id())
 	run_game()
 
-func _input(event) -> void:
-	handle_input_click(event)
+func open() -> void:
+	show()
+
+func close() -> void:
+	self.queue_free()
 
 func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
 	if DIFFICULTY_PATHS[index]:
@@ -38,22 +41,19 @@ func run_game() -> void:
 	while continue_game:
 		await puzzle()
 
-func puzzle(load_country_names : PackedStringArray = random_cohesive_countries()) -> void:
+func puzzle(load_country_names : PackedStringArray = Weltkarte.random_cohesive_countries()) -> void:
 	##### PREPARATION
 	# load countries
-	load_countries(load_country_names)
-	# shuffle a bit
-	for sprite in AllSprites.get_children():
-		sprite.position += Vector2(randf()*200, randf()*200)
+	Weltkarte.load_countries(load_country_names)
+	Weltkarte.shuffle()
 	##### await player finishing
-	while not solved(AllSprites.get_child(0).position):
-		await check_whether_right
+	while not Weltkarte.solved():
+		await Weltkarte.check_whether_right
 	# tweak until actually right
-	await tweak_right(AllSprites.get_children(), AllSprites.get_child(0).position)
+	await Weltkarte.tweak_right()
 	await self_ok()
 	##### delete old ones
-	for sprite in AllSprites.get_children():
-		sprite.hide()
+	Weltkarte.hide_all()
 
 func self_ok() -> void:
 	await Global.wait(0.25)
@@ -63,18 +63,20 @@ func self_ok() -> void:
 	return
 
 func _on_back_pressed() -> void:
-	open_main_menu.emit()
+	self.open_main_menu.emit()
 	queue_free()
-
-func _on_selected(country : String) -> void:
-	CountryLabel.text = Global.get_country_name(country)
-	CountryContainer.show()
-
-func _on_unselected(_country : String) -> void:
-	CountryContainer.hide()
 
 func _on_ok_button_pressed() -> void:
 	ok.emit()
 
 func _on_difficulty_option_item_selected(index: int) -> void:
 	load_difficulty(index)
+
+
+func _on_puzzlekarte_selected(country : String) -> void:
+	CountryLabel.text = Global.get_country_name(country)
+	CountryContainer.show()
+
+func _on_puzzlekarte_unselected(country : String) -> void:
+	pass
+	#CountryContainer.hide()

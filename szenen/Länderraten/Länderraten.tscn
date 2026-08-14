@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c17c66any7ise" path="res://szenen/Länderraten/Länderraten.gd" id="1_8etso"]
 [ext_resource type="Texture2D" uid="uid://d238ukxiv5cgk" path="res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png" id="2_11qh7"]
-[ext_resource type="PackedScene" uid="uid://d2qp1rcqfwuxx" path="res://szenen/karten/Weltkarte.tscn" id="2_35arq"]
+[ext_resource type="PackedScene" uid="uid://d2qp1rcqfwuxx" path="res://szenen/karten/Klickkarte.tscn" id="2_35arq"]
 [ext_resource type="PackedScene" uid="uid://c1cm6j4t5m2it" path="res://szenen/UIElements/RegionSelection.tscn" id="4_11qh7"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gb4g8"]

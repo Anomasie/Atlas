@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d2qp1rcqfwuxx"]
+
+[ext_resource type="Script" uid="uid://dk4255cncv8hb" path="res://szenen/karten/Klickkarte.gd" id="1_r4vwi"]
+
+[node name="KlickKarte" type="Control" unique_id=33769356]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r4vwi")
+
+[node name="AllSprites" type="Node2D" parent="." unique_id=1113023665]
+
+[node name="RegionSprites" type="Node2D" parent="." unique_id=1456745886]
+
+[node name="Cam" type="Camera2D" parent="." unique_id=3284071]
+position = Vector2(960, 540)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="Layer" type="CanvasLayer" parent="." unique_id=1263948228]
+
+[node name="Button" type="Button" parent="Layer" unique_id=1966443458]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="pressed" from="Layer/Button" to="." method="_on_button_pressed"]
