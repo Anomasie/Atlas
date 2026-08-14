@@ -16,10 +16,15 @@ var continue_game : bool = true
 @onready var DifficultyOption = $CanvasLayer/Control/Options/Lines/DifficultyOption
 @onready var BackgroundKarte = $Karte
 @onready var Weltkarte = $Puzzlekarte
+@onready var RegionSelection = $CanvasLayer/Control/Regionsauswahl/RegionSelection
+
+var active_regions : Array[String] = ["Orient"]
+var possible_start_countries : Array[String] = []
 
 func _ready() -> void:
 	CountryContainer.hide()
 	load_difficulty(DifficultyOption.get_selected_id())
+	update_active_regions()
 	run_game()
 
 func open() -> void:
@@ -39,9 +44,12 @@ func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
 
 func run_game() -> void:
 	while continue_game:
-		await puzzle()
+		var puzzle_countries : PackedStringArray = Weltkarte.random_cohesive_countries(
+			possible_start_countries.pick_random()
+		)
+		await puzzle(puzzle_countries)
 
-func puzzle(load_country_names : PackedStringArray = Weltkarte.random_cohesive_countries()) -> void:
+func puzzle(load_country_names : PackedStringArray) -> void:
 	##### PREPARATION
 	# load countries
 	Weltkarte.load_countries(load_country_names)
@@ -61,6 +69,10 @@ func self_ok() -> void:
 	await ok
 	OKButton.hide()
 	return
+
+func update_active_regions(new_regions : Array[String] = RegionSelection.get_active_regions()) -> void:
+	active_regions = new_regions
+	possible_start_countries = Global.get_countries_in_regions(active_regions)
 
 func _on_back_pressed() -> void:
 	self.open_main_menu.emit()
@@ -84,3 +96,6 @@ func _on_puzzlekarte_unselected(country : String) -> void:
 func _on_auflosung_pressed() -> void:
 	await Weltkarte.tweak_right()
 	Weltkarte.check_whether_right.emit()
+
+func _on_region_selection_regions_changed(new_regions : Array[String]) -> void:
+	update_active_regions(new_regions)

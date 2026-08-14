@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://clttf8lo7dc0o" path="res://szenen/Kartenpuzzlen/Kartenpuzzle.gd" id="1_4kvqp"]
 [ext_resource type="Texture2D" uid="uid://c8255ra8s1ry3" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png" id="2_36agm"]
 [ext_resource type="PackedScene" uid="uid://dokmu5qajivgt" path="res://szenen/karten/Puzzlekarte.tscn" id="3_8r6do"]
+[ext_resource type="PackedScene" uid="uid://c1cm6j4t5m2it" path="res://szenen/UIElements/RegionSelection.tscn" id="4_infum"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kvqp"]
 content_margin_left = 10.0
@@ -117,9 +118,23 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Auflösung"
 
+[node name="Regionsauswahl" type="PanelContainer" parent="CanvasLayer/Control" unique_id=1528534104]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 270.0
+offset_bottom = 13.0
+grow_vertical = 0
+
+[node name="RegionSelection" parent="CanvasLayer/Control/Regionsauswahl" unique_id=1742747368 instance=ExtResource("4_infum")]
+layout_mode = 2
+
 [connection signal="selected" from="Puzzlekarte" to="." method="_on_puzzlekarte_selected"]
 [connection signal="unselected" from="Puzzlekarte" to="." method="_on_puzzlekarte_unselected"]
 [connection signal="pressed" from="CanvasLayer/Control/OKButton" to="." method="_on_ok_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]
 [connection signal="pressed" from="CanvasLayer/Control/Auflosung" to="." method="_on_auflosung_pressed"]
+[connection signal="regions_changed" from="CanvasLayer/Control/Regionsauswahl/RegionSelection" to="." method="_on_region_selection_regions_changed"]

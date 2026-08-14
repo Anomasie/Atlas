@@ -15,6 +15,13 @@ var language : String = "German"
 func _ready() -> void:
 	load_country_list()
 
+func get_countries_in_regions(regions : Array[String]) -> Array[String]:
+	var allowed_countries : Array[String] = []
+	for country in countries.keys():
+		if countries[country]["Region"] in regions:
+			allowed_countries.append(country)
+	return allowed_countries
+
 func get_country_name(load_country_name : String) -> String:
 	if countries.has(load_country_name) and countries[load_country_name].has(language):
 		return countries[load_country_name][language]
