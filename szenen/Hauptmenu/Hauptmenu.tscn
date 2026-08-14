@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://g02bumek677i" path="res://szenen/Hauptmenu/Hauptmenu.gd" id="1_6d0cj"]
 [ext_resource type="Texture2D" uid="uid://c8255ra8s1ry3" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png" id="2_itusj"]
+[ext_resource type="PackedScene" uid="uid://c1cm6j4t5m2it" path="res://szenen/UIElements/RegionSelection.tscn" id="3_dongg"]
 
 [node name="Hauptmenu" type="Control" unique_id=241467984]
 layout_mode = 3
@@ -23,21 +24,20 @@ grow_vertical = 2
 texture = ExtResource("2_itusj")
 expand_mode = 1
 
-[node name="Lines" type="VBoxContainer" parent="." unique_id=88468087]
+[node name="Screen" type="MarginContainer" parent="." unique_id=2122608485]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -112.5
-offset_top = -138.0
-offset_right = 112.5
-offset_bottom = 138.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Lines" unique_id=1407476861]
+[node name="Lines" type="VBoxContainer" parent="Screen" unique_id=88468087]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Screen/Lines" unique_id=1407476861]
 layout_mode = 2
 theme_type_variation = &"MainLabel"
 text = "Stadt
@@ -45,24 +45,34 @@ Land
 Fluss"
 horizontal_alignment = 1
 
-[node name="Länderplatzieren" type="Button" parent="Lines" unique_id=788861084]
+[node name="Länderplatzieren" type="Button" parent="Screen/Lines" unique_id=788861084]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Länder positionieren"
 
-[node name="Länderraten" type="Button" parent="Lines" unique_id=312670196]
+[node name="Länderraten" type="Button" parent="Screen/Lines" unique_id=312670196]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Länderraten"
 
-[node name="Kartenpuzzle" type="Button" parent="Lines" unique_id=24704060]
+[node name="Kartenpuzzle" type="Button" parent="Screen/Lines" unique_id=24704060]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "Länderpuzzeln"
 
-[connection signal="pressed" from="Lines/Länderplatzieren" to="." method="_on_länderplatzieren_pressed"]
-[connection signal="pressed" from="Lines/Länderraten" to="." method="_on_länderraten_pressed"]
-[connection signal="pressed" from="Lines/Kartenpuzzle" to="." method="_on_kartenpuzzle_pressed"]
+[node name="Beenden" type="Button" parent="Screen/Lines" unique_id=599689891]
+layout_mode = 2
+text = "Spiel beenden"
+
+[node name="RegionSelection" parent="Screen" unique_id=1742747368 instance=ExtResource("3_dongg")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[connection signal="pressed" from="Screen/Lines/Länderplatzieren" to="." method="_on_länderplatzieren_pressed"]
+[connection signal="pressed" from="Screen/Lines/Länderraten" to="." method="_on_länderraten_pressed"]
+[connection signal="pressed" from="Screen/Lines/Kartenpuzzle" to="." method="_on_kartenpuzzle_pressed"]
+[connection signal="pressed" from="Screen/Lines/Beenden" to="." method="_on_beenden_pressed"]

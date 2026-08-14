@@ -42,8 +42,7 @@ layout_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=675518290]
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1482478850]
-layout_mode = 3
+[node name="Control" type="MarginContainer" parent="CanvasLayer" unique_id=1763388079]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -52,14 +51,9 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="LabelContainer" type="PanelContainer" parent="CanvasLayer/Control" unique_id=700571898]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -10.5
-offset_right = 10.5
-offset_bottom = 45.0
-grow_horizontal = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="CountryLabel" type="Label" parent="CanvasLayer/Control/LabelContainer" unique_id=1677252492]
 layout_mode = 2
@@ -67,28 +61,19 @@ text = "Madagaskar"
 horizontal_alignment = 1
 
 [node name="OKButton" type="Button" parent="CanvasLayer/Control" unique_id=1842270732]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 flat = true
 
 [node name="Back" type="Button" parent="CanvasLayer/Control" unique_id=1240314772]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 text = "←"
 
 [node name="Options" type="PanelContainer" parent="CanvasLayer/Control" unique_id=842967084]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -20.0
-offset_bottom = 8.0
-grow_horizontal = 0
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4kvqp")
 
 [node name="Lines" type="VBoxContainer" parent="CanvasLayer/Control/Options" unique_id=971004893]
@@ -106,27 +91,15 @@ popup/item_2/text = "keine Karte"
 popup/item_2/id = 2
 
 [node name="Auflosung" type="Button" parent="CanvasLayer/Control" unique_id=978954635]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -8.0
-grow_horizontal = 0
-grow_vertical = 0
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 text = "Auflösung"
 
 [node name="Regionsauswahl" type="PanelContainer" parent="CanvasLayer/Control" unique_id=1528534104]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 270.0
-offset_bottom = 13.0
-grow_vertical = 0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
 [node name="RegionSelection" parent="CanvasLayer/Control/Regionsauswahl" unique_id=1742747368 instance=ExtResource("4_m4ii1")]
 layout_mode = 2

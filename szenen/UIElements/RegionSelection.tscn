@@ -8,6 +8,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"NoMarginContainer"
 script = ExtResource("1_siw0f")
 
 [node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1410662907]

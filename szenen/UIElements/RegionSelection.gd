@@ -9,6 +9,7 @@ signal regions_changed
 
 func _ready() -> void:
 	load_region_checkboxes()
+	load_player_data()
 
 func get_active_regions() -> Array[String]:
 	var result : Array[String] = []
@@ -23,6 +24,13 @@ func get_active_regions() -> Array[String]:
 		return []
 	else:
 		return result
+
+func load_player_data() -> void:
+	for big_region in RegionCheckBoxes:
+		big_region.button_pressed = Global.selected_regions_big[big_region.name]
+	for small_region_menu in RegionCheckMenus:
+		for small_region in small_region_menu.get_children():
+			small_region.button_pressed = Global.selected_regions_small[small_region.name]
 
 func load_region_checkboxes() -> void:
 	for region in Global.REGION_LIST:
@@ -52,5 +60,13 @@ func load_region_checkboxes() -> void:
 			new_menu_lines.add_child(nested_checkbox)
 #			NestedCheckBoxes.append(new_checkbox)
 
+func update_global_player_data() -> void:
+	for big_region in RegionCheckBoxes:
+		Global.selected_regions_big[big_region.name] = big_region.button_pressed
+	for small_region_menu in RegionCheckMenus:
+		for small_region in small_region_menu.get_children():
+			Global.selected_regions_small[small_region.name] = small_region.button_pressed
+
 func _on_regions_changed() -> void:
+	update_global_player_data()
 	regions_changed.emit(get_active_regions())

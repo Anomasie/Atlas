@@ -45,8 +45,7 @@ layout_mode = 1
 
 [node name="Top" type="CanvasLayer" parent="." unique_id=1077104715]
 
-[node name="Control" type="Control" parent="Top" unique_id=547992107]
-layout_mode = 3
+[node name="Control" type="MarginContainer" parent="Top" unique_id=2031399723]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,23 +54,13 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Button" type="Button" parent="Top/Control" unique_id=1264118283]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 flat = true
 
 [node name="Results" type="PanelContainer" parent="Top/Control" unique_id=2115653130]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -128.0
-offset_right = 128.0
-offset_bottom = 86.0
-grow_horizontal = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="Lines" type="VBoxContainer" parent="Top/Control/Results" unique_id=447585720]
 layout_mode = 2
@@ -87,13 +76,9 @@ text = "Das war"
 horizontal_alignment = 1
 
 [node name="Options" type="PanelContainer" parent="Top/Control" unique_id=2087983510]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -20.0
-offset_bottom = 8.0
-grow_horizontal = 0
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_35arq")
 
 [node name="Lines" type="VBoxContainer" parent="Top/Control/Options" unique_id=909145903]
@@ -111,13 +96,9 @@ popup/item_2/text = "keine Karte"
 popup/item_2/id = 2
 
 [node name="Statistik" type="PanelContainer" parent="Top/Control" unique_id=426769987]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -8.0
-offset_right = 20.0
-grow_vertical = 0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
 [node name="Lines" type="VBoxContainer" parent="Top/Control/Statistik" unique_id=1483187966]
 layout_mode = 2

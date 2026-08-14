@@ -73,9 +73,6 @@ func _on_back_pressed() -> void:
 	open_main_menu.emit()
 	queue_free()
 
-func _on_add_button_pressed() -> void:
-	Weltkarte.load_countries([Global.countries.keys().pick_random()])
-
 func _on_difficulty_option_item_selected(index: int) -> void:
 	load_difficulty(index)
 

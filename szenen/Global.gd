@@ -12,6 +12,31 @@ var countries : Dictionary = {}
 var countries_by_region : Dictionary = {}
 var language : String = "German"
 
+var selected_regions_big : Dictionary[String, bool] = {
+	"Afrika": true,
+	"Europa": true,
+	"Amerika": true,
+	"Ozeanien": true,
+	"Asien": true
+}
+
+var selected_regions_small : Dictionary[String, bool] = {
+	"Westafrika": true,
+	"Ostafrika": true,
+	"Sahara": true,
+	"Südafrika": true,
+	"Zentralafrika": true,
+	"Westeuropa": true,
+	"Osteuropa": true,
+	"Nordamerika": true,
+	"Karibik": false,
+	"Sudamerika": true,
+	"Ozeanien": true,
+	"Ostasien": true,
+	"Himalaya": true,
+	"Orient": true
+}
+
 func _ready() -> void:
 	load_country_list()
 

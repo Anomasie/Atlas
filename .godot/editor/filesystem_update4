@@ -3,6 +3,11 @@ res://theme/MainTheme.tres
 res://ressourcen/shader/Blur.gdshader
 res://ressourcen/shader/Sharpen.gdshader
 res://ressourcen/shader/WaterDarker.gdshader
+res://szenen/UIElements/RegionSelection.tscn
+res://szenen/UIElements/RegionSelection.gd
+res://szenen/Global.gd
+res://szenen/Länderpuzzeln/Länderpuzzle.tscn
+res://szenen/Länderraten/Länderraten.tscn
+res://szenen/Hauptmenu/Hauptmenu.tscn
+res://szenen/Hauptmenu/Hauptmenu.gd
 res://szenen/Länderplatzieren/Länderplatzieren.gd
-res://szenen/karten/Puzzlekarte.tscn
-res://szenen/karten/Puzzlekarte.gd

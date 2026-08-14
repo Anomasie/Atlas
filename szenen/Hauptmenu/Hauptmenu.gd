@@ -4,7 +4,10 @@ signal start_länderraten
 signal start_kartenpuzzle
 signal start_länderplatzieren
 
+@onready var RegionSelection = $Screen/RegionSelection
+
 func open() -> void:
+	RegionSelection.load_player_data()
 	show()
 
 func close() -> void:
@@ -18,3 +21,7 @@ func _on_kartenpuzzle_pressed() -> void:
 
 func _on_länderplatzieren_pressed() -> void:
 	start_länderplatzieren.emit()
+
+
+func _on_beenden_pressed() -> void:
+	get_tree().quit()

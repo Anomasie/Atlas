@@ -45,8 +45,7 @@ layout_mode = 1
 
 [node name="Top" type="CanvasLayer" parent="." unique_id=1631853549]
 
-[node name="Control" type="Control" parent="Top" unique_id=1900381032]
-layout_mode = 3
+[node name="Control" type="MarginContainer" parent="Top" unique_id=178275572]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,14 +54,9 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="LabelContainer" type="PanelContainer" parent="Top/Control" unique_id=1642825504]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -77.0
-offset_right = 77.0
-offset_bottom = 45.0
-grow_horizontal = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 
 [node name="CountryLabel" type="Label" parent="Top/Control/LabelContainer" unique_id=442295105]
 layout_mode = 2
@@ -70,28 +64,19 @@ text = "Madagaskar"
 horizontal_alignment = 1
 
 [node name="OKButton" type="Button" parent="Top/Control" unique_id=884305465]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 flat = true
 
 [node name="Back" type="Button" parent="Top/Control" unique_id=1993473451]
-layout_mode = 0
-offset_right = 23.0
-offset_bottom = 31.0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 text = "←"
 
 [node name="Options" type="PanelContainer" parent="Top/Control" unique_id=725141803]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -20.0
-offset_bottom = 8.0
-grow_horizontal = 0
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_28rs3")
 
 [node name="Lines" type="VBoxContainer" parent="Top/Control/Options" unique_id=1986816803]
@@ -108,32 +93,16 @@ popup/item_1/id = 1
 popup/item_2/text = "keine Karte"
 popup/item_2/id = 2
 
-[node name="AddButton" type="Button" parent="Top/Control/Options/Lines" unique_id=1482125466]
-layout_mode = 2
-text = "+"
-
 [node name="Auflosung" type="Button" parent="Top/Control" unique_id=1954899166]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -134.0
-offset_top = -45.0
-grow_horizontal = 0
-grow_vertical = 0
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 text = "Auflösung"
 
 [node name="Regionsauswahl" type="PanelContainer" parent="Top/Control" unique_id=1934956359]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 270.0
-offset_bottom = 13.0
-grow_vertical = 0
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
 [node name="RegionSelection" parent="Top/Control/Regionsauswahl" unique_id=1742747368 instance=ExtResource("4_hfwk6")]
 layout_mode = 2
@@ -143,6 +112,5 @@ layout_mode = 2
 [connection signal="pressed" from="Top/Control/OKButton" to="." method="_on_ok_button_pressed"]
 [connection signal="pressed" from="Top/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="item_selected" from="Top/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]
-[connection signal="pressed" from="Top/Control/Options/Lines/AddButton" to="." method="_on_add_button_pressed"]
 [connection signal="pressed" from="Top/Control/Auflosung" to="." method="_on_auflosung_pressed"]
 [connection signal="regions_changed" from="Top/Control/Regionsauswahl/RegionSelection" to="." method="_on_region_selection_regions_changed"]

@@ -1,9 +1,9 @@
+res://ressourcen/
 res://szenen/karten/
 res://szenen/UIElements/
 res://
 res://karten/Drüberlegen/
 res://ressourcen/shader/
-res://ressourcen/
 res://theme/fonts/
 res://karten/quellen/
 res://karten/weltkarte/
@@ -11,6 +11,5 @@ res://theme/
 res://szenen/
 res://szenen/Hauptmenu/
 res://szenen/Länderplatzieren/
-res://szenen/Kartenpuzzlen/
 res://szenen/tests/
 res://szenen/Länderraten/
