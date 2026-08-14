@@ -80,3 +80,7 @@ func _on_puzzlekarte_selected(country : String) -> void:
 func _on_puzzlekarte_unselected(country : String) -> void:
 	pass
 	#CountryContainer.hide()
+
+func _on_auflosung_pressed() -> void:
+	await Weltkarte.tweak_right()
+	Weltkarte.check_whether_right.emit()

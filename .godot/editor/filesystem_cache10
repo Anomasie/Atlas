@@ -1,9 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1786702920
+::res://::1786703123
 icon.png::CompressedTexture2D::3756574423459987695::1786596145::1786538442::1::::<><><>0<>0<>802b015c97ce73dc33adf2b94195969c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 Ideas.txt::TextFile::-1::1786598119::0::1::::<><><>0<>0<><>::
-::res://karten/::1786648761
-Länder.csv::Translation::8885691838996131235::1786648694::1786648761::1::::<><><>0<>0<>f2c96af895d5c2257b3e9d22cb8dac86<>::
+::res://karten/::1786703352
+Länder.csv::Translation::8885691838996131235::1786703352::1786703356::1::::<><><>0<>0<>f2c96af895d5c2257b3e9d22cb8dac86<>::
 ::res://karten/Drüberlegen/::1785817862
 EigentlicheKarte-Physisch-1.png::CompressedTexture2D::7594997925267630666::1785659614::1785658369::1::::<><><>0<>0<>aafe5923b25d36cbf1a2c3afc6394495<>res://.godot/imported/EigentlicheKarte-Physisch-1.png-7c1d646844695e22a9907ca276dfc660.ctex::
 EigentlicheKarte-Physisch-2.png::CompressedTexture2D::7146687384822443424::1785817800::1785817802::1::::<><><>0<>0<>68c6530725badd43bf693c1d047a8597<>res://.godot/imported/EigentlicheKarte-Physisch-2.png-f6a44b248f73bb6de61cb9be8b8b3466.ctex::
@@ -209,10 +209,10 @@ Weltkarte-Zypern-149.png::CompressedTexture2D::1297936669895452176::1786647627::
 ::res://ressourcen/::1785786919
 StyleBoxNormalButton.tres::StyleBoxFlat::7375180781779073182::1785786919::0::1::::<><><>0<>0<><>::
 StyleBoxPanel.tres::StyleBoxFlat::5748737782416114985::1785780040::0::1::::<><><>0<>0<><>::
-::res://ressourcen/shader/::1786698239
-Blur.gdshader::Shader::1684294746860728092::1786698239::0::1::::<><><>0<>0<><>::
-Sharpen.gdshader::Shader::2179169371714450131::1786698239::0::1::::<><><>0<>0<><>::
-WaterDarker.gdshader::Shader::7863412057464977034::1786698239::0::1::::<><><>0<>0<><>::
+::res://ressourcen/shader/::1786702978
+Blur.gdshader::Shader::1684294746860728092::1786702978::0::1::::<><><>0<>0<><>::
+Sharpen.gdshader::Shader::2179169371714450131::1786702978::0::1::::<><><>0<>0<><>::
+WaterDarker.gdshader::Shader::7863412057464977034::1786702978::0::1::::<><><>0<>0<><>::
 ::res://szenen/::1786701965
 Game.gd::GDScript::5977549055036802389::1785783621::0::1::::<>Control<><>0<>0<><>::
 GAME.tscn::PackedScene::4733634564341997266::1786537899::0::1::::<><><>0<>0<><>::uid://crftmhx66lre8::::res://szenen/Game.gd<>uid://bfgpf40rudv26::::res://szenen/Hauptmenu/Hauptmenu.tscn<>uid://x85dagtd5moq::::res://ressourcen/shader/Blur.gdshader<>uid://6buuo7pelf7h::::res://ressourcen/shader/Sharpen.gdshader
@@ -220,15 +220,15 @@ Global.gd::GDScript::6625700647797834992::1786701426::0::1::::<>Node<><>0<>0<><>
 ::res://szenen/Hauptmenu/::1785833339
 Hauptmenu.gd::GDScript::474384719479305568::1785678870::0::1::::<>Control<><>0<>0<><>::
 Hauptmenu.tscn::PackedScene::2750672414865179713::1785833339::0::1::::<><><>0<>0<><>::uid://g02bumek677i::::res://szenen/Hauptmenu/Hauptmenu.gd<>uid://c8255ra8s1ry3::::res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png
-::res://szenen/karten/::1786702837
-Karte.gd::GDScript::3560556875650787420::1786702837::0::1::::Karte<>Control<><>0<>0<><>::
+::res://szenen/karten/::1786703176
+Karte.gd::GDScript::3560556875650787420::1786703176::0::1::::Karte<>Control<><>0<>0<><>::
 Klickkarte.gd::GDScript::7922711954333512027::1786701934::0::1::::KlickKarte<>Karte<><>0<>0<><>::
 Klickkarte.tscn::PackedScene::9088348955625256565::1786701978::0::1::::<><><>0<>0<><>::uid://dk4255cncv8hb::::res://szenen/karten/Klickkarte.gd
-PuzzleKarte.gd::GDScript::6770081984466539249::1786702426::0::1::::PuzzleKarte<>Karte<><>0<>0<><>::
-Puzzlekarte.tscn::PackedScene::8163315559773390723::1786702666::0::1::::<><><>0<>0<><>::uid://c3pqi450i4ytd::::res://szenen/karten/PuzzleKarte.gd
-::res://szenen/Kartenpuzzlen/::1786702896
-Kartenpuzzle.gd::GDScript::5585306127506164480::1786702715::0::1::::<>Control<><>0<>0<><>::
-Kartenpuzzle.tscn::PackedScene::8735354589426351280::1786702896::0::1::::<><><>0<>0<><>::uid://clttf8lo7dc0o::::res://szenen/Kartenpuzzlen/Kartenpuzzle.gd<>uid://c8255ra8s1ry3::::res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png<>uid://dokmu5qajivgt::::res://szenen/karten/Puzzlekarte.tscn
+Puzzlekarte.gd::GDScript::6770081984466539249::1786703110::0::1::::Puzzlekarte<>Karte<><>0<>0<><>::
+Puzzlekarte.tscn::PackedScene::8163315559773390723::1786703123::0::1::::<><><>0<>0<><>::uid://c3pqi450i4ytd::::res://szenen/karten/Puzzlekarte.gd
+::res://szenen/Kartenpuzzlen/::1786703159
+Kartenpuzzle.gd::GDScript::5585306127506164480::1786702997::0::1::::<>Control<><>0<>0<><>::
+Kartenpuzzle.tscn::PackedScene::8735354589426351280::1786703159::0::1::::<><><>0<>0<><>::uid://clttf8lo7dc0o::::res://szenen/Kartenpuzzlen/Kartenpuzzle.gd<>uid://c8255ra8s1ry3::::res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png<>uid://dokmu5qajivgt::::res://szenen/karten/Puzzlekarte.tscn
 ::res://szenen/Länderplatzieren/::1786701852
 Länderplatzieren.gd::GDScript::3993851161853523080::1785788148::0::1::::<>PuzzleKarte<><>0<>0<><>::
 Länderplatzieren.tscn::PackedScene::7261459853985512061::1786701852::0::1::::<><><>0<>0<><>::uid://bw5we61celoo3::::res://szenen/Länderplatzieren/Länderplatzieren.gd<>uid://dghcrhfew5euc::::res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png
@@ -240,8 +240,8 @@ Test.tscn::PackedScene::7932757369885711510::1785662789::0::1::::<><><>0<>0<><>:
 ::res://szenen/UIElements/::1786701549
 RegionSelection.gd::GDScript::107602231951574187::1786701475::0::1::::<>Control<><>0<>0<><>::
 RegionSelection.tscn::PackedScene::6602664539420758639::1786701549::0::1::::<><><>0<>0<><>::uid://bsegtfhpffod::::res://szenen/UIElements/RegionSelection.gd
-::res://theme/::1786698239
-MainTheme.tres::Theme::8984836791973754383::1786698239::0::1::::<><><>0<>0<><>::uid://c1vr4ij087cmb::::res://theme/fonts/Some Time Later.otf<>uid://ddcufdltt36wg::::res://ressourcen/StyleBoxNormalButton.tres<>uid://dwa2umrp18m40::::res://theme/fonts/Bimbo_JVE.ttf<>uid://cn5y4vksf4eqb::::res://ressourcen/StyleBoxPanel.tres
+::res://theme/::1786702978
+MainTheme.tres::Theme::8984836791973754383::1786702978::0::1::::<><><>0<>0<><>::uid://c1vr4ij087cmb::::res://theme/fonts/Some Time Later.otf<>uid://ddcufdltt36wg::::res://ressourcen/StyleBoxNormalButton.tres<>uid://dwa2umrp18m40::::res://theme/fonts/Bimbo_JVE.ttf<>uid://cn5y4vksf4eqb::::res://ressourcen/StyleBoxPanel.tres
 Quellen.txt::TextFile::-1::1785783915::0::1::::<><><>0<>0<><>::
 ThemeExplained.txt::TextFile::-1::1785819867::0::1::::<><><>0<>0<><>::
 ::res://theme/fonts/::1785772563

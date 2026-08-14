@@ -1,0 +1,9 @@
+res://szenen/Kartenpuzzlen/Kartenpuzzle.gd
+res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn
+res://theme/MainTheme.tres
+res://ressourcen/shader/Blur.gdshader
+res://ressourcen/shader/Sharpen.gdshader
+res://ressourcen/shader/WaterDarker.gdshader
+res://szenen/karten/Puzzlekarte.tscn
+res://szenen/karten/PuzzleKarte.gd
+res://szenen/karten/Karte.gd

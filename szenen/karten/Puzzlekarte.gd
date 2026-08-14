@@ -1,5 +1,5 @@
 extends Karte
-class_name PuzzleKarte
+class_name Puzzlekarte
 
 signal check_whether_right
 signal selected

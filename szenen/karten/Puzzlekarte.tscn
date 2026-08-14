@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dokmu5qajivgt"]
 
-[ext_resource type="Script" uid="uid://c3pqi450i4ytd" path="res://szenen/karten/PuzzleKarte.gd" id="1_c5kpk"]
+[ext_resource type="Script" uid="uid://c3pqi450i4ytd" path="res://szenen/karten/Puzzlekarte.gd" id="1_c5kpk"]
 
 [node name="Puzzlekarte" type="Control" unique_id=33769356]
 layout_mode = 3
