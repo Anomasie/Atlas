@@ -1,7 +1,7 @@
-Button
-MarginContainer
 PanelContainer
 Label
+Button
+MarginContainer
 VBoxContainer
 Panel
 FoldableContainer

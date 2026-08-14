@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dth1foskdbxhy"]
+
+[ext_resource type="Script" uid="uid://dgba4byrco15p" path="res://szenen/karten/Ländergrößenlader.gd" id="1_glugc"]
+
+[node name="Ländergrößenlader" type="Control" unique_id=23756171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glugc")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2029170163]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 10.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WarteLabel" type="Label" parent="PanelContainer" unique_id=722277364]
+layout_mode = 2

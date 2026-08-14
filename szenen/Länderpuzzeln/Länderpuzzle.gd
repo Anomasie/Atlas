@@ -57,7 +57,7 @@ func puzzle(load_country_names : PackedStringArray) -> void:
 	##### PREPARATION
 	# load countries
 	Weltkarte.load_countries(load_country_names)
-	Weltkarte.shuffle()
+	Weltkarte.shuffle(true)
 	##### await player finishing
 	while not Weltkarte.solved():
 		await Weltkarte.check_whether_right

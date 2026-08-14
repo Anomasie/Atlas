@@ -48,11 +48,18 @@ func right_position(country_position, origin:Vector2 = Vector2.ZERO) -> bool:
 	else:
 		return true
 
-func shuffle() -> void:
+func shuffle(rotating : bool = true) -> void:
+	var counter : int = 0
 	# shuffle a bit
 	for sprite in AllSprites.get_children():
 		if sprite.visible:
-			sprite.position += Vector2(randf()*200, randf()*200)
+			if sprite.name in Global.countries.keys():
+				sprite.position = self.size/2 - Vector2(Global.countries[sprite.name]["Rect"])
+				if rotating:
+					sprite.position += Vector2(150, 0).rotated(9.0 * counter)
+				counter += 1
+			else:
+				print("ERROR in Puzzlekarte.shuffle: Country named ", sprite.name, " not found in Global.countries")
 
 func solved(origin : Vector2 = AllSprites.get_child(0).position) -> bool:
 	for sprite in AllSprites.get_children():

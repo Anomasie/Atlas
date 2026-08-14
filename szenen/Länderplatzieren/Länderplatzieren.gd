@@ -41,7 +41,7 @@ func puzzle(load_country_name: String = possible_countries.pick_random()) -> voi
 	##### PREPARATION
 	# load countries
 	Weltkarte.load_countries([load_country_name])
-	Weltkarte.shuffle()
+	Weltkarte.shuffle(false)
 	CountryLabel.text = Global.get_country_name(load_country_name)
 	##### await player finishing
 	while not Weltkarte.solved(BackgroundKarte.position):

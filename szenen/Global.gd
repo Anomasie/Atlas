@@ -56,6 +56,7 @@ func get_country_name(load_country_name : String) -> String:
 func load_country_list() -> void:
 	var file = FileAccess.open("res://karten/Länder.csv", FileAccess.READ)
 	var file_text : PackedStringArray = file.get_as_text().split("\n", false)
+	var ländergrößen : Dictionary[String, Vector2i] = get_ländergrößen()
 	var keys = file_text[0].split(";")
 	file_text.remove_at(0)
 	countries = {}
@@ -69,11 +70,25 @@ func load_country_list() -> void:
 				countries[this_name][keys[i]] = row_split[i]
 			else:
 				countries[this_name][keys[i]] = Array(row_split[i].split(","))
+		# add ländergrößen
+		if this_name in ländergrößen.keys():
+			countries[this_name]["Rect"] = ländergrößen[this_name]
+		else:
+			print("ERROR in Global.load_country_list: Country named ", this_name, " has no Ländergröße")
+			countries[this_name]["Rect"] = Vector2i.ZERO
 		# add to countries_by_region
 		var this_region : String = countries[this_name]["Region"]
 		if not this_region in countries_by_region.keys():
 			countries_by_region[this_region] = {}
 		countries_by_region[this_region][this_name] = countries[this_name]
+
+func get_ländergrößen() -> Dictionary[String, Vector2i]:
+	var file = FileAccess.open("res://karten/Ländergrößen.csv", FileAccess.READ).get_as_text().split("\n", false)
+	var dict : Dictionary[String, Vector2i] = {}
+	for row in file:
+		var array = row.split(";", false)
+		dict[array[0]] = Vector2i(int(array[1]), int(array[2]))
+	return dict
 
 func wait(wait_time: float = 1.0) -> void:
 	if wait_time > 0:
