@@ -1,12 +1,10 @@
 extends Node
 
-const REGION_LIST = {
+const REGION_LIST : Dictionary[String, Array] = {
 	"Afrika": ["Westafrika", "Ostafrika", "Sahara", "Südafrika", "Zentralafrika"],
 	"Europa": ["Westeuropa", "Osteuropa"],
-	"Nordamerika": ["Nordamerika"],
-	"Südamerika": ["Sudamerika"],
-	"Karibik": ["Karibik"],
-	"Ozeanien": [""],
+	"Amerika": ["Nordamerika", "Karibik", "Sudamerika"],
+	"Ozeanien": [],
 	"Asien": ["Ostasien", "Himalaya", "Orient"]
 }
 

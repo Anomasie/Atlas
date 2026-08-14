@@ -28,7 +28,7 @@ func check_country_is_clicked(node: Sprite2D, koordinaten: Vector2) -> bool:
 	if image.get_width() > check_koords.x and check_koords.x >= 0 and image.get_height() > check_koords.y and check_koords.y >= 0:
 		var color = image.get_pixel(check_koords.x, check_koords.y)
 		if color == Color.WHITE:
-			print("found click in ", node.name)
+#			print("found click in ", node.name)
 			return true
 	return false
 
@@ -49,22 +49,22 @@ func handle_input(event: InputEvent) -> void:
 		Cam.zoom /= 1.1
 
 func get_country(koordinaten: Vector2, guess:String = "") -> String:
-	print("get country, guess: ", guess)
+#	print("get country, guess: ", guess)
 	if not AllSprites.get_node(guess):
 		print("ERROR in Karte.gd.get_country: No guess node existing named ", guess)
 	if guess and AllSprites.get_node(guess) is Sprite2D and check_country_is_clicked(AllSprites.get_node(guess), koordinaten):
-		print("clicked on guess!")
+#		print("clicked on guess!")
 		return guess
-	print("get country not guess")
+#	print("get country not guess")
 	if RegionSprites and RegionSprites.get_children():
-		print("search by region!")
+#		print("search by region!")
 		for region in RegionSprites.get_children():
-			print("check ", region.name)
+#			print("check ", region.name)
 			if region.visible and region is Sprite2D and check_country_is_clicked(region, koordinaten):
-				print("search in region ", region.name)
+#				print("search in region ", region.name)
 				return get_country_in_region(region.name, koordinaten)
 	else:
-		print("search without region")
+#		print("search without region")
 		for kid in AllSprites.get_children():
 			if kid.visible and kid is Sprite2D and check_country_is_clicked(kid, koordinaten):
 				return kid.name
@@ -72,9 +72,9 @@ func get_country(koordinaten: Vector2, guess:String = "") -> String:
 	return ""
 
 func get_country_in_region(region: String, koordinaten):
-	print("checking now in ", region)
+#	print("checking now in ", region)
 	for country in Global.countries_by_region[region].keys():
-		print("checking:::: ", country)
+#		print("checking:::: ", country)
 		if not AllSprites.get_node(country):
 			print("ERROR in Karte.gd.get_country_in_region: No node exists named ", country)
 		if check_country_is_clicked(
@@ -118,7 +118,7 @@ func load_countries(to_add_ones : Array = []) -> void:
 		if len(item.split("-")) > 1:
 			var item_name : String = item.split("-")[1]
 			if item.ends_with(".png") and (len(to_add_ones) == 0 or item_name in to_add_ones):
-				if not AllSprites.has_node(item):
+				if not AllSprites.has_node(item) and item_name:
 					var new_texture = Sprite2D.new()
 					new_texture.set_texture( load("res://karten/weltkarte/"+item) )
 					new_texture.set_name(item_name)
@@ -128,7 +128,7 @@ func load_countries(to_add_ones : Array = []) -> void:
 #					new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 					AllSprites.add_child(new_texture)
 #					print("set name ", item_name, " at \t ", new_texture.name, "\t with no ", item)
-				else:
+				elif item_name:
 					AllSprites.get_node(item).show()
 
 func load_regions() -> void:

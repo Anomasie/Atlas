@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c1cm6j4t5m2it"]
+
+[ext_resource type="Script" uid="uid://bsegtfhpffod" path="res://szenen/UIElements/RegionSelection.gd" id="1_siw0f"]
+
+[node name="RegionSelection" type="MarginContainer" unique_id=1742747368]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_siw0f")
+
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1410662907]
+layout_mode = 2
+folded = true
+title = "Regionen auswählen"
+
+[node name="Grid" type="GridContainer" parent="FoldableContainer" unique_id=93801119]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2

@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1786648761
+::res://::1786698173
 icon.png::CompressedTexture2D::3756574423459987695::1786596145::1786538442::1::::<><><>0<>0<>802b015c97ce73dc33adf2b94195969c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 Ideas.txt::TextFile::-1::1786598119::0::1::::<><><>0<>0<><>::
 ::res://karten/::1786648761
@@ -31,7 +31,7 @@ Regionen-Sudamerika-3.png::CompressedTexture2D::8450603979255945507::1786648741:
 Regionen-Westafrika-10.png::CompressedTexture2D::3110227951446320828::1786648741::1786646773::1::::<><><>0<>0<>68d5c4731113063c40a76be9837534cc<>res://.godot/imported/Regionen-Westafrika-10.png-70989dbccc52a9db5bcaf1069e113b22.ctex::
 Regionen-Westeuropa-4.png::CompressedTexture2D::2321823836983896806::1786648741::1786646773::1::::<><><>0<>0<>9ee36a7b652637c033d0834fc6a28855<>res://.godot/imported/Regionen-Westeuropa-4.png-b505a29934f584f79eaa5c4cea4a0426.ctex::
 Regionen-Zentralafrika-9.png::CompressedTexture2D::6704955034249370963::1786648741::1786646773::1::::<><><>0<>0<>ddebd16661e0051fb062e809b2cdb3de<>res://.godot/imported/Regionen-Zentralafrika-9.png-1d373513a42d33483a9480fb18e9760c.ctex::
-::res://karten/weltkarte/::1786649448
+::res://karten/weltkarte/::1786649451
 Weltkarte--113.png::CompressedTexture2D::8115715075753081268::1786647624::1786647638::1::::<><><>0<>0<>01fcf5b09f4ddbba55999fd4a2323f15<>res://.godot/imported/Weltkarte--113.png-9fe0286cd0400af9b99dad3962fad003.ctex::
 Weltkarte--174.png::CompressedTexture2D::1266308273108004118::1786647629::1786647640::1::::<><><>0<>0<>1f29ed917f1cf2aaa21cb0634a72e485<>res://.godot/imported/Weltkarte--174.png-e16faa17c5def4703d90636e5f02dfce.ctex::
 Weltkarte-Aegypten-6.png::CompressedTexture2D::1566650412264600411::1786647613::1786647617::1::::<><><>0<>0<>d76229c36dbdcb393b9952debf377584<>res://.godot/imported/Weltkarte-Aegypten-6.png-bcf7e5ef16fe77ca92cef240e64e6eef.ctex::
@@ -231,9 +231,9 @@ Kartenpuzzle.tscn::PackedScene::8735354589426351280::1786646510::0::1::::<><><>0
 ::res://szenen/Länderplatzieren/::1786598467
 Länderplatzieren.gd::GDScript::3993851161853523080::1785788148::0::1::::<>PuzzleKarte<><>0<>0<><>::
 Länderplatzieren.tscn::PackedScene::7261459853985512061::1786598467::0::1::::<><><>0<>0<><>::uid://bw5we61celoo3::::res://szenen/Länderplatzieren/Länderplatzieren.gd<>uid://dghcrhfew5euc::::res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png
-::res://szenen/Länderraten/::1786649382
-Länderraten.gd::GDScript::6663989812549396264::1786649381::0::1::::<>Control<><>0<>0<><>::
-Länderraten.tscn::PackedScene::1094276766284670868::1786649382::0::1::::<><><>0<>0<><>::uid://c17c66any7ise::::res://szenen/Länderraten/Länderraten.gd<>uid://d238ukxiv5cgk::::res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png<>uid://d2qp1rcqfwuxx::::res://szenen/karten/Weltkarte.tscn
+::res://szenen/Länderraten/::1786649807
+Länderraten.gd::GDScript::6663989812549396264::1786649800::0::1::::<>Control<><>0<>0<><>::
+Länderraten.tscn::PackedScene::1094276766284670868::1786649807::0::1::::<><><>0<>0<><>::uid://c17c66any7ise::::res://szenen/Länderraten/Länderraten.gd<>uid://d238ukxiv5cgk::::res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png<>uid://d2qp1rcqfwuxx::::res://szenen/karten/Weltkarte.tscn
 ::res://szenen/tests/::1785662789
 Test.tscn::PackedScene::7932757369885711510::1785662789::0::1::::<><><>0<>0<><>::uid://l6keywso433d::::res://karten/weltkarte/Weltkarte-Aethiopien-29.png
 ::res://theme/::1786648769

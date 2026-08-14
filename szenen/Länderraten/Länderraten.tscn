@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c17c66any7ise" path="res://szenen/Länderraten/Länderraten.gd" id="1_8etso"]
 [ext_resource type="Texture2D" uid="uid://d238ukxiv5cgk" path="res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png" id="2_11qh7"]
 [ext_resource type="PackedScene" uid="uid://d2qp1rcqfwuxx" path="res://szenen/karten/Weltkarte.tscn" id="2_35arq"]
+[ext_resource type="PackedScene" uid="uid://c1cm6j4t5m2it" path="res://szenen/UIElements/RegionSelection.tscn" id="4_11qh7"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gb4g8"]
 blend_mode = 2
@@ -118,25 +119,31 @@ offset_top = -8.0
 offset_right = 20.0
 grow_vertical = 0
 
-[node name="Grid" type="GridContainer" parent="Top/Control/Statistik" unique_id=77042057]
+[node name="Lines" type="VBoxContainer" parent="Top/Control/Statistik" unique_id=1483187966]
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="Top/Control/Statistik/Lines" unique_id=77042057]
 layout_mode = 2
 columns = 2
 
-[node name="Gelernte" type="Label" parent="Top/Control/Statistik/Grid" unique_id=1344074370]
+[node name="Gelernte" type="Label" parent="Top/Control/Statistik/Lines/Grid" unique_id=1344074370]
 layout_mode = 2
 text = "Gelernte Länder:"
 
-[node name="GelernteCounter" type="Label" parent="Top/Control/Statistik/Grid" unique_id=850906187]
+[node name="GelernteCounter" type="Label" parent="Top/Control/Statistik/Lines/Grid" unique_id=850906187]
 layout_mode = 2
 text = "10"
 
-[node name="Fehlende" type="Label" parent="Top/Control/Statistik/Grid" unique_id=1129628819]
+[node name="Fehlende" type="Label" parent="Top/Control/Statistik/Lines/Grid" unique_id=1129628819]
 layout_mode = 2
 text = "Fehlende Länder:"
 
-[node name="FehlendeCounter" type="Label" parent="Top/Control/Statistik/Grid" unique_id=2035627815]
+[node name="FehlendeCounter" type="Label" parent="Top/Control/Statistik/Lines/Grid" unique_id=2035627815]
 layout_mode = 2
 text = "129"
+
+[node name="RegionSelection" parent="Top/Control/Statistik/Lines" unique_id=1848428662 instance=ExtResource("4_11qh7")]
+layout_mode = 2
 
 [node name="Back" type="Button" parent="Top" unique_id=1660802702]
 offset_right = 8.0
@@ -145,4 +152,5 @@ text = "←"
 
 [connection signal="pressed" from="Top/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="Top/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]
+[connection signal="regions_changed" from="Top/Control/Statistik/Lines/RegionSelection" to="." method="_on_region_selection_regions_changed"]
 [connection signal="pressed" from="Top/Back" to="." method="_on_back_pressed"]

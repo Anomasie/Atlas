@@ -1,7 +1,10 @@
-res://szenen/Länderraten/Länderraten.tscn
+res://szenen/UIElements/RegionSelection.tscn
 res://theme/MainTheme.tres
 res://ressourcen/shader/Blur.gdshader
 res://ressourcen/shader/Sharpen.gdshader
 res://ressourcen/shader/WaterDarker.gdshader
-res://szenen/Global.gd
+res://szenen/Länderraten/Länderraten.tscn
 res://szenen/Länderraten/Länderraten.gd
+res://szenen/UIElements/RegionSelection.gd
+res://szenen/Global.gd
+res://szenen/Karte.gd

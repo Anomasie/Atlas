@@ -13,9 +13,9 @@ const WRONG_COLOR : Color = Color.GREEN_YELLOW
 @onready var OKButton = $Top/Control/Button
 @onready var BackgroundKarte = $Karte
 @onready var DifficultyOption = $Top/Control/Options/Lines/DifficultyOption
-@onready var GelernteCounter = $Top/Control/Statistik/Grid/GelernteCounter
-@onready var FehlendeCounter = $Top/Control/Statistik/Grid/FehlendeCounter
-@onready var Grid = $Top/Control/Statistik/Grid
+@onready var GelernteCounter = $Top/Control/Statistik/Lines/Grid/GelernteCounter
+@onready var FehlendeCounter = $Top/Control/Statistik/Lines/Grid/FehlendeCounter
+@onready var RegionSelection = $Top/Control/Statistik/Lines/RegionSelection
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
@@ -23,13 +23,15 @@ const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png"
 ]
 
+var active_regions : Array[String] = ["Orient"]
+var current_countries : Dictionary
 var continue_game : bool = true
 
 func _ready() -> void:
 	OKButton.hide()
 	Angeklickt.text = ""
 	Aufgabe.text = ""
-	load_region_checkboxes()
+	update_active_regions()
 	run_game()
 
 func open() -> void:
@@ -38,10 +40,10 @@ func open() -> void:
 func close() -> void:
 	self.queue_free()
 
-func get_active_countries(list_of_countries: Dictionary, duplicate_by_unknownness:bool, enabled_regions:Array[String] = get_active_regions()) -> Array:
+func get_active_countries(list_of_countries: Dictionary, duplicate_by_unknownness:bool) -> Array:
 	var list : Array[String] = []
 	for key in list_of_countries.keys():
-		if list_of_countries[key] < 0 and Global.countries[key]["Region"] in enabled_regions:
+		if list_of_countries[key] < 0 and Global.countries[key]["Region"] in active_regions:
 			if duplicate_by_unknownness:
 				for i in -list_of_countries[key]:
 					list.append(key)
@@ -49,18 +51,18 @@ func get_active_countries(list_of_countries: Dictionary, duplicate_by_unknownnes
 				list.append(key)
 	return list
 
-func get_active_regions() -> Array[String]:
-	return ["Sahara"]
+func update_active_regions() -> void:
+	active_regions = RegionSelection.get_active_regions()
 
 func get_known_countries(list_of_countries: Dictionary) -> Array:
 	var list : Array[String] = []
 	for key in list_of_countries.keys():
-		if list_of_countries[key] >= 0:
+		if list_of_countries[key] >= 0 and Global.countries[key]["Region"] in active_regions:
 			list.append(key)
 	return list
 
-func get_new_goal(current_countries : Dictionary, last_goal:String, last_choice:String) -> String:
-	var choose_out_of : Array = get_active_countries(current_countries, true)#, get_active_regions())
+func get_new_goal(to_countries : Dictionary, last_goal:String, last_choice:String) -> String:
+	var choose_out_of : Array = get_active_countries(to_countries, true)#, get_active_regions())
 	if len(choose_out_of) > 0:
 		choose_out_of.erase(last_goal)
 	if len(choose_out_of) > 0:
@@ -71,19 +73,19 @@ func get_new_goal(current_countries : Dictionary, last_goal:String, last_choice:
 func get_unknown_countries(known_countries: Dictionary) -> Array:
 	var list : Array[String] = []
 	for key in Global.countries.keys():
-		if key not in known_countries.keys():
+		if key not in known_countries.keys() and Global.countries[key]["Region"] in active_regions:
 			list.append(key)
 	return list
 
-func least_known_countries(list_of_countries : Array, current_countries : Dictionary) -> Array:
+func least_known_countries(list_of_countries : Array, to_countries : Dictionary = current_countries) -> Array:
 	var minimum : int = 0
 	var minimum_args : Array = []
 	for key in list_of_countries:
-		if key in current_countries.keys():
-			if current_countries[key] < minimum:
+		if key in to_countries.keys():
+			if to_countries[key] < minimum:
 				minimum_args = [key]
-				minimum = current_countries[key]
-			elif current_countries[key] == minimum:
+				minimum = to_countries[key]
+			elif to_countries[key] == minimum:
 				minimum_args.append(key)
 		elif minimum == 0:
 			minimum_args.append(key)
@@ -94,22 +96,12 @@ func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
 		load(DIFFICULTY_PATHS[index])
 	)
 
-func load_region_checkboxes() -> void:
-	for region in Global.REGION_LIST:
-		# add label
-		var new_label : Label = Label.new()
-		new_label.text = region + ":"
-		Grid.add_child(new_label)
-		# add checkbox
-		var new_checkbox : CheckBox = CheckBox.new()
-		Grid.add_child(new_checkbox)
-
 func run_game() -> void:
 	# choose start countries
-	var current_countries : Dictionary = {}
+	current_countries = {}
 	update_ui(current_countries)
 	while len(current_countries.keys()) < NO_START_COUNTRIES:
-		var next_country : String = Global.countries_by_region[get_active_regions().pick_random()].keys().pick_random()
+		var next_country : String = Global.countries_by_region[active_regions.pick_random()].keys().pick_random()
 		if not next_country in current_countries.keys():
 			current_countries[next_country] = -1
 	
@@ -164,13 +156,13 @@ func run_game() -> void:
 		Angeklickt.text = ""
 		Aufgabe.text = ""
 		##### END GAME?
-		if len(get_active_countries(current_countries, true)) == 0:
-			continue_game = false
-			Aufgabe.text = "Herzlichen Glückwunsch! Du kennst alle Länder."
 		# if not enough current_countries: add one
 		while len(get_active_countries(current_countries, false)) < 4 and get_unknown_countries(current_countries):
 			print("add country! ", get_active_countries(current_countries, false), " has length smaller than 4.")
 			current_countries[get_unknown_countries(current_countries).pick_random()] = -1
+		if len(get_active_countries(current_countries, true)) == 0:
+			continue_game = false
+			Aufgabe.text = "Herzlichen Glückwunsch! Du kennst alle Länder."
 		print()
 
 func self_ok() -> void:
@@ -190,9 +182,9 @@ func similar_sounding_countries(choose_out_of:Array, country: String) -> Array:
 		result = [""]
 	return result
 
-func update_ui(current_countries:Dictionary) -> void:
-	GelernteCounter.text = str(len(get_known_countries(current_countries)))
-	FehlendeCounter.text = str(len(get_unknown_countries(current_countries)))
+func update_ui(to_countries:Dictionary = current_countries) -> void:
+	GelernteCounter.text = str(len(get_known_countries(to_countries)))
+	FehlendeCounter.text = str(len(get_unknown_countries(to_countries)))
 
 func _on_button_pressed() -> void:
 	ok.emit()
@@ -203,3 +195,8 @@ func _on_back_pressed() -> void:
 
 func _on_difficulty_option_item_selected(index: int) -> void:
 	load_difficulty(index)
+
+
+func _on_region_selection_regions_changed(new_regions) -> void:
+	active_regions = new_regions
+	update_ui()
