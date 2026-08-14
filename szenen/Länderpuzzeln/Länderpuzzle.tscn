@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dwpqap83ku6qu"]
 
-[ext_resource type="Script" uid="uid://clttf8lo7dc0o" path="res://szenen/Kartenpuzzlen/Kartenpuzzle.gd" id="1_4kvqp"]
-[ext_resource type="Texture2D" uid="uid://c8255ra8s1ry3" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png" id="2_36agm"]
-[ext_resource type="PackedScene" uid="uid://dokmu5qajivgt" path="res://szenen/karten/Puzzlekarte.tscn" id="3_8r6do"]
-[ext_resource type="PackedScene" uid="uid://c1cm6j4t5m2it" path="res://szenen/UIElements/RegionSelection.tscn" id="4_infum"]
+[ext_resource type="Script" uid="uid://clttf8lo7dc0o" path="res://szenen/Länderpuzzeln/Länderpuzzle.gd" id="1_xsg2h"]
+[ext_resource type="Texture2D" uid="uid://c8255ra8s1ry3" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png" id="2_bv25n"]
+[ext_resource type="PackedScene" uid="uid://dokmu5qajivgt" path="res://szenen/karten/Puzzlekarte.tscn" id="3_y1dij"]
+[ext_resource type="PackedScene" uid="uid://c1cm6j4t5m2it" path="res://szenen/UIElements/RegionSelection.tscn" id="4_m4ii1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kvqp"]
 content_margin_left = 10.0
@@ -21,23 +21,23 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[node name="Kartenpuzzle" type="Control" unique_id=424906269]
+[node name="Länderpuzzle" type="Control" unique_id=424906269]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4kvqp")
+script = ExtResource("1_xsg2h")
 
 [node name="Karte" type="TextureRect" parent="." unique_id=1352772675]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
-texture = ExtResource("2_36agm")
+texture = ExtResource("2_bv25n")
 
-[node name="Puzzlekarte" parent="." unique_id=33769356 instance=ExtResource("3_8r6do")]
+[node name="Puzzlekarte" parent="." unique_id=33769356 instance=ExtResource("3_y1dij")]
 layout_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=675518290]
@@ -128,7 +128,7 @@ offset_right = 270.0
 offset_bottom = 13.0
 grow_vertical = 0
 
-[node name="RegionSelection" parent="CanvasLayer/Control/Regionsauswahl" unique_id=1742747368 instance=ExtResource("4_infum")]
+[node name="RegionSelection" parent="CanvasLayer/Control/Regionsauswahl" unique_id=1742747368 instance=ExtResource("4_m4ii1")]
 layout_mode = 2
 
 [connection signal="selected" from="Puzzlekarte" to="." method="_on_puzzlekarte_selected"]

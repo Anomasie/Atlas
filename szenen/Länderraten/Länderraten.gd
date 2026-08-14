@@ -34,6 +34,10 @@ func _ready() -> void:
 	update_active_regions()
 	run_game()
 
+func _input(event) -> void:
+	if event.is_action_pressed("click"):
+		ok.emit()
+
 func open() -> void:
 	show()
 

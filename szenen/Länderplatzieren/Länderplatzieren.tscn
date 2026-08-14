@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dbprghoatsitx"]
 
 [ext_resource type="Script" uid="uid://bw5we61celoo3" path="res://szenen/Länderplatzieren/Länderplatzieren.gd" id="1_28rs3"]
+[ext_resource type="PackedScene" uid="uid://dokmu5qajivgt" path="res://szenen/karten/Puzzlekarte.tscn" id="3_hfwk6"]
 [ext_resource type="Texture2D" uid="uid://dghcrhfew5euc" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png" id="3_lsu3j"]
+[ext_resource type="PackedScene" uid="uid://c1cm6j4t5m2it" path="res://szenen/UIElements/RegionSelection.tscn" id="4_hfwk6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28rs3"]
 content_margin_left = 10.0
@@ -29,18 +31,17 @@ grow_vertical = 2
 script = ExtResource("1_28rs3")
 
 [node name="Karte" type="TextureRect" parent="." unique_id=900331945]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_lsu3j")
 
-[node name="AllSprites" type="Node2D" parent="." unique_id=1119369162]
-
-[node name="Cam" type="Camera2D" parent="." unique_id=1838116808]
-position = Vector2(960, 540)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+[node name="Puzzlekarte" parent="." unique_id=33769356 instance=ExtResource("3_hfwk6")]
+layout_mode = 1
 
 [node name="Top" type="CanvasLayer" parent="." unique_id=1631853549]
 
@@ -67,6 +68,15 @@ grow_horizontal = 2
 layout_mode = 2
 text = "Madagaskar"
 horizontal_alignment = 1
+
+[node name="OKButton" type="Button" parent="Top/Control" unique_id=884305465]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
 
 [node name="Back" type="Button" parent="Top/Control" unique_id=1993473451]
 layout_mode = 0
@@ -102,8 +112,37 @@ popup/item_2/id = 2
 layout_mode = 2
 text = "+"
 
-[connection signal="selected" from="." to="." method="_on_selected"]
-[connection signal="unselected" from="." to="." method="_on_unselected"]
+[node name="Auflosung" type="Button" parent="Top/Control" unique_id=1954899166]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Auflösung"
+
+[node name="Regionsauswahl" type="PanelContainer" parent="Top/Control" unique_id=1934956359]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 270.0
+offset_bottom = 13.0
+grow_vertical = 0
+
+[node name="RegionSelection" parent="Top/Control/Regionsauswahl" unique_id=1742747368 instance=ExtResource("4_hfwk6")]
+layout_mode = 2
+
+[connection signal="selected" from="Puzzlekarte" to="." method="_on_puzzlekarte_selected"]
+[connection signal="unselected" from="Puzzlekarte" to="." method="_on_puzzlekarte_unselected"]
+[connection signal="pressed" from="Top/Control/OKButton" to="." method="_on_ok_button_pressed"]
 [connection signal="pressed" from="Top/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="item_selected" from="Top/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]
 [connection signal="pressed" from="Top/Control/Options/Lines/AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="pressed" from="Top/Control/Auflosung" to="." method="_on_auflosung_pressed"]
+[connection signal="regions_changed" from="Top/Control/Regionsauswahl/RegionSelection" to="." method="_on_region_selection_regions_changed"]

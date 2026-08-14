@@ -27,6 +27,10 @@ func _ready() -> void:
 	update_active_regions()
 	run_game()
 
+func _input(event) -> void:
+	if event.is_action_pressed("click"):
+		ok.emit()
+
 func open() -> void:
 	show()
 
@@ -58,7 +62,7 @@ func puzzle(load_country_names : PackedStringArray) -> void:
 	while not Weltkarte.solved():
 		await Weltkarte.check_whether_right
 	# tweak until actually right
-	await Weltkarte.tweak_right()
+	await Weltkarte.tweak_right_relative_to(load_country_names[0])
 	await self_ok()
 	##### delete old ones
 	Weltkarte.hide_all()
@@ -94,7 +98,7 @@ func _on_puzzlekarte_unselected(country : String) -> void:
 	#CountryContainer.hide()
 
 func _on_auflosung_pressed() -> void:
-	await Weltkarte.tweak_right()
+	await Weltkarte.tweak_right_relative_to()
 	Weltkarte.check_whether_right.emit()
 
 func _on_region_selection_regions_changed(new_regions : Array[String]) -> void:

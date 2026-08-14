@@ -16,7 +16,7 @@ func open_main_menu() -> void:
 
 func _on_hauptmenu_start_kartenpuzzle() -> void:
 	Hauptmenu.close()
-	add_game("res://szenen/Kartenpuzzlen/Kartenpuzzle.tscn")
+	add_game("res://szenen/Länderpuzzeln/Länderpuzzle.tscn")
 
 func _on_hauptmenu_start_länderplatzieren() -> void:
 	Hauptmenu.close()

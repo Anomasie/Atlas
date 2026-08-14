@@ -44,7 +44,7 @@ func hide_all() -> void:
 
 func right_position(country_position, origin:Vector2 = Vector2.ZERO) -> bool:
 	if (country_position - origin).length() > EPSILON:
-			return false
+		return false
 	else:
 		return true
 
@@ -60,9 +60,18 @@ func solved(origin : Vector2 = AllSprites.get_child(0).position) -> bool:
 			return false
 	return true
 
-func tweak_right(countries : Array = AllSprites.get_children(), origin:Vector2 = AllSprites.get_child(0).position) -> void:
+func tweak_right(countries : Array, origin : Vector2) -> void:
 	var tween : Tween = get_tree().create_tween()
 	for kid in countries:
 		tween.tween_property(kid, "position", origin, HIGHLIGHT_IN_TIME)
 	await tween.finished
 	tween.kill()
+
+func tweak_right_relative_to(to:String = "", countries: Array = AllSprites.get_children()) -> void:
+	if to and AllSprites.get_node(to):
+		await tweak_right(countries, AllSprites.get_node(to).position)
+	else:
+		await tweak_right(countries, countries[-1].position)
+
+func tweak_right_zero(origin:Vector2 = Vector2.ZERO, countries:Array = AllSprites.get_children()) -> void:
+	await tweak_right(countries, origin)
