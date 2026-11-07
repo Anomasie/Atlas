@@ -63,6 +63,19 @@ layout_mode = 2
 text = "Madagaskar"
 horizontal_alignment = 1
 
+[node name="Auflosung" type="Button" parent="Top/Control" unique_id=1954899166]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Auflösung"
+
+[node name="NextButton" type="Button" parent="Top/Control" unique_id=116336914]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 65
+text = "Weiter →"
+
 [node name="OKButton" type="Button" parent="Top/Control" unique_id=884305465]
 layout_mode = 2
 flat = true
@@ -93,12 +106,6 @@ popup/item_1/id = 1
 popup/item_2/text = "keine Karte"
 popup/item_2/id = 2
 
-[node name="Auflosung" type="Button" parent="Top/Control" unique_id=1954899166]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-text = "Auflösung"
-
 [node name="Regionsauswahl" type="PanelContainer" parent="Top/Control" unique_id=1934956359]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -109,8 +116,8 @@ layout_mode = 2
 
 [connection signal="selected" from="Puzzlekarte" to="." method="_on_puzzlekarte_selected"]
 [connection signal="unselected" from="Puzzlekarte" to="." method="_on_puzzlekarte_unselected"]
+[connection signal="pressed" from="Top/Control/Auflosung" to="." method="_on_auflosung_pressed"]
 [connection signal="pressed" from="Top/Control/OKButton" to="." method="_on_ok_button_pressed"]
 [connection signal="pressed" from="Top/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="item_selected" from="Top/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]
-[connection signal="pressed" from="Top/Control/Auflosung" to="." method="_on_auflosung_pressed"]
 [connection signal="regions_changed" from="Top/Control/Regionsauswahl/RegionSelection" to="." method="_on_region_selection_regions_changed"]

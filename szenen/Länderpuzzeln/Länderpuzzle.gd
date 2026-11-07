@@ -24,6 +24,7 @@ var active_regions : Array[String] = ["Orient"]
 var possible_start_countries : Array[String] = []
 
 func _ready() -> void:
+	OKButton.hide()
 	CountryContainer.hide()
 	load_difficulty(DifficultyOption.get_selected_id())
 	update_active_regions()

@@ -10,6 +10,7 @@ signal open_main_menu
 @onready var Weltkarte = $Puzzlekarte
 @onready var OKButton = $Top/Control/OKButton
 @onready var RegionSelection = $Top/Control/Regionsauswahl/RegionSelection
+@onready var NextButton = $Top/Control/NextButton
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
@@ -26,6 +27,8 @@ func _ready() -> void:
 	Weltkarte.SELECTION_COLOR = Color.BLUE
 	load_difficulty()
 	update_active_regions()
+	NextButton.hide()
+	OKButton.hide()
 	run_game()
 
 func _input(event) -> void:
@@ -48,7 +51,6 @@ func puzzle(load_country_name: String = possible_countries.pick_random()) -> voi
 		await Weltkarte.check_whether_right
 	# tweak until actually right
 	await Weltkarte.tweak_right_zero(BackgroundKarte.get_global_position())
-	await self_ok()
 	##### delete old ones
 	Weltkarte.hide_all()
 
@@ -59,10 +61,11 @@ func run_game() -> void:
 		Weltkarte.hide_all()
 
 func self_ok() -> void:
-	await Global.wait(0.25)
+	NextButton.show()
 	OKButton.show()
 	await ok
 	OKButton.hide()
+	NextButton.hide()
 	return
 
 func update_active_regions(new_regions : Array[String] = RegionSelection.get_active_regions()) -> void:
@@ -89,7 +92,12 @@ func _on_ok_button_pressed() -> void:
 
 func _on_auflosung_pressed() -> void:
 	await Weltkarte.tweak_right_zero(BackgroundKarte.get_global_position())
+	await self_ok()
 	Weltkarte.check_whether_right.emit()
 
 func _on_region_selection_regions_changed(new_regions : Array[String]) -> void:
 	update_active_regions(new_regions)
+
+
+func _on_next_button_pressed() -> void:
+	pass # Replace with function body.
