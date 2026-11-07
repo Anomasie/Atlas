@@ -68,10 +68,16 @@ func solved(origin : Vector2 = AllSprites.get_child(0).position) -> bool:
 	return true
 
 func tweak_right(countries : Array, origin : Vector2) -> void:
+	var b : bool = false
 	var tween : Tween = get_tree().create_tween()
 	for kid in countries:
-		tween.tween_property(kid, "position", origin, HIGHLIGHT_IN_TIME)
-	await tween.finished
+		if kid.visible:
+			tween.tween_property(kid, "position", origin, HIGHLIGHT_IN_TIME)
+			b = true
+		else:
+			kid.position = origin
+	if b:
+		await tween.finished
 	tween.kill()
 
 func tweak_right_relative_to(to:String = "", countries: Array = AllSprites.get_children()) -> void:

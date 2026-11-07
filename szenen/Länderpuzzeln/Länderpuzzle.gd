@@ -1,5 +1,6 @@
 extends Control
 
+signal finish_turn
 signal ok
 signal open_main_menu
 
@@ -17,6 +18,7 @@ var continue_game : bool = true
 @onready var BackgroundKarte = $Karte
 @onready var Weltkarte = $Puzzlekarte
 @onready var RegionSelection = $CanvasLayer/Control/Regionsauswahl/RegionSelection
+@onready var NextButton = $CanvasLayer/Control/NextButton
 
 var active_regions : Array[String] = ["Orient"]
 var possible_start_countries : Array[String] = []
@@ -55,6 +57,7 @@ func run_game() -> void:
 
 func puzzle(load_country_names : PackedStringArray) -> void:
 	##### PREPARATION
+	NextButton.hide()
 	# load countries
 	Weltkarte.load_countries(load_country_names)
 	Weltkarte.shuffle(true)
@@ -62,17 +65,19 @@ func puzzle(load_country_names : PackedStringArray) -> void:
 	while not Weltkarte.solved():
 		await Weltkarte.check_whether_right
 	# tweak until actually right
-	await Weltkarte.tweak_right_relative_to(load_country_names[0])
-	await self_ok()
+	NextButton.show()
+	await get_tree().process_frame
+	self_ok(load_country_names)
+	await finish_turn
 	##### delete old ones
 	Weltkarte.hide_all()
 
-func self_ok() -> void:
-	await Global.wait(0.25)
+func self_ok(load_country_names) -> void:
+	await Weltkarte.tweak_right_relative_to(load_country_names[0])
 	OKButton.show()
 	await ok
 	OKButton.hide()
-	return
+	finish_turn.emit()
 
 func update_active_regions(new_regions : Array[String] = RegionSelection.get_active_regions()) -> void:
 	active_regions = new_regions
@@ -93,7 +98,7 @@ func _on_puzzlekarte_selected(country : String) -> void:
 	CountryLabel.text = Global.get_country_name(country)
 	CountryContainer.show()
 
-func _on_puzzlekarte_unselected(country : String) -> void:
+func _on_puzzlekarte_unselected(_country : String) -> void:
 	pass
 	#CountryContainer.hide()
 
@@ -103,3 +108,7 @@ func _on_auflosung_pressed() -> void:
 
 func _on_region_selection_regions_changed(new_regions : Array[String]) -> void:
 	update_active_regions(new_regions)
+
+
+func _on_next_button_pressed() -> void:
+	finish_turn.emit()

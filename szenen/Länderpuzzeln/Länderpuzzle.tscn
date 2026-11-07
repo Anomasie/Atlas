@@ -104,6 +104,13 @@ size_flags_vertical = 8
 [node name="RegionSelection" parent="CanvasLayer/Control/Regionsauswahl" unique_id=1742747368 instance=ExtResource("4_m4ii1")]
 layout_mode = 2
 
+[node name="NextButton" type="Button" parent="CanvasLayer/Control" unique_id=1487534979]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 65
+text = "Weiter →"
+
 [connection signal="selected" from="Puzzlekarte" to="." method="_on_puzzlekarte_selected"]
 [connection signal="unselected" from="Puzzlekarte" to="." method="_on_puzzlekarte_unselected"]
 [connection signal="pressed" from="CanvasLayer/Control/OKButton" to="." method="_on_ok_button_pressed"]
@@ -111,3 +118,4 @@ layout_mode = 2
 [connection signal="item_selected" from="CanvasLayer/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]
 [connection signal="pressed" from="CanvasLayer/Control/Auflosung" to="." method="_on_auflosung_pressed"]
 [connection signal="regions_changed" from="CanvasLayer/Control/Regionsauswahl/RegionSelection" to="." method="_on_region_selection_regions_changed"]
+[connection signal="pressed" from="CanvasLayer/Control/NextButton" to="." method="_on_next_button_pressed"]

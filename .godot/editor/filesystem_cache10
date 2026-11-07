@@ -1,12 +1,12 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1794064602
+::res://::1794070231
 export_presets.cfg::TextFile::-1::1794064602::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::3756574423459987695::1786596145::1786538442::1::::<><><>0<>0<>802b015c97ce73dc33adf2b94195969c<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 Ideas.txt::TextFile::-1::1786720249::0::1::::<><><>0<>0<><>::
 ::res://exports/::1794064612
-::res://karten/::1794067456
-Länder.csv::Translation::8885691838996131235::1794067455::1794067457::1::::<><><>0<>0<>f2c96af895d5c2257b3e9d22cb8dac86<>::
-Ländergrößen.csv::Translation::7195738818092121305::1786727615::1786727618::1::::<><><>0<>0<>8831923410a1862316dc9bbaa1f14e48<>::
+::res://karten/::1794069206
+Länder.csv::Translation::8183983808039637339::1794069201::1794069206::1::::<><><>0<>0<>ae5421418083b915421600518553a500<>::
+Ländergrößen.csv::Translation::3731170315202063860::1786727615::1794068517::1::::<><><>0<>0<>65abf71e94a5226b0f39f8b84c9931b4<>::
 ::res://karten/Drüberlegen/::1785817862
 EigentlicheKarte-Physisch-1.png::CompressedTexture2D::7594997925267630666::1785659614::1785658369::1::::<><><>0<>0<>aafe5923b25d36cbf1a2c3afc6394495<>res://.godot/imported/EigentlicheKarte-Physisch-1.png-7c1d646844695e22a9907ca276dfc660.ctex::
 EigentlicheKarte-Physisch-2.png::CompressedTexture2D::7146687384822443424::1785817800::1785817802::1::::<><><>0<>0<>68c6530725badd43bf693c1d047a8597<>res://.godot/imported/EigentlicheKarte-Physisch-2.png-f6a44b248f73bb6de61cb9be8b8b3466.ctex::
@@ -265,14 +265,14 @@ Weltkarte-Zypern-149.png::CompressedTexture2D::1297936669895452176::1786723824::
 ::res://ressourcen/::1785786919
 StyleBoxNormalButton.tres::StyleBoxFlat::7375180781779073182::1785786919::0::1::::<><><>0<>0<><>::
 StyleBoxPanel.tres::StyleBoxFlat::5748737782416114985::1785780040::0::1::::<><><>0<>0<><>::
-::res://ressourcen/shader/::1794066339
-Blur.gdshader::Shader::1684294746860728092::1794066339::0::1::::<><><>0<>0<><>::
-Sharpen.gdshader::Shader::2179169371714450131::1794066339::0::1::::<><><>0<>0<><>::
-WaterDarker.gdshader::Shader::7863412057464977034::1794066339::0::1::::<><><>0<>0<><>::
-::res://szenen/::1787823737
+::res://ressourcen/shader/::1794069558
+Blur.gdshader::Shader::1684294746860728092::1794069558::0::1::::<><><>0<>0<><>::
+Sharpen.gdshader::Shader::2179169371714450131::1794069558::0::1::::<><><>0<>0<><>::
+WaterDarker.gdshader::Shader::7863412057464977034::1794069558::0::1::::<><><>0<>0<><>::
+::res://szenen/::1794069341
 Game.gd::GDScript::5977549055036802389::1786704385::0::1::::<>Control<><>0<>0<><>::
 GAME.tscn::PackedScene::4733634564341997266::1787823737::0::1::::<><><>0<>0<><>::uid://crftmhx66lre8::::res://szenen/Game.gd<>uid://bfgpf40rudv26::::res://szenen/Hauptmenu/Hauptmenu.tscn
-Global.gd::GDScript::6625700647797834992::1786718735::0::1::::<>Node<><>0<>0<><>::
+Global.gd::GDScript::6625700647797834992::1794069341::0::1::::<>Node<><>0<>0<><>::
 Pixelfilter.tscn::PackedScene::4819209308222681409::1787823733::0::1::::<><><>0<>0<><>::uid://x85dagtd5moq::::res://ressourcen/shader/Blur.gdshader<>uid://6buuo7pelf7h::::res://ressourcen/shader/Sharpen.gdshader
 ::res://szenen/Hauptmenu/::1786716712
 Hauptmenu.gd::GDScript::474384719479305568::1786716712::0::1::::<>Control<><>0<>0<><>::
@@ -294,14 +294,14 @@ Länderpuzzle.tscn::PackedScene::8735354589426351280::1786719255::0::1::::<><><>
 ::res://szenen/Länderraten/::1786716542
 Länderraten.gd::GDScript::6663989812549396264::1786711005::0::1::::<>Control<><>0<>0<><>::
 Länderraten.tscn::PackedScene::1094276766284670868::1786716542::0::1::::<><><>0<>0<><>::uid://c17c66any7ise::::res://szenen/Länderraten/Länderraten.gd<>uid://d238ukxiv5cgk::::res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png<>uid://d2qp1rcqfwuxx::::res://szenen/karten/Klickkarte.tscn<>uid://c1cm6j4t5m2it::::res://szenen/UIElements/RegionSelection.tscn
-::res://szenen/Tests/::1794067297
+::res://szenen/Tests/::1794069558
 Datentester.gd::GDScript::2405566249966021129::1794066378::0::1::::<>Control<><>0<>0<><>::
-Datentester.tscn::PackedScene::8900149288715020100::1794067297::0::1::::<><><>0<>0<><>::uid://bajjlblgwiekf::::res://szenen/Tests/Datentester.gd
+Datentester.tscn::PackedScene::8900149288715020100::1794069558::0::1::::<><><>0<>0<><>::uid://bajjlblgwiekf::::res://szenen/Tests/Datentester.gd
 ::res://szenen/UIElements/::1786716485
 RegionSelection.gd::GDScript::107602231951574187::1786716134::0::1::::<>Control<><>0<>0<><>::
 RegionSelection.tscn::PackedScene::6602664539420758639::1786716485::0::1::::<><><>0<>0<><>::uid://bsegtfhpffod::::res://szenen/UIElements/RegionSelection.gd
-::res://theme/::1794066339
-MainTheme.tres::Theme::8984836791973754383::1794066339::0::1::::<><><>0<>0<><>::uid://c1vr4ij087cmb::::res://theme/fonts/Some Time Later.otf<>uid://ddcufdltt36wg::::res://ressourcen/StyleBoxNormalButton.tres<>uid://dwa2umrp18m40::::res://theme/fonts/Bimbo_JVE.ttf<>uid://cn5y4vksf4eqb::::res://ressourcen/StyleBoxPanel.tres
+::res://theme/::1794069558
+MainTheme.tres::Theme::8984836791973754383::1794069558::0::1::::<><><>0<>0<><>::uid://c1vr4ij087cmb::::res://theme/fonts/Some Time Later.otf<>uid://ddcufdltt36wg::::res://ressourcen/StyleBoxNormalButton.tres<>uid://dwa2umrp18m40::::res://theme/fonts/Bimbo_JVE.ttf<>uid://cn5y4vksf4eqb::::res://ressourcen/StyleBoxPanel.tres
 Quellen.txt::TextFile::-1::1785783915::0::1::::<><><>0<>0<><>::
 ThemeExplained.txt::TextFile::-1::1785819867::0::1::::<><><>0<>0<><>::
 ::res://theme/fonts/::1785772563

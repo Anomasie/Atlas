@@ -153,7 +153,7 @@ func load_regions() -> void:
 #				print("set name ", item_name, " at \t ", new_texture.name, "\t with no ", item)
 
 func random_cohesive_countries(start_country:String = "", length=6) -> Array:
-	while not ( start_country and Global.countries[start_country]["Neighbors"] ):
+	while not ( start_country and Global.countries[start_country]["Neighbors"] and len(Global.countries[start_country]["Neighbors"]) > 2 ):
 		start_country = Global.countries.keys().pick_random()
 	print("start country in Karte.gd: ", start_country, " has neighbors ", Global.countries[start_country]["Neighbors"] )
 	var result : Array = [start_country]
@@ -161,7 +161,7 @@ func random_cohesive_countries(start_country:String = "", length=6) -> Array:
 	for _i in length - 1:
 		var new_entry : String = start_country
 		var counter : int = 0
-		while new_entry in result and counter < 1000:
+		while new_entry in result and counter < 100:
 			counter += 1
 			var key : String = result.pick_random()
 			if not new_entry in Global.countries.keys():

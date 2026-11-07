@@ -51,20 +51,20 @@ Eritrea;Eritrea;Westafrika;Dschibuti,Aethiopien,Sudan
 Estland;Estland;Osteuropa;Russland,Lettland
 Eswatini;Eswatini;Südafrika;Suedafrika,Mosambik
 Falklandinseln;Falklandinseln;Sudamerika;
-Faroer;Färöer-Inseln;;
+Faroer;Färöer-Inseln;Europa;
 Fidschi;Fidschi;Ozeanien;
 Finnland;Finnland;Westeuropa;Norwegen,Schweden,Russland
 Frankreich;Frankreich;Westeuropa;Belgien,Luxemburg,Deutschland,Schweiz,Italien,Andorra,Spanien,Monaco
 FranzGuyana;Französisch-Guyana;Sudamerika;Suriname,Brasilien
-FranzPolynesien;;;
+FranzPolynesien;Französch-Polynesien;Ozeanien;
 Gabun;Gabun;Ostafrika;Aequatorialguinea,Kongo,Kamerun
-Galapagos;;;
+Galapagos;Galapagos-Inseln;Sudamerika;
 Gambien;Gambien;Ostafrika;Senegal
 Gaza;Gaza;Orient;Israel,Aegypten
 GB;GB;Westeuropa;Irland
 Georgien;Georgien;Orient;Russland,Turkei,Armenien,Aserbaidschan
 Ghana;Ghana;Ostafrika;Togo,BurkinaFaso,Elfenbeinkueste
-Gibraltar;;;
+Gibraltar;Gibraltar;Europa;
 Grenada;Grenada;Karibik;
 Griechenland;Griechenland;Osteuropa;Turkei,Bulgarien,Nordmazedonien,Albanien
 Gronland;Grönland;Westeuropa;
@@ -74,7 +74,7 @@ Guinea;Guinea;Ostafrika;Mali,GuineaBissau,Senegal,SierraLeone,Liberia,Elfenbeink
 GuineaBissau;Guinea-Bissau;Ostafrika;Guinea,Senegal
 Guyana;Guyana;Sudamerika;Venezuela,Brasilien,Suriname
 Haiti;Haiti;Karibik;
-HeardMyCDonaldinseln;;;
+HeardMyCDonaldinseln; Heard und McDonaldinseln;Karibik;
 Honduras;Honduras;Karibik;Guatemala,ElSalvador,Nicaragua
 Indien;Indien;Ostasien;Pakistan,China,Nepal,Myanmar,Bangladesch,Bhutan
 Indonesien;Indonesien;Ostasien;Malaysia,Osttimor,PapuaNeuguinea
@@ -89,7 +89,7 @@ Japan;Japan;Ostasien;
 Jemen;Jemen;Orient;Oman,SaudiArabien
 Jordanien;Jordanien;Orient;Israel,Syrien,Irak,SaudiArabien
 Jungferninseln;Jungferninseln;Karibik;
-Kaimaninseln;;;
+Kaimaninseln;Kaimaninseln;Karibik;
 Kambodscha;Kambodscha;Ostasien;Thailand,Laos,Vietnam
 Kamerun;Kamerun;Ostafrika;ZentralafrikanischeRepublik,Tschad,Nigeria,Gabun,Kongo,Aequatorialguinea
 Kanada;Kanada;Nordamerika;USA
@@ -98,7 +98,7 @@ Kasachstan;Kasachstan;Himalaya;Kirgisistan,Russland,China,Usbekistan,Turkmenista
 Katar;Katar;Orient;SaudiArabien,Bahrain
 Kenia;Kenia;Westafrika;Somalia,Aethiopien,Suedsudan,Uganda,Tansania
 Kirgisistan;Kirgistan;Ostasien;Kasachstan,Usbekistan,Tadschikistan,China
-Kiribati;;;
+Kiribati;Kiribati;Ozeanien;
 Kolumbien;Kolumbien;Südamerika;Panama,Venezuela,Brasilien,Ecuador,Peru
 Komoren;Komoren;Westafrika;
 Kongo;Kongo;Ostafrika;DemokratischeRepublikKongo,ZentralafrikanischeRepublik,Kamerun,Gabun,Angola
@@ -118,11 +118,11 @@ Luxemburg;Luxemburg;Westeuropa;Belgien,Deutschland,Frankreich
 Madagaskar;Madagaskar;Sudafrika;
 Malawi;Malawi;Sudafrika;Tansania,Mosambik,Sambia
 Malaysia;Malaysia;Ostasien;Thailand,Indonesien,Brunei
-Malediven;;;
+Malediven;Malediven;Ostasien;
 Mali;Mali;Sahara;Algerien,Mauretanien,Niger,Senegal,Guinea,Elfenbeinkueste,BurkinaFaso
-Man;;;
+Man;Insel Man;Europa;
 Marokko;Marokko;Sahara;Westsahara,Algerien,Mauretanien
-Marshallinseln;;;
+Marshallinseln;Marshallinseln;Ozeanien;
 Martinique;Martinique;Karibik;
 Mauretanien;Mauretanien;Sahara;Mali,Algerien,Westsahara,Senegal,Mali,Marokko
 Mauritius;Mauritius;Sudafrika;
@@ -144,11 +144,11 @@ Nicaragua;Nicaragua;Karibik;Honduras,CostaRica
 Niederlande;Niederlande;Westeuropa;Deutschland,Belgien
 Niger;Niger;Sahara;Libyen,Tschad,Nigeria,Benin,BurkinaFaso,Mali,Algerien
 Nigeria;Nigeria;Ostafrika;Kamerun,Tschad,Niger,Benin
-Niue;;;
+Niue;Niue;Ozeanien;
 Nordkorea;Nordkorea;Ostasien;China,Sudkorea
-NordlicheMarianen;;;
+NordlicheMarianen;Nördliche Marianen ;Ozeanien;
 Nordmazedonien;Nordmazedonien;Osteuropa;Kosovo,Serbien,Bulgarien,Griechenland,Albanien
-Norfolkinsel;;;
+Norfolkinsel;Norfolkinsel;Ozeanien;
 Norwegen;Norwegen;Westeuropa;Schweden,Finnland
 Oman;Oman;Orient;ArabischeEmirate,SaudiArabien,Jemen
 Osterreich;Osterreich;Westeuropa;Deutschland,Liechtenstein,Italien,Tschechien,Schweiz,Slowakei,Ungarn,Slowenien
@@ -186,8 +186,8 @@ Slowenien;Slowenien;Osteuropa;Italien,Osterreich,Kroatien,Ungarn
 Somalia;Somalia;Westafrika;Somaliland,Aethiopien,Kenia
 Somaliland;Somaliland;Westafrika;Somalia,Aethiopien,Dschibuti
 Spanien;Spanien;Westeuropa;Portugal,Andorra,Frankreich
-Spitzbergen;;;
-SriLanka;;;
+Spitzbergen;Spitzbergen;Europa;
+SriLanka;Sri Lanka;Ostasien;
 StKittsNevis;St. Kitts und Nevis;Karibik;
 StLucia;St. Lucia;Karibik;
 StVincentGrenadinen;St. Vincent und Grenadinen;Karibik;
@@ -202,7 +202,7 @@ Taiwan;Taiwan;Ostasien;
 Tansania;Tansania;Westafrika;DemokratischeRepublikKongo,Kenia,Ruanda,Burundi,Sambia,Malawi,Mosambik
 Thailand;Thailand;Ostasien;Myanmar,Malaysia,Laos,Kambodscha
 Togo;Togo;Ostafrika;Benin,BurkinaFaso,Ghana
-Tokelau;;;
+Tokelau;Tokelau;Ozeanien;
 Tonga;Tonga;Ozeanien;
 TrinidadTobago;Trinidad und Tobago;Karibik;Venezuela
 Tschad;Tschad;Sahara;ZentralafrikanischeRepublik,Sudan,Libyen,Niger,Nigeria,Kamerun
@@ -210,7 +210,7 @@ Tschechien;Tschechien;Osteuropa;Polen,Deutschland,Osterreich,Slowakei
 Tunesien;Tunesien;Sahara;Algerien,Libyen
 Turkei;Turkei;Orient;Bulgarien,Griechenland,Georgien,Armenien,Iran,Irak,Syrien,Rojava
 Turkmenistan;Turkmenistan;Ostasien;Kasachstan,Iran,Afghanistan,Usbekistan
-Turks;;;
+Turks;Turks- und Caicosinseln;Ozeanien;
 Tuvalu;Tuvalu;Ozeanien;
 Uganda;Uganda;Zentralafrika;DemokratischeRepublikKongo,Suedsudan,Kenia,Ruanda
 Ukraine;Ukraine;Osteuropa;Russland,Moldau,Rumanien,Ungarn,Slowakei,Polen,Belarus
@@ -222,9 +222,9 @@ Usbekistan;Usbekistan;Ostasien;Kasachstan,Turkmenistan,Afghanistan,Tadschikistan
 Vanuatu;Vanuatu;Ozeanien;
 Venezuela;Venezuela;Sudamerika;Kolumbien,TrinidadTobago,Guyana,Brasilien
 Vietnam;Vietnam;Ostasien;China,Laos,Kambodscha
-WallisFutuna;;;
-Weihnachtsinsel;;;
+WallisFutuna;Wallis und Futuna;Ozeanien;
+Weihnachtsinsel;Weihnachtsinsel;Ozeanien;
 Westsahara;West-Sahara;Sahara;Marokko,Mauretanien
 ZentralafrikanischeRepublik;Zentralafrikanische Republik;Zentralafrika;DemokratischeRepublikKongo,Suedsudan,Tschad,Sudan,Kamerun,Kongo
 Zypern;Zypern;Osteuropa;
-Curacao;;;
+Curacao;Curaçao;Ozeanien;
