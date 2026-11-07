@@ -20,7 +20,10 @@ func _input(event: InputEvent) -> void:
 	handle_input(event)
 
 func check_country_is_clicked(node: Sprite2D, koordinaten: Vector2) -> bool:
-	if not node.get_texture():
+	if not node:
+		print("ERROR in Karte.gd.check_country_is_clicked: No node given")
+		return false
+	elif not node.get_texture():
 		print("ERROR in Karte.gd.check_country_is_clicked: Node invalid ", node.name)
 		return false
 	var image : Image = node.get_texture().get_image()

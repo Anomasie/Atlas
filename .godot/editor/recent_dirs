@@ -1,3 +1,5 @@
+/home/mina/Projects/Spiele/Stadt-Land-Fluss/exports/
+res://szenen/
 res://szenen/karten/
 res://ressourcen/
 res://szenen/UIElements/
@@ -8,8 +10,6 @@ res://theme/fonts/
 res://karten/quellen/
 res://karten/weltkarte/
 res://theme/
-res://szenen/
 res://szenen/Hauptmenu/
 res://szenen/Länderplatzieren/
-res://szenen/tests/
 res://szenen/Länderraten/

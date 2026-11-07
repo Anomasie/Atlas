@@ -75,7 +75,7 @@ func tweak_right(countries : Array, origin : Vector2) -> void:
 	tween.kill()
 
 func tweak_right_relative_to(to:String = "", countries: Array = AllSprites.get_children()) -> void:
-	if to and AllSprites.get_node(to):
+	if to and AllSprites.has_node(to) and AllSprites.get_node(to):
 		await tweak_right(countries, AllSprites.get_node(to).position)
 	else:
 		await tweak_right(countries, countries[-1].position)

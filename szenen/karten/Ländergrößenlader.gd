@@ -7,7 +7,8 @@ const GRID = 3
 func _ready() -> void:
 	WarteLabel.text = "Lade Länder!"
 	await load_ländergrößen()
-	WarteLabel.text = "Fertig!"
+	await get_tree().process_frame
+	get_tree().quit()
 
 func find_some_pixel(image : Image) -> Vector2i:
 	for x in image.get_width():
@@ -54,4 +55,4 @@ func load_ländergrößen() -> void:
 	var dictstring : String = await get_ländergrößen(country_dict.keys())
 	# save dictionary
 	var file = FileAccess.open("res://karten/Ländergrößen.csv", FileAccess.WRITE)
-	file.store_string(dictstring)
+	await file.store_string(dictstring)
