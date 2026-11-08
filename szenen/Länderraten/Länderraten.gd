@@ -218,3 +218,15 @@ func _on_difficulty_option_item_selected(index: int) -> void:
 func _on_region_selection_regions_changed(new_regions) -> void:
 	active_regions = new_regions
 	update_ui()
+
+
+func _on_zoom_in_pressed() -> void:
+	Kontinentkarte.Cam.zoom *= 1.5
+
+func _on_zoom_out_pressed() -> void:
+	Kontinentkarte.Cam.zoom /= 1.5
+
+func _on_original_button_pressed() -> void:
+	
+	Kontinentkarte.Cam.zoom = Vector2(1.0, 1.0)
+	Kontinentkarte.Cam.position = get_viewport_rect().size/2

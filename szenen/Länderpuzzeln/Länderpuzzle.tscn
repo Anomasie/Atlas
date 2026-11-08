@@ -112,6 +112,32 @@ layout_mode = 2
 text = "Madagaskar"
 horizontal_alignment = 1
 
+[node name="ZoomLines" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=2060865729]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="ZoomIn" type="Button" parent="CanvasLayer/Control/ZoomLines" unique_id=1264025025]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+text = "+"
+
+[node name="ZoomOut" type="Button" parent="CanvasLayer/Control/ZoomLines" unique_id=620926209]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+text = "-"
+
+[node name="OriginalButton" type="Button" parent="CanvasLayer/Control/ZoomLines" unique_id=2030939621]
+layout_mode = 2
+text = "Original-
+Zoom"
+
 [connection signal="selected" from="Puzzlekarte" to="." method="_on_puzzlekarte_selected"]
 [connection signal="unselected" from="Puzzlekarte" to="." method="_on_puzzlekarte_unselected"]
 [connection signal="pressed" from="CanvasLayer/Control/Auflosung" to="." method="_on_auflosung_pressed"]
@@ -120,3 +146,6 @@ horizontal_alignment = 1
 [connection signal="pressed" from="CanvasLayer/Control/Back" to="." method="_on_back_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]
 [connection signal="regions_changed" from="CanvasLayer/Control/Regionsauswahl/RegionSelection" to="." method="_on_region_selection_regions_changed"]
+[connection signal="pressed" from="CanvasLayer/Control/ZoomLines/ZoomIn" to="." method="_on_zoom_in_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ZoomLines/ZoomOut" to="." method="_on_zoom_out_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ZoomLines/OriginalButton" to="." method="_on_original_button_pressed"]

@@ -13,3 +13,6 @@ res://szenen/Länderraten/Länderraten.gd
 res://szenen/karten/Puzzlekarte.tscn
 res://szenen/karten/Puzzlekarte.gd
 res://szenen/karten/Klickkarte.gd
+res://szenen/Global.gd
+res://szenen/Länderplatzieren/Länderplatzieren.gd
+res://szenen/Länderpuzzeln/Länderpuzzle.gd

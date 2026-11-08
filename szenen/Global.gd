@@ -173,7 +173,7 @@ Ghana;Ghana;Ostafrika;Togo,BurkinaFaso,Elfenbeinkueste
 Gibraltar;Gibraltar;Europa;
 Grenada;Grenada;Karibik;
 Griechenland;Griechenland;Osteuropa;Turkei,Bulgarien,Nordmazedonien,Albanien
-Gronland;Grönland;Westeuropa;
+Gronland;Grönland;Nordamerika;
 Guadeloupe;Guadeloupe;Karibik;
 Guatemala;Guatemala;Karibik;Mexiko,Belize,ElSalvador,Honduras
 Guinea;Guinea;Ostafrika;Mali,GuineaBissau,Senegal,SierraLeone,Liberia,Elfenbeinkueste
@@ -273,7 +273,7 @@ PuertoRico;Puerto Rico;Karibik;
 Rojava;Rojava;Orient;Syrien,Irak,Turkei
 Ruanda;Ruanda;Zentralafrika;DemokratischeRepublikKongo,Burundi,Uganda,Tansania
 Rumanien;Rumanien;Osteuropa;Moldau,Ukraine,Bulgarien,Serbien,Ungarn
-Russland;Russland;Osteuropa;Finnland,Estland,Lettland,Litauen,Belarus,Ukraine,Aserbaidschan,Georgien,China,Mongolei,Kasachstan,Mongolei,Polen
+Russland;Russland;Himalaya;Finnland,Estland,Lettland,Litauen,Belarus,Ukraine,Aserbaidschan,Georgien,China,Mongolei,Kasachstan,Mongolei,Polen
 Salomonen;Salomonen;Ozeanien;
 Sambia;Sambia;Zentralafrika;DemokratischeRepublikKongo,Angola,Namibia,Simbabwe,Mosambik,Malawi,Tansania
 Samoa;Samoa;Ozeanien;

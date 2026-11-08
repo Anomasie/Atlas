@@ -51,10 +51,8 @@ func handle_input(event: InputEvent) -> void:
 		Cam.position = cam_origin + (drag_origin - get_global_mouse_position())
 	elif event.is_action_pressed("zoom_in") or event is InputEventMagnifyGesture:
 		Cam.zoom *= 1.1
-		$ColorRect.show()
 	elif event.is_action_pressed("zoom_out") or event is InputEventPanGesture:
 		Cam.zoom /= 1.1
-		$ColorRect.hide()
 
 func start_dragging() -> void:
 	cam_dragging = true

@@ -99,5 +99,12 @@ func _on_region_selection_regions_changed(new_regions : Array[String]) -> void:
 	update_active_regions(new_regions)
 
 
-func _on_next_button_pressed() -> void:
-	pass # Replace with function body.
+func _on_zoom_in_pressed() -> void:
+	Weltkarte.Cam.zoom *= 1.5
+
+func _on_zoom_out_pressed() -> void:
+	Weltkarte.Cam.zoom /= 1.5
+
+func _on_original_button_pressed() -> void:
+	Weltkarte.Cam.zoom = Vector2(1.0, 1.0)
+	Weltkarte.Cam.position = get_viewport_rect().size/2

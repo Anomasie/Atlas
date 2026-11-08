@@ -16,7 +16,7 @@ script = ExtResource("1_c5kpk")
 [node name="RegionSprites" type="Node2D" parent="." unique_id=1456745886]
 
 [node name="Cam" type="Camera2D" parent="." unique_id=3284071]
-position = Vector2(960, 540)
+position = Vector2(956, 539)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 

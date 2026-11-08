@@ -21,6 +21,29 @@ func load_continent(kontinent : String) -> void:
 	var regions : Array = Global.REGION_LIST[kontinent]
 	print(regions)
 	await load_countries(Global.get_countries_in_regions(regions), true)
+	match kontinent:
+		"Afrika":
+			Cam.zoom *= 2.0
+			Cam.position.y += 40
+		"Asien":
+			Cam.zoom *= 1.5
+			Cam.position.x += 500
+			Cam.position.y -= 140
+		"Europa":
+			Cam.zoom *= 2.5
+			Cam.position.y -= 250
+		"Nordamerika":
+			Cam.zoom *= 2.8
+			Cam.position.x -= 500
+			Cam.position.y -= 140
+		"Sudamerika":
+			Cam.zoom *= 2.0
+			Cam.position.x -= 300
+			Cam.position.y += 200
+		"Ozeanien":
+			Cam.zoom *= 2.0
+			Cam.position.x += 600
+			Cam.position.y += 120
 
 func _on_button_pressed() -> void:
 	maybe_start_dragging = false
