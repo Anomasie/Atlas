@@ -23,3 +23,10 @@ res://karten/Ländergrößen.505.translation
 res://szenen/karten/Puzzlekarte.tscn
 res://szenen/karten/Puzzlekarte.gd
 res://szenen/Länderpuzzeln/Länderpuzzle.gd
+res://szenen/Länderraten/Länderraten.tscn
+res://szenen/Länderraten/Weltkarten.gd
+res://szenen/Länderraten/Kontinentauswahl.tscn
+res://szenen/Länderraten/Kontinentauswahl.gd
+res://szenen/Hauptmenu/Hauptmenu.tscn
+res://szenen/GAME.tscn
+res://szenen/Game.gd

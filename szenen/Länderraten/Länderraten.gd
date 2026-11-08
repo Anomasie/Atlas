@@ -9,7 +9,7 @@ const WRONG_COLOR : Color = Color.GREEN_YELLOW
 
 @onready var Aufgabe = $Top/Control/Results/Lines/Aufgabe
 @onready var Angeklickt = $Top/Control/Results/Lines/Angeklickt
-@onready var Weltkarte = $Weltkarte
+@onready var Kontinentkarte = $Kontinentkarte
 @onready var OKButton = $Top/Control/Button
 @onready var BackgroundKarte = $Karte
 @onready var DifficultyOption = $Top/Control/Options/Lines/DifficultyOption
@@ -24,7 +24,7 @@ const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Physisch-1.png"
 ]
 
-var active_regions : Array[String] = ["Orient"]
+var active_regions : Array = ["Orient"]
 var current_countries : Dictionary
 var continue_game : bool = true
 
@@ -33,12 +33,6 @@ func _ready() -> void:
 	OKButton.hide()
 	Angeklickt.text = ""
 	Aufgabe.text = ""
-	update_active_regions()
-	await Weltkarte.load_data()
-	LadeLabel.hide()
-	show()
-	
-#	run_game()
 
 func _input(event) -> void:
 	if event.is_action_pressed("click"):
@@ -116,7 +110,12 @@ func set_start_countries():
 		counter += 1
 	print(current_countries)
 
-func run_game() -> void:
+func run_game(kontinent : String) -> void:
+	active_regions = Global.REGION_LIST[kontinent]
+	await Kontinentkarte.load_continent(kontinent)
+	LadeLabel.hide()
+	show()
+	
 	# choose start current_countries
 	set_start_countries()
 	
@@ -135,15 +134,14 @@ func run_game() -> void:
 		##### SHOW GOAL
 		# show goal
 		Aufgabe.text = "Finde " + Global.get_country_name(goal) + "!"
-		Weltkarte.guess = goal
+		Kontinentkarte.guess = goal
 		##### PLAYER'S TURN
 		# await player's choice
 		print("await country now")
-		var choice : String = await Weltkarte.country_selected
+		var choice : String = await Kontinentkarte.country_selected
 		print("something got selected, nice")
 		last_choice = choice
 		print("→→ ", last_choice)
-		return
 		##### EVALUATION
 		# compare choice with goal
 #		print(choice, ", ", goal)
@@ -151,13 +149,13 @@ func run_game() -> void:
 			current_countries[goal] /= 2
 			Angeklickt.text = "Richtig! Das ist "+Global.get_country_name(choice)+"!"
 			### show highlight
-			await Weltkarte.highlight([goal], RIGHT_COLOR)
+			await Kontinentkarte.highlight([goal], RIGHT_COLOR)
 		else:
 			current_countries[goal] -= 1
 			Angeklickt.text = "Nein, das ist "+Global.get_country_name(choice)+"."
 			
-			Weltkarte.highlight([goal], RIGHT_COLOR)
-			await Weltkarte.highlight([choice], WRONG_COLOR)
+			Kontinentkarte.highlight([goal], RIGHT_COLOR)
+			await Kontinentkarte.highlight([choice], WRONG_COLOR)
 			# add choice to current_countries
 			if not choice in current_countries.keys():
 				current_countries[choice] = -1
@@ -172,7 +170,7 @@ func run_game() -> void:
 		update_ui(current_countries)
 		##### CLOSE
 		await self_ok()
-		await Weltkarte.hide_highlight()
+		await Kontinentkarte.hide_highlight()
 		Angeklickt.text = ""
 		Aufgabe.text = ""
 		##### END GAME?

@@ -39,7 +39,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_11qh7")
 
-[node name="Weltkarte" parent="." unique_id=33769356 instance=ExtResource("2_35arq")]
+[node name="Kontinentkarte" parent="." unique_id=33769356 instance=ExtResource("2_35arq")]
 material = SubResource("CanvasItemMaterial_gb4g8")
 layout_mode = 1
 

@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://dqu6aifaj3els"]
+
+[ext_resource type="Texture2D" uid="uid://bqjiohdvmxnge" path="res://karten/kontinentauswahl/Afrika.jpg" id="1_bmnst"]
+[ext_resource type="Script" uid="uid://bxqbgalccw704" path="res://szenen/Länderraten/Kontinentauswahl.gd" id="1_ow00r"]
+[ext_resource type="Texture2D" uid="uid://drv5cq3nkc168" path="res://karten/kontinentauswahl/Sudamerika.jpg" id="2_8lrnw"]
+[ext_resource type="Texture2D" uid="uid://dvwmird8cnjbj" path="res://karten/kontinentauswahl/Asien.jpg" id="2_r6hte"]
+[ext_resource type="Texture2D" uid="uid://b5p7l4ruf3ujo" path="res://karten/kontinentauswahl/Ozeanien.jpg" id="3_2e448"]
+[ext_resource type="Texture2D" uid="uid://oa3eys2se151" path="res://karten/kontinentauswahl/Europa.jpg" id="3_ow00r"]
+[ext_resource type="Texture2D" uid="uid://33u0pdntyjke" path="res://karten/kontinentauswahl/Nordamerika.jpg" id="4_eefgv"]
+
+[node name="Kontinentauswahl" type="Control" unique_id=2024332594]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ow00r")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=2134327219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lines" type="VBoxContainer" parent="Margin" unique_id=1063792337]
+layout_mode = 2
+
+[node name="Sep" type="HBoxContainer" parent="Margin/Lines" unique_id=1339080994]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="Margin/Lines/Sep" unique_id=770848019]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "←"
+
+[node name="Panel" type="PanelContainer" parent="Margin/Lines/Sep" unique_id=120857130]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Margin/Lines/Sep/Panel" unique_id=458243261]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 64
+text = "Welchen Kontinent möchtest du dir anschauen?"
+
+[node name="Kontinente" type="GridContainer" parent="Margin/Lines" unique_id=1594605904]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="Afrika" type="Button" parent="Margin/Lines/Kontinente" unique_id=416086739]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Afrika"
+icon = ExtResource("1_bmnst")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Asien" type="Button" parent="Margin/Lines/Kontinente" unique_id=357507495]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Asien"
+icon = ExtResource("2_r6hte")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Europa" type="Button" parent="Margin/Lines/Kontinente" unique_id=602438854]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Europa"
+icon = ExtResource("3_ow00r")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Nordamerika" type="Button" parent="Margin/Lines/Kontinente" unique_id=23322065]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Nordamerika
+und Karibik"
+icon = ExtResource("4_eefgv")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sudamerika" type="Button" parent="Margin/Lines/Kontinente" unique_id=518960579]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Südamerika"
+icon = ExtResource("2_8lrnw")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Ozeanien" type="Button" parent="Margin/Lines/Kontinente" unique_id=2102978412]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Australien
+und Ozeanien"
+icon = ExtResource("3_2e448")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Margin/Lines/Sep/Back" to="." method="_on_back_pressed"]

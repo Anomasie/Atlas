@@ -4,7 +4,7 @@ const REGION_LIST : Dictionary[String, Array] = {
 	"Afrika": ["Westafrika", "Ostafrika", "Sahara", "Südafrika", "Zentralafrika"],
 	"Europa": ["Westeuropa", "Osteuropa"],
 	"Amerika": ["Nordamerika", "Karibik", "Sudamerika"],
-	"Ozeanien": [],
+	"Ozeanien": ["Ozeanien"],
 	"Asien": ["Ostasien", "Himalaya", "Orient"]
 }
 
@@ -40,7 +40,7 @@ var selected_regions_small : Dictionary[String, bool] = {
 func _ready() -> void:
 	load_country_list()
 
-func get_countries_in_regions(regions : Array[String]) -> Array[String]:
+func get_countries_in_regions(regions : Array) -> Array[String]:
 	var allowed_countries : Array[String] = []
 	for country in countries.keys():
 		if countries[country]["Region"] in regions:
