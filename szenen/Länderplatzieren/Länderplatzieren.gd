@@ -43,8 +43,8 @@ func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
 func puzzle(load_country_name: String = possible_countries.pick_random()) -> void:
 	##### PREPARATION
 	# load countries
-	Weltkarte.load_countries([load_country_name])
-	Weltkarte.shuffle(false)
+	Weltkarte.load_countries([load_country_name], false)
+	Weltkarte.shuffle(true)
 	CountryLabel.text = Global.get_country_name(load_country_name)
 	##### await player finishing
 	while not Weltkarte.solved(BackgroundKarte.position):

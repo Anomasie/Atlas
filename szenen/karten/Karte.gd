@@ -124,6 +124,7 @@ func hide_highlight() -> void:
 
 func load_countries(to_add_ones : Array = [], should_wait : bool = true) -> void:
 	for kid in AllSprites.get_children():
+#		print("hide ", kid.name)
 		kid.hide()
 	var dir = DirAccess.open("res://karten/weltkarte")
 	var file_names = dir.get_files()
