@@ -55,9 +55,9 @@ func handle_input(event: InputEvent) -> void:
 		cam_dragging = false
 	elif cam_dragging and event is InputEventMouseMotion:
 		Cam.position = cam_origin + (drag_origin - get_global_mouse_position())
-	elif event.is_action_pressed("zoom_in"):
+	elif event.is_action_pressed("zoom_in") or event is InputEventMagnifyGesture:
 		Cam.zoom *= 1.1
-	elif event.is_action_pressed("zoom_out"):
+	elif event.is_action_pressed("zoom_out") or event is InputEventPanGesture:
 		Cam.zoom /= 1.1
 
 func get_country(koordinaten: Vector2, guess:String = "") -> String:
@@ -117,8 +117,8 @@ func load_countries(to_add_ones : Array = [], should_wait : bool = true) -> void
 	for kid in AllSprites.get_children():
 #		print("hide ", kid.name)
 		kid.hide()
-	var dir = DirAccess.open("res://karten/weltkarte")
-	var file_names = dir.get_files()
+#	var dir = DirAccess.open("res://karten/weltkarte")
+	var file_names = ResourceLoader.list_directory("res://karten/weltkarte") #dir.get_files()
 	var counter : int = 0
 	for item in file_names:
 		if len(item.split("-")) > 1:
@@ -130,7 +130,7 @@ func load_countries(to_add_ones : Array = [], should_wait : bool = true) -> void
 					new_texture.set_texture( load("res://karten/weltkarte/"+item) )
 					new_texture.set_name(item_name)
 					new_texture.self_modulate = NORMAL_COLOR
-#					new_texture.material = self.material
+					new_texture.material = self.material
 					new_texture.centered = false
 #					new_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 					AllSprites.add_child(new_texture)
@@ -147,7 +147,7 @@ func load_countries(to_add_ones : Array = [], should_wait : bool = true) -> void
 func random_cohesive_countries(start_country:String = "", length=6) -> Array:
 	while not ( start_country and Global.countries[start_country]["Neighbors"] and len(Global.countries[start_country]["Neighbors"]) > 2 ):
 		start_country = Global.countries.keys().pick_random()
-	print("start country in Karte.gd: ", start_country, " has neighbors ", Global.countries[start_country]["Neighbors"] )
+#	print("start country in Karte.gd: ", start_country, " has neighbors ", Global.countries[start_country]["Neighbors"] )
 	var result : Array = [start_country]
 #	print("start with: ", start_country)
 	for _i in length - 1:

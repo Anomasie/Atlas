@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bqjiohdvmxnge" path="res://karten/kontinentauswahl/Afrika.jpg" id="1_bmnst"]
 [ext_resource type="Script" uid="uid://bxqbgalccw704" path="res://szenen/Länderraten/Kontinentauswahl.gd" id="1_ow00r"]
 [ext_resource type="Texture2D" uid="uid://drv5cq3nkc168" path="res://karten/kontinentauswahl/Sudamerika.jpg" id="2_8lrnw"]
+[ext_resource type="Texture2D" uid="uid://1adspwd10s87" path="res://ressourcen/Arrow.png" id="2_eefgv"]
 [ext_resource type="Texture2D" uid="uid://dvwmird8cnjbj" path="res://karten/kontinentauswahl/Asien.jpg" id="2_r6hte"]
 [ext_resource type="Texture2D" uid="uid://b5p7l4ruf3ujo" path="res://karten/kontinentauswahl/Ozeanien.jpg" id="3_2e448"]
 [ext_resource type="Texture2D" uid="uid://oa3eys2se151" path="res://karten/kontinentauswahl/Europa.jpg" id="3_ow00r"]
@@ -36,7 +37,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 64
-text = "←"
+icon = ExtResource("2_eefgv")
 
 [node name="Panel" type="PanelContainer" parent="Margin/Lines/Sep" unique_id=120857130]
 layout_mode = 2

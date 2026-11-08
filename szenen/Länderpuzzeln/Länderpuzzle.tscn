@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://clttf8lo7dc0o" path="res://szenen/Länderpuzzeln/Länderpuzzle.gd" id="1_xsg2h"]
 [ext_resource type="Texture2D" uid="uid://c8255ra8s1ry3" path="res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png" id="2_bv25n"]
 [ext_resource type="PackedScene" uid="uid://dokmu5qajivgt" path="res://szenen/karten/Puzzlekarte.tscn" id="3_y1dij"]
+[ext_resource type="Texture2D" uid="uid://1adspwd10s87" path="res://ressourcen/Arrow.png" id="4_bv25n"]
 [ext_resource type="PackedScene" uid="uid://c1cm6j4t5m2it" path="res://szenen/UIElements/RegionSelection.tscn" id="4_m4ii1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kvqp"]
@@ -50,16 +51,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="LabelContainer" type="PanelContainer" parent="CanvasLayer/Control" unique_id=700571898]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="CountryLabel" type="Label" parent="CanvasLayer/Control/LabelContainer" unique_id=1677252492]
-layout_mode = 2
-text = "Madagaskar"
-horizontal_alignment = 1
-
 [node name="Auflosung" type="Button" parent="CanvasLayer/Control" unique_id=978954635]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -71,7 +62,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 65
-text = "Weiter →"
+text = "Weiter"
 
 [node name="OKButton" type="Button" parent="CanvasLayer/Control" unique_id=1842270732]
 layout_mode = 2
@@ -81,7 +72,7 @@ flat = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "←"
+icon = ExtResource("4_bv25n")
 
 [node name="Options" type="PanelContainer" parent="CanvasLayer/Control" unique_id=842967084]
 layout_mode = 2
@@ -110,6 +101,16 @@ size_flags_vertical = 8
 
 [node name="RegionSelection" parent="CanvasLayer/Control/Regionsauswahl" unique_id=1742747368 instance=ExtResource("4_m4ii1")]
 layout_mode = 2
+
+[node name="LabelContainer" type="PanelContainer" parent="CanvasLayer/Control" unique_id=700571898]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="CountryLabel" type="Label" parent="CanvasLayer/Control/LabelContainer" unique_id=1677252492]
+layout_mode = 2
+text = "Madagaskar"
+horizontal_alignment = 1
 
 [connection signal="selected" from="Puzzlekarte" to="." method="_on_puzzlekarte_selected"]
 [connection signal="unselected" from="Puzzlekarte" to="." method="_on_puzzlekarte_unselected"]

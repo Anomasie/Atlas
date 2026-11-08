@@ -3,7 +3,8 @@ extends Node
 const REGION_LIST : Dictionary[String, Array] = {
 	"Afrika": ["Westafrika", "Ostafrika", "Sahara", "Südafrika", "Zentralafrika"],
 	"Europa": ["Westeuropa", "Osteuropa"],
-	"Amerika": ["Nordamerika", "Karibik", "Sudamerika"],
+	"Nordamerika": ["Nordamerika", "Karibik"],
+	"Sudamerika": ["Sudamerika"],
 	"Ozeanien": ["Ozeanien"],
 	"Asien": ["Ostasien", "Himalaya", "Orient"]
 }
@@ -15,7 +16,8 @@ var language : String = "German"
 var selected_regions_big : Dictionary[String, bool] = {
 	"Afrika": true,
 	"Europa": true,
-	"Amerika": true,
+	"Nordamerika": true,
+	"Sudamerika": true,
 	"Ozeanien": true,
 	"Asien": true
 }
@@ -110,7 +112,7 @@ Afghanistan;Afghanistan;Ostasien;Pakistan,Iran,Turkmenistan,Usbekistan,Tadschiki
 Albanien;Albanien;Osteuropa;Montenegro,Kosovo,Nordmazedonien,Griechenland
 Algerien;Algerien;Sahara;Tunesien,Libyen,Niger,Mali,Mauretanien,Marokko
 Andorra;Andorra;Westeuropa;Spanien,Frankreich
-Angola;Angola;Sudafrika;DemokratischeRepublikKongo,Kongo,Sambia,Namibia
+Angola;Angola;Südafrika;DemokratischeRepublikKongo,Kongo,Sambia,Namibia
 Anguilla;Anguilla;;
 AntiguaBarbuda;Antigua und Barbuda;Karibik;
 ArabischeEmirate;Vereinigte Arabische Emirate;Orient;SaudiArabien,Oman
@@ -203,7 +205,7 @@ Katar;Katar;Orient;SaudiArabien,Bahrain
 Kenia;Kenia;Westafrika;Somalia,Aethiopien,Suedsudan,Uganda,Tansania
 Kirgisistan;Kirgistan;Ostasien;Kasachstan,Usbekistan,Tadschikistan,China
 Kiribati;Kiribati;Ozeanien;
-Kolumbien;Kolumbien;Südamerika;Panama,Venezuela,Brasilien,Ecuador,Peru
+Kolumbien;Kolumbien;Sudamerika;Panama,Venezuela,Brasilien,Ecuador,Peru
 Komoren;Komoren;Westafrika;
 Kongo;Kongo;Ostafrika;DemokratischeRepublikKongo,ZentralafrikanischeRepublik,Kamerun,Gabun,Angola
 Kosovo;Kosovo;Osteuropa;Serbien,Nordmazedonien,Albanien,Montenegro
@@ -219,8 +221,8 @@ Libyen;Libyen;Sahara;Algerien,Tunesien,Aegypten,Sudan,Tschad,Niger
 Liechtenstein;Liechtenstein;Westeuropa;Schweiz,Osterreich
 Litauen;Litauen;Osteuropa;Lettland,Belarus,Russland,Polen
 Luxemburg;Luxemburg;Westeuropa;Belgien,Deutschland,Frankreich
-Madagaskar;Madagaskar;Sudafrika;
-Malawi;Malawi;Sudafrika;Tansania,Mosambik,Sambia
+Madagaskar;Madagaskar;Südafrika;
+Malawi;Malawi;Südafrika;Tansania,Mosambik,Sambia
 Malaysia;Malaysia;Ostasien;Thailand,Indonesien,Brunei
 Malediven;Malediven;Ostasien;
 Mali;Mali;Sahara;Algerien,Mauretanien,Niger,Senegal,Guinea,Elfenbeinkueste,BurkinaFaso
@@ -229,7 +231,7 @@ Marokko;Marokko;Sahara;Westsahara,Algerien,Mauretanien
 Marshallinseln;Marshallinseln;Ozeanien;
 Martinique;Martinique;Karibik;
 Mauretanien;Mauretanien;Sahara;Mali,Algerien,Westsahara,Senegal,Mali,Marokko
-Mauritius;Mauritius;Sudafrika;
+Mauritius;Mauritius;Südafrika;
 Mexiko;Mexiko;Nordamerika;USA,Guatemala,Belize
 Mikronesien;Mikronesien;Ozeanien;
 Moldau;Moldau;Osteuropa;Ukraine,Rumanien
@@ -237,9 +239,9 @@ Monaco;Monaco;Westeuropa;Frankreich,Italien
 Mongolei;Mongolei;Ostasien;Russland,China
 Montenegro;Montenegro;Osteuropa;Kosovo,Albanien,BosnienHerzegowina,Serbien
 Montserrat;Montserrat;Karibik;
-Mosambik;Mosambik;Sudafrika;Tansania,Malawi,Sambia,Simbabwe,Suedafrika,Eswatini
+Mosambik;Mosambik;Südafrika;Tansania,Malawi,Sambia,Simbabwe,Suedafrika,Eswatini
 Myanmar;Myanmar;Ostasien;Indien,Bangladesch,Thailand,Laos,China
-Namibia;Namibia;Sudafrika;Angola,Botswana,Sambia,Suedafrika
+Namibia;Namibia;Südafrika;Angola,Botswana,Sambia,Suedafrika
 Nauru;Nauru;Ozeanien;
 Nepal;Nepal;Ostasien;Indien,China
 Neukaledonien;Neukaledonien;Ozeanien;
@@ -284,7 +286,7 @@ Senegal;Senegal;Ostafrika;Gambien,Mauretanien,Mali,Guinea,GuineaBissau
 Serbien;Serbien;Osteuropa;Ungarn,Rumanien,Bulgarien,Nordmazedonien,Kosovo,Montenegro,BosnienHerzegowina,Kroatien
 Seychellen;Seychellen;Südafrika;
 SierraLeone;Sierra Leone;Ostafrika;Liberia,Guinea
-Simbabwe;Simbabwe;Sudafrika;Sambia,Botswana,Suedafrika,Mosambik
+Simbabwe;Simbabwe;Südafrika;Sambia,Botswana,Suedafrika,Mosambik
 Slowakei;Slowakei;Osteuropa;Polen,Tschechien,Osterreich,Ungarn,Ukraine
 Slowenien;Slowenien;Osteuropa;Italien,Osterreich,Kroatien,Ungarn
 Somalia;Somalia;Westafrika;Somaliland,Aethiopien,Kenia

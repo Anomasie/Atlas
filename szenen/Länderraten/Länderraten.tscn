@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d238ukxiv5cgk" path="res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png" id="2_11qh7"]
 [ext_resource type="PackedScene" uid="uid://d2qp1rcqfwuxx" path="res://szenen/karten/Klickkarte.tscn" id="2_35arq"]
 [ext_resource type="PackedScene" uid="uid://c1cm6j4t5m2it" path="res://szenen/UIElements/RegionSelection.tscn" id="4_11qh7"]
+[ext_resource type="Texture2D" uid="uid://1adspwd10s87" path="res://ressourcen/Arrow.png" id="5_gb4g8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gb4g8"]
 blend_mode = 2
@@ -72,24 +73,6 @@ mouse_filter = 2
 layout_mode = 2
 flat = true
 
-[node name="Results" type="PanelContainer" parent="Top/Control" unique_id=2115653130]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="Lines" type="VBoxContainer" parent="Top/Control/Results" unique_id=447585720]
-layout_mode = 2
-
-[node name="Aufgabe" type="Label" parent="Top/Control/Results/Lines" unique_id=1740211570]
-layout_mode = 2
-text = "Ziel: Finde"
-horizontal_alignment = 1
-
-[node name="Angeklickt" type="Label" parent="Top/Control/Results/Lines" unique_id=1890209160]
-layout_mode = 2
-text = "Das war"
-horizontal_alignment = 1
-
 [node name="Options" type="PanelContainer" parent="Top/Control" unique_id=2087983510]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -141,10 +124,36 @@ text = "129"
 [node name="RegionSelection" parent="Top/Control/Statistik/Lines" unique_id=1848428662 instance=ExtResource("4_11qh7")]
 layout_mode = 2
 
+[node name="NextButton" type="Button" parent="Top/Control" unique_id=151286591]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_font_sizes/font_size = 65
+text = "Weiter"
+
+[node name="Results" type="PanelContainer" parent="Top/Control" unique_id=2115653130]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Lines" type="VBoxContainer" parent="Top/Control/Results" unique_id=447585720]
+layout_mode = 2
+
+[node name="Aufgabe" type="Label" parent="Top/Control/Results/Lines" unique_id=1740211570]
+layout_mode = 2
+text = "Ziel: Finde"
+horizontal_alignment = 1
+
+[node name="Angeklickt" type="Label" parent="Top/Control/Results/Lines" unique_id=1890209160]
+layout_mode = 2
+text = "Das war"
+horizontal_alignment = 1
+
 [node name="Back" type="Button" parent="Top" unique_id=1660802702]
 offset_right = 8.0
 offset_bottom = 8.0
-text = "←"
+icon = ExtResource("5_gb4g8")
 
 [connection signal="pressed" from="Top/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="item_selected" from="Top/Control/Options/Lines/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]

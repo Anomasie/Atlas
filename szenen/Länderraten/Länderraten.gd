@@ -4,8 +4,8 @@ signal ok
 signal open_main_menu
 
 const NO_START_COUNTRIES : int = 3
-const RIGHT_COLOR : Color = Color.DIM_GRAY
-const WRONG_COLOR : Color = Color.GREEN_YELLOW
+const RIGHT_COLOR : Color = Color.DEEP_PINK
+const WRONG_COLOR : Color = Color.DARK_TURQUOISE
 
 @onready var Aufgabe = $Top/Control/Results/Lines/Aufgabe
 @onready var Angeklickt = $Top/Control/Results/Lines/Angeklickt
@@ -17,6 +17,7 @@ const WRONG_COLOR : Color = Color.GREEN_YELLOW
 @onready var FehlendeCounter = $Top/Control/Statistik/Lines/Grid/FehlendeCounter
 @onready var RegionSelection = $Top/Control/Statistik/Lines/RegionSelection
 @onready var LadeLabel = $Top/LadeLabel
+@onready var NextButton = $Top/Control/NextButton
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
@@ -33,6 +34,7 @@ func _ready() -> void:
 	OKButton.hide()
 	Angeklickt.text = ""
 	Aufgabe.text = ""
+	NextButton.hide()
 
 func _input(event) -> void:
 	if event.is_action_pressed("click"):
@@ -137,11 +139,9 @@ func run_game(kontinent : String) -> void:
 		Kontinentkarte.guess = goal
 		##### PLAYER'S TURN
 		# await player's choice
-		print("await country now")
 		var choice : String = await Kontinentkarte.country_selected
-		print("something got selected, nice")
 		last_choice = choice
-		print("→→ ", last_choice)
+		NextButton.show()
 		##### EVALUATION
 		# compare choice with goal
 #		print(choice, ", ", goal)
@@ -170,13 +170,13 @@ func run_game(kontinent : String) -> void:
 		update_ui(current_countries)
 		##### CLOSE
 		await self_ok()
+		NextButton.hide()
 		await Kontinentkarte.hide_highlight()
 		Angeklickt.text = ""
 		Aufgabe.text = ""
 		##### END GAME?
 		# if not enough current_countries: add one
 		while len(get_active_countries(current_countries, false)) < 4 and get_unknown_countries(current_countries):
-			print("add country! ", get_active_countries(current_countries, false), " has length smaller than 4.")
 			current_countries[get_unknown_countries(current_countries).pick_random()] = -1
 		if len(get_active_countries(current_countries, true)) == 0:
 			continue_game = false

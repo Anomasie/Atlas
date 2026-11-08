@@ -40,9 +40,7 @@ size_flags_vertical = 4
 [node name="Label" type="Label" parent="Screen/Lines" unique_id=1407476861]
 layout_mode = 2
 theme_type_variation = &"MainLabel"
-text = "Stadt
-Land
-Fluss"
+text = "Atlasspiel"
 horizontal_alignment = 1
 
 [node name="Länderplatzieren" type="Button" parent="Screen/Lines" unique_id=788861084]
