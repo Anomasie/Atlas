@@ -151,7 +151,7 @@ func random_cohesive_countries(start_country:String = "", length=6) -> Array:
 	for _i in length - 1:
 		var new_entry : String = start_country
 		var counter : int = 0
-		while new_entry in result and counter < 100:
+		while (not new_entry or new_entry in result) and counter < 100:
 			counter += 1
 			var key : String = result.pick_random()
 			if not new_entry in Global.countries.keys():
@@ -160,6 +160,11 @@ func random_cohesive_countries(start_country:String = "", length=6) -> Array:
 				print("ERROR in Karte.random_cohesive_countries: ", key, " not in Global.countries!")
 				break
 			new_entry = Global.countries[key]["Neighbors"].pick_random()
+			if not Global.small_countries_ok:
+				var rect : Rect2i = Global.countries[new_entry]["Rect"]
+				if rect.size.x < 40 or rect.size.y < 40:
+					print(new_entry, " too small")
+					new_entry = ""
 #		print("add: ", new_entry)
 		result.append(new_entry)
 	return result

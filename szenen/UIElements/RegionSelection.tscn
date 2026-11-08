@@ -16,8 +16,17 @@ layout_mode = 2
 folded = true
 title = "Regionen auswählen"
 
-[node name="Grid" type="GridContainer" parent="FoldableContainer" unique_id=93801119]
+[node name="Lines" type="VBoxContainer" parent="FoldableContainer" unique_id=1137038066]
 visible = false
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="FoldableContainer/Lines" unique_id=93801119]
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 2
+
+[node name="SmallCountriesChecker" type="CheckBox" parent="FoldableContainer/Lines" unique_id=1587631310]
+layout_mode = 2
+text = "sehr kleine Länder anzeigen"
+
+[connection signal="pressed" from="FoldableContainer/Lines/SmallCountriesChecker" to="." method="_on_check_box_pressed"]

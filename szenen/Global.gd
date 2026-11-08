@@ -9,6 +9,8 @@ const REGION_LIST : Dictionary[String, Array] = {
 	"Asien": ["Ostasien", "Himalaya", "Orient"]
 }
 
+var small_countries_ok : bool = false
+
 var countries : Dictionary = {}
 var countries_by_region : Dictionary = {}
 var language : String = "German"

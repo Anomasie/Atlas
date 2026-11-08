@@ -107,9 +107,14 @@ func set_start_countries():
 	var counter : int = 0
 	while len(current_countries.keys()) < NO_START_COUNTRIES and counter < 50:
 		var next_country : String = Global.countries_by_region[active_regions.pick_random()].keys().pick_random()
-		if not next_country in current_countries.keys():
-			current_countries[next_country] = -1
+		if not Global.small_countries_ok:
+			var rect : Rect2i = Global.countries[next_country]["Rect"]
+			if rect.size.x < 40 or rect.size.y < 40:
+				print(next_country, " too small")
+				next_country = ""
 		counter += 1
+		if next_country and not next_country in current_countries.keys():
+			current_countries[next_country] = -1
 	print(current_countries)
 
 func run_game(kontinent : String) -> void:

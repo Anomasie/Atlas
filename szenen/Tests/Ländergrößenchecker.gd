@@ -3,6 +3,7 @@ extends Control
 @onready var Rect : Sprite2D = $Rect
 @onready var Country : TextureRect = $Country
 @onready var MyLabel : Label = $Label
+@onready var SizeLabel : Label = $SizeLabel
 
 func _ready() -> void:
 	load_random_country()
@@ -33,6 +34,7 @@ func load_random_country() -> void:
 	var rect : Rect2i = Global.countries[country_name]["Rect"]
 	Rect.position = rect.position
 	Rect.scale = Vector2(rect.size)
+	SizeLabel.text = str(rect)
 
 
 func _on_reload_pressed() -> void:

@@ -16,3 +16,7 @@ res://szenen/karten/Klickkarte.gd
 res://szenen/Global.gd
 res://szenen/Länderplatzieren/Länderplatzieren.gd
 res://szenen/Länderpuzzeln/Länderpuzzle.gd
+res://szenen/UIElements/RegionSelection.tscn
+res://szenen/UIElements/RegionSelection.gd
+res://szenen/Tests/Ländergrößenchecker.tscn
+res://szenen/Tests/Ländergrößenchecker.gd

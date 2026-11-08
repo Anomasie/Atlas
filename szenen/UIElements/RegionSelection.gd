@@ -2,7 +2,8 @@ extends Control
 
 signal regions_changed
 
-@onready var Grid = $FoldableContainer/Grid
+@onready var Grid = $FoldableContainer/Lines/Grid
+@onready var SmallCountriesChecker : CheckBox = $FoldableContainer/Lines/SmallCountriesChecker
 @onready var RegionCheckBoxes : Array[CheckBox]
 @onready var RegionCheckMenus : Array[VBoxContainer]
 #@onready var NestedCheckBoxes : Array[CheckBox]
@@ -59,6 +60,7 @@ func load_region_checkboxes() -> void:
 			nested_checkbox.button_pressed = true
 			new_menu_lines.add_child(nested_checkbox)
 #			NestedCheckBoxes.append(new_checkbox)
+	SmallCountriesChecker.button_pressed = Global.small_countries_ok
 
 func update_global_player_data() -> void:
 	for big_region in RegionCheckBoxes:
@@ -70,3 +72,7 @@ func update_global_player_data() -> void:
 func _on_regions_changed() -> void:
 	update_global_player_data()
 	regions_changed.emit(get_active_regions())
+
+
+func _on_check_box_pressed() -> void:
+	Global.small_countries_ok = SmallCountriesChecker.button_pressed
