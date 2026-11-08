@@ -17,9 +17,6 @@ var highlighted_countries : Array = []
 
 var all_sprites : Array[Node] = []
 
-func _input(event: InputEvent) -> void:
-	handle_input(event)
-
 func check_country_is_clicked(node: Sprite2D, koordinaten: Vector2) -> bool:
 	if not node:
 		print("ERROR in Karte.gd.check_country_is_clicked: No node given")
@@ -37,7 +34,6 @@ func check_country_is_clicked(node: Sprite2D, koordinaten: Vector2) -> bool:
 	var check_koords : Vector2i = koordinaten - node.position
 	if check_koords.x > country_position.position.x and check_koords.x < country_position.position.x + country_position.size.x:
 		if check_koords.y > country_position.position.y and check_koords.y < country_position.position.y + country_position.size.y:
-			print("→ check further: ", node.name)
 			var image : Image = node.get_texture().get_image()
 			var color = image.get_pixel(check_koords.x, check_koords.y)
 			if color == Color.WHITE:
@@ -48,17 +44,22 @@ func handle_input(event: InputEvent) -> void:
 	if not Cam:
 		return
 	if event.is_action_pressed("drag"):
-		cam_dragging = true
-		drag_origin = get_global_mouse_position()
-		cam_origin = Cam.position
+		start_dragging()
 	elif event.is_action_released("drag"):
 		cam_dragging = false
 	elif cam_dragging and event is InputEventMouseMotion:
 		Cam.position = cam_origin + (drag_origin - get_global_mouse_position())
 	elif event.is_action_pressed("zoom_in") or event is InputEventMagnifyGesture:
 		Cam.zoom *= 1.1
+		$ColorRect.show()
 	elif event.is_action_pressed("zoom_out") or event is InputEventPanGesture:
 		Cam.zoom /= 1.1
+		$ColorRect.hide()
+
+func start_dragging() -> void:
+	cam_dragging = true
+	drag_origin = get_global_mouse_position()
+	cam_origin = Cam.position
 
 func get_country(koordinaten: Vector2, guess:String = "") -> String:
 	if guess and not AllSprites.get_node(guess):
@@ -69,7 +70,6 @@ func get_country(koordinaten: Vector2, guess:String = "") -> String:
 #	print("get country differing from guess")
 	for kid in all_sprites:
 		if kid.visible and kid is Sprite2D:
-			print("checking ", kid.name)
 			if check_country_is_clicked(kid, koordinaten):
 				return kid.name
 	print("ERROR Karte.gd.get_country(), instance ", self.name, ": No country found")

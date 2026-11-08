@@ -30,11 +30,14 @@ func handle_input_click(event) -> void:
 			drag_origin = get_global_mouse_position()
 			con_origin = AllSprites.get_node(dragging_country).position
 			highlight([country], SELECTION_COLOR)
+		else:
+			start_dragging()
 	elif event.is_action_released("click"):
 		unselected.emit(dragging_country)
 		dragging_country = ""
 		check_whether_right.emit()
 		hide_highlight()
+		cam_dragging = false
 	elif dragging_country and event is InputEventMouseMotion:
 		AllSprites.get_node(dragging_country).position = con_origin + (get_global_mouse_position() - drag_origin)
 

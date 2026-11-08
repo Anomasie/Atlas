@@ -10,3 +10,6 @@ res://szenen/Hauptmenu/Hauptmenu.tscn
 res://szenen/karten/Klickkarte.tscn
 res://szenen/karten/Karte.gd
 res://szenen/Länderraten/Länderraten.gd
+res://szenen/karten/Puzzlekarte.tscn
+res://szenen/karten/Puzzlekarte.gd
+res://szenen/karten/Klickkarte.gd
