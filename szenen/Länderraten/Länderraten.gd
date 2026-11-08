@@ -16,6 +16,7 @@ const WRONG_COLOR : Color = Color.GREEN_YELLOW
 @onready var GelernteCounter = $Top/Control/Statistik/Lines/Grid/GelernteCounter
 @onready var FehlendeCounter = $Top/Control/Statistik/Lines/Grid/FehlendeCounter
 @onready var RegionSelection = $Top/Control/Statistik/Lines/RegionSelection
+@onready var LadeLabel = $Top/LadeLabel
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
@@ -28,11 +29,16 @@ var current_countries : Dictionary
 var continue_game : bool = true
 
 func _ready() -> void:
+	hide()
 	OKButton.hide()
 	Angeklickt.text = ""
 	Aufgabe.text = ""
 	update_active_regions()
-	run_game()
+	await Weltkarte.load_data()
+	LadeLabel.hide()
+	show()
+	
+#	run_game()
 
 func _input(event) -> void:
 	if event.is_action_pressed("click"):
@@ -100,14 +106,19 @@ func load_difficulty(index : int = DifficultyOption.get_selected_id()) -> void:
 		load(DIFFICULTY_PATHS[index])
 	)
 
-func run_game() -> void:
-	# choose start countries
-	current_countries = {}
+func set_start_countries():
 	update_ui(current_countries)
-	while len(current_countries.keys()) < NO_START_COUNTRIES:
+	var counter : int = 0
+	while len(current_countries.keys()) < NO_START_COUNTRIES and counter < 50:
 		var next_country : String = Global.countries_by_region[active_regions.pick_random()].keys().pick_random()
 		if not next_country in current_countries.keys():
 			current_countries[next_country] = -1
+		counter += 1
+	print(current_countries)
+
+func run_game() -> void:
+	# choose start current_countries
+	set_start_countries()
 	
 	var last_goal : String = ""
 	var last_choice : String = ""
@@ -117,6 +128,7 @@ func run_game() -> void:
 		# pick next goal
 		var goal : String = get_new_goal(current_countries, last_goal, last_choice) #least_known_countries(choose_out_of, current_countries).pick_random()
 		last_goal = goal
+		
 		# add goal to current_countries
 		if not goal in current_countries.keys():
 			current_countries[goal] = -1
@@ -126,8 +138,12 @@ func run_game() -> void:
 		Weltkarte.guess = goal
 		##### PLAYER'S TURN
 		# await player's choice
+		print("await country now")
 		var choice : String = await Weltkarte.country_selected
+		print("something got selected, nice")
 		last_choice = choice
+		print("→→ ", last_choice)
+		return
 		##### EVALUATION
 		# compare choice with goal
 #		print(choice, ", ", goal)

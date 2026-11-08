@@ -9,11 +9,15 @@ func _ready() -> void:
 	AllSprites = $AllSprites
 	RegionSprites = $RegionSprites
 	Cam = $Cam
-	load_countries()
-	load_regions()
 #	print(RegionSprites.get_children())
 
+func load_data() -> void:
+#	await load_countries()
+	load_regions()
+
 func _on_button_pressed() -> void:
+	print("Klickkarte: get country please")
 	var clicked_country : String = get_country(get_global_mouse_position(), guess)
+	print("Klickkarte: got country thanks")
 	if clicked_country:
 		country_selected.emit(clicked_country)

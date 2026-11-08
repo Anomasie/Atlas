@@ -60,7 +60,7 @@ func puzzle(load_country_names : PackedStringArray) -> void:
 	##### PREPARATION
 	NextButton.hide()
 	# load countries
-	Weltkarte.load_countries(load_country_names)
+	Weltkarte.load_countries(load_country_names, false)
 	Weltkarte.shuffle(true)
 	##### await player finishing
 	while not Weltkarte.solved():

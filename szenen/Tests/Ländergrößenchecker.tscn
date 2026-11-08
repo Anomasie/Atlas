@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://4d1h6q8i6ec6"]
+
+[ext_resource type="Script" uid="uid://bklpw6kq8vf6m" path="res://szenen/Tests/Ländergrößenchecker.gd" id="1_xxgty"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uapk7"]
+
+[node name="Ländergrößenchecker" type="Control" unique_id=1643117119]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xxgty")
+
+[node name="TextureRect" type="ColorRect" parent="." unique_id=216867850]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.75, 0, 1)
+
+[node name="Country" type="TextureRect" parent="." unique_id=1718775685]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Rect" type="Sprite2D" parent="." unique_id=692997284]
+modulate = Color(1, 1, 1, 0.5411765)
+texture = SubResource("PlaceholderTexture2D_uapk7")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=1002811103]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 37.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Land"
+
+[node name="Reload" type="Button" parent="." unique_id=1288561747]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 8.0
+text = "Reload"
+
+[connection signal="pressed" from="Reload" to="." method="_on_reload_pressed"]

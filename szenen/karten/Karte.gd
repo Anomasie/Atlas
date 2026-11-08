@@ -26,13 +26,22 @@ func check_country_is_clicked(node: Sprite2D, koordinaten: Vector2) -> bool:
 	elif not node.get_texture():
 		print("ERROR in Karte.gd.check_country_is_clicked: Node invalid ", node.name)
 		return false
+	# check Ländergrößen first:
+	var country_position : Rect2i = Rect2i(0,0,0,0)
+	if "Rect" in Global.countries[node.name].keys():
+		country_position = Global.countries[node.name]["Rect"]
+	else:
+		print("ERROR in Karte.gd.check: ", node.name, " has no Ländergröße")
 	var image : Image = node.get_texture().get_image()
 	var check_koords : Vector2i = koordinaten - node.position
-	if image.get_width() > check_koords.x and check_koords.x >= 0 and image.get_height() > check_koords.y and check_koords.y >= 0:
-		var color = image.get_pixel(check_koords.x, check_koords.y)
-		if color == Color.WHITE:
-#			print("found click in ", node.name)
-			return true
+	if check_koords.x > country_position.position.x and check_koords.x < country_position.position.x + country_position.size.x:
+#		return true
+		if check_koords.y > country_position.position.y and check_koords.y < country_position.position.y + country_position.size.y:
+			print("checking further: ", node.name)
+			var color = image.get_pixel(check_koords.x, check_koords.y)
+			if color == Color.WHITE:
+	#			print("found click in ", node.name)
+				return true
 	return false
 
 func handle_input(event: InputEvent) -> void:
@@ -53,18 +62,19 @@ func handle_input(event: InputEvent) -> void:
 
 func get_country(koordinaten: Vector2, guess:String = "") -> String:
 #	print("get country, guess: ", guess)
+	print("clicked somewhere?")
 	if guess and not AllSprites.get_node(guess):
 		print("ERROR in Karte.gd.get_country: No guess node existing named ", guess)
 	if guess and AllSprites.get_node(guess) is Sprite2D and check_country_is_clicked(AllSprites.get_node(guess), koordinaten):
-#		print("clicked on guess!")
+		print("clicked on guess!")
 		return guess
-#	print("get country not guess")
+	print("get country not guess")
 	if RegionSprites and RegionSprites.get_children():
-#		print("search by region!")
+		print("search by region!")
 		for region in RegionSprites.get_children():
-#			print("check ", region.name)
+			print("check ", region.name)
 			if region.visible and region is Sprite2D and check_country_is_clicked(region, koordinaten):
-#				print("search in region ", region.name)
+				print("search in region ", region.name)
 				return get_country_in_region(region.name, koordinaten)
 	else:
 #		print("search without region")
@@ -112,16 +122,17 @@ func hide_highlight() -> void:
 	tween.kill()
 	return
 
-func load_countries(to_add_ones : Array = []) -> void:
+func load_countries(to_add_ones : Array = [], should_wait : bool = true) -> void:
 	for kid in AllSprites.get_children():
 		kid.hide()
 	var dir = DirAccess.open("res://karten/weltkarte")
 	var file_names = dir.get_files()
+	var counter : int = 0
 	for item in file_names:
 		if len(item.split("-")) > 1:
 			var item_name : String = item.split("-")[1]
 			if item.ends_with(".png") and (len(to_add_ones) == 0 or item_name in to_add_ones):
-				if not AllSprites.has_node(item) and item_name:
+				if not AllSprites.has_node(item_name):
 					var new_texture = Sprite2D.new()
 					new_texture.set_texture( load("res://karten/weltkarte/"+item) )
 					new_texture.set_name(item_name)
@@ -132,7 +143,10 @@ func load_countries(to_add_ones : Array = []) -> void:
 					AllSprites.add_child(new_texture)
 #					print("set name ", item_name, " at \t ", new_texture.name, "\t with no ", item)
 				elif item_name:
-					AllSprites.get_node(item).show()
+					AllSprites.get_node(item_name).show()
+		counter += 1
+		if should_wait and counter % 30 == 0:
+			await get_tree().process_frame
 
 func load_regions() -> void:
 	var dir = DirAccess.open("res://karten/regionen")

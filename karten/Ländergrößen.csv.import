@@ -2,11 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
-uid="uid://btfn3ho1grx05"
+uid="uid://dckqaf2feu2pl"
 
 [deps]
 
+files=["res://karten/Ländergrößen.451.translation", "res://karten/Ländergrößen.60.translation", "res://karten/Ländergrößen.54.translation"]
+
 source_file="res://karten/Ländergrößen.csv"
+dest_files=["res://karten/Ländergrößen.451.translation", "res://karten/Ländergrößen.60.translation", "res://karten/Ländergrößen.54.translation"]
 
 [params]
 

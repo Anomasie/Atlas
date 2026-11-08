@@ -1,6 +1,11 @@
+ColorRect
+TextureRect
 Button
-PanelContainer
 Label
+Sprite2D
+Node
+CanvasLayer
+PanelContainer
 MarginContainer
 VBoxContainer
 Panel
@@ -8,7 +13,3 @@ FoldableContainer
 CheckBox
 MenuButton
 GridContainer
-MenuBar
-Control
-ItemList
-CanvasLayer
