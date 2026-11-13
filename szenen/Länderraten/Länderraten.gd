@@ -2,6 +2,7 @@ extends Control
 
 signal ok
 signal open_main_menu
+signal open_game # not needed here
 
 const NO_START_COUNTRIES : int = 3
 const RIGHT_COLOR : Color = Color.DEEP_PINK
@@ -18,6 +19,8 @@ const WRONG_COLOR : Color = Color.DARK_TURQUOISE
 @onready var RegionSelection = $Top/Control/Statistik/Lines/RegionSelection
 @onready var LadeLabel = $Top/LadeLabel
 @onready var NextButton = $Top/Control/NextButton
+
+const MAXIMAL_AMOUNT_OF_CHILDREN : int = 50
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",

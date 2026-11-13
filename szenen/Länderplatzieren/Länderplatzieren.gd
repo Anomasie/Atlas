@@ -2,6 +2,7 @@ extends Control
 
 signal ok
 signal open_main_menu
+signal open_game
 
 @onready var BackgroundKarte = $Karte
 @onready var CountryContainer = $Top/Control/LabelContainer
@@ -11,6 +12,8 @@ signal open_main_menu
 @onready var OKButton = $Top/Control/OKButton
 @onready var RegionSelection = $Top/Control/Regionsauswahl/RegionSelection
 @onready var NextButton = $Top/Control/NextButton
+
+const MAXIMAL_AMOUNT_OF_CHILDREN : int = 50
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
@@ -59,6 +62,10 @@ func run_game() -> void:
 		await puzzle()
 		# reset
 		Weltkarte.hide_all()
+		if len(Weltkarte.AllSprites.get_children()) >= MAXIMAL_AMOUNT_OF_CHILDREN:
+			print("ATTENTION: Länderplatzieren.gd closes itself now in order to restart anew")
+			open_game.emit("res://szenen/Länderplatzieren/Länderplatzieren.tscn")
+			self.queue_free()
 
 func self_ok() -> void:
 	NextButton.show()

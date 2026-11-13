@@ -3,12 +3,15 @@ extends Control
 signal finish_turn
 signal ok
 signal open_main_menu
+signal open_game
 
 const DIFFICULTY_PATHS : Array = [
 	"res://karten/Drüberlegen/EigentlicheKarte-Politisch-3.png",
 	"res://karten/Drüberlegen/EigentlicheKarte-Physisch-2.png",
 	""
 ]
+
+const MAXIMAL_AMOUNT_OF_CHILDREN : int = 50
 
 var continue_game : bool = true
 @onready var CountryContainer = $CanvasLayer/Control/LabelContainer
@@ -55,6 +58,10 @@ func run_game() -> void:
 			possible_start_countries.pick_random()
 		)
 		await puzzle(puzzle_countries)
+		if len(Weltkarte.AllSprites.get_children()) >= MAXIMAL_AMOUNT_OF_CHILDREN:
+			print("ATTENTION: Länderpuzzle.gd closes itself now in order to restart anew")
+			open_game.emit("res://szenen/Länderpuzzeln/Länderpuzzle.tscn")
+			self.queue_free()
 
 func puzzle(load_country_names : PackedStringArray) -> void:
 	##### PREPARATION

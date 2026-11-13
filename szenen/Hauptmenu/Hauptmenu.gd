@@ -5,6 +5,10 @@ signal start_kartenpuzzle
 signal start_länderplatzieren
 
 @onready var RegionSelection = $Screen/RegionSelection
+@onready var BeendenButton = $Screen/Lines/Beenden
+
+func _ready() -> void:
+	BeendenButton.visible = not OS.has_feature("web")
 
 func open() -> void:
 	RegionSelection.load_player_data()

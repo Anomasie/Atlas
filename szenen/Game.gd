@@ -9,6 +9,7 @@ func _ready() -> void:
 func add_game(path : String):
 	var instance = load(path).instantiate()
 	instance.open_main_menu.connect(open_main_menu)
+	instance.open_game.connect(_on_instance_open_game)
 	Subviewport.add_child(instance)
 	return instance
 
@@ -29,6 +30,9 @@ func _on_hauptmenu_start_länderraten() -> void:
 func _on_hauptmenu_start_länderplatzieren() -> void:
 	Hauptmenu.close()
 	add_game("res://szenen/Länderplatzieren/Länderplatzieren.tscn")
+
+func _on_instance_open_game(path : String) -> void:
+	add_game(path)
 
 func _on_kontinent_selected(n : String) -> void:
 	for kid in Subviewport.get_children():
